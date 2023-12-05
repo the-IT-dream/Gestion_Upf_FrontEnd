@@ -1,16 +1,15 @@
 import React from 'react'
 import LoginForm from '../../../Components/Mini-Components/Js/LoginForm'
 
-function Login() {
-  
+function ForgotPassword() {
   return (
-    <div >
+    <div>
       <LoginForm 
-        titleLogin="Login"
-        buttonLogin="Se connecter"
+        titleLogin="Forgot Password ?"
+        buttonLogin="Send reset Link"
       />
     </div>
   )
 }
 
-export default Login
+export default ForgotPassword

@@ -1,0 +1,150 @@
+/* LoginForm.css */
+
+.Login__Card__Container {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+}
+.input__login__password{
+  display: none;
+}
+
+.Login__Card__Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.Login__Form__Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding-bottom: 3%;
+  padding-top: 3%;
+  background-color: #ffffff;
+}
+
+.Login__Form__label {
+  font-weight: bold;
+  color: rgba(47, 43, 61, 0.78);
+}
+
+.Login__Form__label {
+  font-size: 13px;
+  color: rgba(47, 43, 61, 0.78);
+  font-weight: 500;
+}
+
+.Login__Form__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  width: 100%;
+  font-size: 17px;
+  color: rgba(47, 43, 61, 0.78);
+}
+
+.Login__Form__Form {
+  max-width: 350px;
+  width: 100%;
+  padding: 5%;
+}
+
+.Login__Form__Group {
+  margin-bottom: 15px;
+}
+
+.Login__Form__Group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.Login__Form__Group__remember {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: rgba(47, 43, 61, 0.78);
+}
+.Link__style p{
+  color: #B11B81;
+}
+.Login__Form__Group__remember input {
+  margin-right: 5px;
+}
+.Login__Form__Group__remember__check label{
+  
+}
+.Login__Form__Group input:focus {
+  border: none; /* Remove borders on focus */
+}
+
+.Login__Form__Butt button {
+  background-color: #B11B81;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  width: 100%; /* Make button width 100% of the parent container */
+}
+
+.Login__Form__Butt button:hover {
+  background-color: #8479F2;
+}
+/* LoginForm.css */
+
+/* ... Your existing styles ... */
+
+/* Style the checkbox */
+.Login__Form__Group__remember__check input {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #ccc; /* Set the initial border color */
+  border-radius: 4px;
+  background-color: white; /* Set the initial background color */
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Style the checked state of the checkbox */
+.Login__Form__Group__remember__check input:checked {
+  background-color: #B11B81; /* Set the background color when checked */
+  border-color: #B11B81; /* Set the border color when checked */
+}
+
+/* Add the checkmark icon */
+.Login__Form__Group__remember__check input:checked::after {
+  content: '\2713'; /* Unicode character for a checkmark */
+  font-size: 14px; /* Adjust the size of the checkmark */
+  color: white; /* Set the color of the checkmark */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Add a click effect */
+.Login__Form__Group__remember__check input:active {
+  background-color: #B11B81; /* Set the background color when clicked */
+}
+
+/* ... Your existing styles ... */
