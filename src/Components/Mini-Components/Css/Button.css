@@ -15,6 +15,7 @@ button{
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 .icon{
     margin-right: 5px;
@@ -30,6 +31,8 @@ button{
     border-radius: 7px;
     cursor: pointer;
     width: 100%;
+    font-weight: 500;
+    font-size: 17px;
 }
 .btn--seconnecter--size:hover{
     background-color: #8479F2;
@@ -70,3 +73,18 @@ button{
     cursor: pointer;
     width: 150px;
 }
+/* //////////////////////////////////////////////////////// */
+.btn--remove--style{
+    border-color: red;
+    background-color: transparent;
+    color: red;
+}
+.btn--remove--size{
+    border-width: 1;
+    padding: 10px;
+    border-radius: 7px;
+    border-block-color: red;
+    cursor: pointer;
+    width: 150px;
+}
+/* //////////////////////////////////////////////////////// */
