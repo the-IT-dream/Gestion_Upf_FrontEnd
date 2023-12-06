@@ -85,7 +85,7 @@ function LoginForm(props) {
               onFocus={handleInputFocus}
               LoginFormGroup={'Login__Form__Group__wrap'}
             />
-            <Link className='Link__style'>
+            <Link className='Link__style' to="/ForgotPassword">
               <p className='mot__de_passe__oublie'>Mot de passe oublié?</p>
             </Link>
           </div>
