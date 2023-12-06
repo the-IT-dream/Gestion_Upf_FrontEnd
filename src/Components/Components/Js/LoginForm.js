@@ -85,9 +85,7 @@ function LoginForm(props) {
               <p className='mot__de_passe__oublie'>Mot de passe oublié?</p>
             </Link>
           </div>
-          <div className='Login__Form__Butt'>
-            <button type="submit">{props.buttonLogin} </button>
-          </div>
+          
         </form>
       </div>
     </div>
