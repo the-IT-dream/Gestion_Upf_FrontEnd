@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import '../Css/LoginForm.css';
 import { Link } from 'react-router-dom';
+
 import Input from '../../Mini-Components/Js/Input';
 import InputCheckBox from '../../Mini-Components/Js/InputCheckBox';
+import { Button } from '../../Mini-Components/Js/Button';
+
 
 function LoginForm(props) {
   // State to store form data
@@ -42,6 +45,7 @@ function LoginForm(props) {
           <img src='../images/logoupf.png' className='image__login'/>
           <h2 className='Login__Form__Title'>{props.titleLogin} </h2>
         </div>
+
         <form onSubmit={handleSubmit} className='Login__Form__Form'>
             <Input 
               htmlfor={'Email'}
@@ -85,9 +89,12 @@ function LoginForm(props) {
               <p className='mot__de_passe__oublie'>Mot de passe oublié?</p>
             </Link>
           </div>
-          <div className='Login__Form__Butt'>
-            <button type="submit">{props.buttonLogin} </button>
-          </div>
+          <Button
+            buttonStyle={'btn--seconnecter--style'} 
+            buttonSize={'btn--seconnecter--size'}
+            children={'Se connecter'} 
+            buttonPath={'/Espace_Etudiant'}
+          />
         </form>
       </div>
     </div>
