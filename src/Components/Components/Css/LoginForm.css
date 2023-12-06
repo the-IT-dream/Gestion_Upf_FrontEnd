@@ -6,9 +6,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh; 
-}
-.input__login__password{
-  display: none;
+  z-index: 1;
 }
 
 .Login__Card__Container {
@@ -31,6 +29,14 @@
   padding-bottom: 2%;
   padding-top: 2%;
   background-color: #ffffff;
+}
+.text__desc__forgetform{
+  max-width: 340px;
+}
+.text__desc__forgetform p{
+  color: rgba(47, 43, 61, 0.78);
+  font-size: 15px;
+  font-weight: 500;
 }
 .Login__Form__text {
   display: flex;
@@ -120,4 +126,17 @@
   background-color: #B11B81; /* Set the background color when clicked */
 }
 
-/* ... Your existing styles ... */
+.backto__login__butt{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+.backto__login__butt p{
+  color: var(--secondary);
+}
+.backto__login__butt .left__arrow{  
+  margin-top: 6%;
+  font-size: 15px;
+  color: var(--secondary);
+}

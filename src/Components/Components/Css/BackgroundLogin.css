@@ -1,0 +1,17 @@
+.background{
+    background-image: url('/public/images/upf.jpeg'); /* Update with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+.Background__image{
+    z-index: 0;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    width: 200px;
+}

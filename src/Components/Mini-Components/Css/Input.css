@@ -46,8 +46,8 @@
     background-color: #B11B81; /* Set the background color when checked */
     border-color: #B11B81; /* Set the border color when checked */
   }
-  .Login__Form__Group__wrap input:active {
-    background-color: #B11B81;
+  .Login__Form__Group__wrap input.active {
+    
     box-shadow: 0 0 5px #b11b8267; /* Set the background color when clicked */
   }
   .Login__Form__Group__wrap input:checked::after {
@@ -62,7 +62,4 @@
   .Login__Form__Group.focused input {
     border: 1px solid #B11B81; /* Add styles for the input when focused */
     box-shadow: 0 0 5px  #580d4128;
-  }
-  .Login__Form__Group.active {
-   
   }
