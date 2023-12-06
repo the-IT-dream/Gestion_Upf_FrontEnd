@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../Css/LoginForm.css';
 import { Link } from 'react-router-dom';
+import { Button } from './Button';
 
 function LoginForm(props) {
   // State to store form data
@@ -51,7 +52,7 @@ function LoginForm(props) {
               onChange={handleChange}
               onFocus={() => handleInputFocus('username')}
               onBlur={() => handleInputFocus(null)}
-              placeholder="******@gmail.com"
+              placeholder="amine@gmail.com"
               required
             />
           </div>
@@ -66,28 +67,50 @@ function LoginForm(props) {
               onChange={handleChange}
               onFocus={() => handleInputFocus('password')}
               onBlur={() => handleInputFocus(null)}
-              placeholder="**********"
               required
             />
           </div>
           <div className='Login__Form__Group__remember'>
             <div className='Login__Form__Group__remember__check'>
-            <input 
-            type="checkbox"
-            id="remember"
-            name="remember"
-            value={formData.password}
-            onChange={handleChange}
-            />
-            <label htmlFor="password" className='Login__Form__label'>Se Souvenir de moi</label>
+              <input 
+              type="checkbox"
+              id="remember"
+              name="remember"
+              value={formData.password}
+              onChange={handleChange}
+              />
+              <label htmlFor="password" className='Login__Form__label'>Se Souvenir de moi</label>
             </div>
             <Link className='Link__style'>
               <p className='mot__de_passe__oublie'>Mot de passe oublié?</p>
             </Link>
           </div>
-          <div className='Login__Form__Butt'>
-            <button type="submit">{props.buttonLogin} </button>
-          </div>
+          
+          <Button
+            buttonStyle={'btn--seconnecter--style'} 
+            buttonSize={'btn--seconnecter--size'}
+            children={'Se connecter'} 
+            buttonPath={'/Espace_Etudiant'}
+          />
+          <br/><br/><br/>
+          <Button
+            buttonStyle={'btn--reset--style'}
+            buttonSize={'btn--reset--size'}
+            children={'Reset'}
+          />
+          <Button
+            buttonStyle={'btn--save--style'}
+            buttonSize={'btn--save--size'}
+            children={'Save'}
+            icon={'tabler:users'}
+          />
+          <br/><br/>
+          <Button
+            buttonStyle={'btn--resetMini--style'}
+            buttonSize={'btn--resetMini--size'}
+            children={'Reset'}
+            
+          />
         </form>
       </div>
     </div>

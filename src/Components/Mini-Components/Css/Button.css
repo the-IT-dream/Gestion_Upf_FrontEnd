@@ -1,0 +1,72 @@
+:root{
+    --primary: #B11B81;
+    --secondary: #333A65;
+    --third: #ABADB1;
+    --fourth :#337AB7;
+    --gray: #F1F1F2;
+}
+*{
+    font-weight: 600;
+}
+.link{
+    text-decoration: none;
+}
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon{
+    margin-right: 5px;
+}
+/* ////////////////////////////////////////////////////// */
+.btn--seconnecter--style{
+    background-color: var(--primary);
+    color:#fff;
+}
+.btn--seconnecter--size{
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 100%;
+}
+.btn--seconnecter--size:hover{
+    background-color: #8479F2;
+}
+/* //////////////////////////////////////////////////////// */
+.btn--reset--style{
+    background-color: var(--gray);
+    color: var(--third);
+}
+.btn--reset--size{
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 150px;
+}
+/* //////////////////////////////////////////////////////// */
+.btn--resetMini--style{
+    background-color: var(--gray);
+    color: var(--third);
+}
+.btn--resetMini--size{
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 90px;
+}
+/* //////////////////////////////////////////////////////// */
+.btn--save--style{
+    background-color: var(--primary);
+    color: var(--gray);
+}
+.btn--save--size{
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 150px;
+}
