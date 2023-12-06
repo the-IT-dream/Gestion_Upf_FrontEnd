@@ -1,0 +1,59 @@
+.Login__Form__Group {
+    margin-bottom: 15px;
+    appearance: none;
+  }
+  
+  .Login__Form__Group input {
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+  }
+  .Login__Form__label {
+    color: rgba(47, 43, 61, 0.78);
+    font-size: 13px;
+    color: rgba(47, 43, 61, 0.78);
+    font-weight: 500;
+  }
+  .Login__Form__Group__wrap{
+    display: flex;
+    flex: wrap;
+  }
+  .Login__Form__Group__wrap input{
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #ccc; /* Set the initial border color */
+    border-radius: 4px;
+    background-color: white; /* Set the initial background color */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    position: relative;
+  }
+  .Login__Form__Group__wrap input:checked {
+    background-color: #B11B81; /* Set the background color when checked */
+    border-color: #B11B81; /* Set the border color when checked */
+  }
+  .Login__Form__Group__wrap input:active {
+    background-color: #B11B81;
+    box-shadow: 0 0 5px #b11b8267; /* Set the background color when clicked */
+  }
+  .Login__Form__Group__wrap input:checked::after {
+    content: '\1F5F8'; /* Unicode character for a checkmark */
+    font-size: 14px; /* Adjust the size of the checkmark */
+    color: white; /* Set the color of the checkmark */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .Login__Form__Group.focused input {
+    border: 1px solid #B11B81; /* Add styles for the input when focused */
+    box-shadow: 0 0 5px  #580d4128;
+  }
+  .Login__Form__Group.active {
+   
+  }

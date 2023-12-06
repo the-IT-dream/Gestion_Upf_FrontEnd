@@ -32,21 +32,9 @@
   padding-top: 3%;
   background-color: #ffffff;
 }
-
-.Login__Form__label {
-  font-weight: bold;
-  color: rgba(47, 43, 61, 0.78);
-}
-
-.Login__Form__label {
-  font-size: 13px;
-  color: rgba(47, 43, 61, 0.78);
-  font-weight: 500;
-}
-
 .Login__Form__text {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   max-width: 500px;
@@ -54,25 +42,18 @@
   font-size: 17px;
   color: rgba(47, 43, 61, 0.78);
 }
-
+.image__login {
+  width: 70px;
+  margin: 2%;
+  margin-left: -10%;
+}
 .Login__Form__Form {
   max-width: 350px;
   width: 100%;
   padding: 5%;
 }
 
-.Login__Form__Group {
-  margin-bottom: 15px;
-}
 
-.Login__Form__Group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 7px;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease-in-out;
-}
 
 .Login__Form__Group__remember {
   display: flex;
@@ -132,15 +113,7 @@
 }
 
 /* Add the checkmark icon */
-.Login__Form__Group__remember__check input:checked::after {
-  content: '\2713'; /* Unicode character for a checkmark */
-  font-size: 14px; /* Adjust the size of the checkmark */
-  color: white; /* Set the color of the checkmark */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
 
 /* Add a click effect */
 .Login__Form__Group__remember__check input:active {
