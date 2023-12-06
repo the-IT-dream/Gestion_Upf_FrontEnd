@@ -64,7 +64,6 @@ function LoginForm(props) {
             buttonStyle={'btn--resetMini--style'}
             buttonSize={'btn--resetMini--size'}
             children={'Reset'}
-            
           />
         </form>
       </div>
