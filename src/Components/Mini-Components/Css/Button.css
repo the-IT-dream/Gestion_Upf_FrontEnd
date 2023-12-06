@@ -15,7 +15,7 @@ button{
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 .icon{
     margin-right: 5px;
@@ -74,7 +74,7 @@ button{
     width: 150px;
 }
 /* //////////////////////////////////////////////////////// */
-.btn--remove--style{
+.btn--remove--style {
     border-color: red;
     background-color: transparent;
     color: red;

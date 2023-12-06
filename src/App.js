@@ -1,4 +1,5 @@
 import './App.css';
+import { Button } from './Components/Mini-Components/Js/Button';
 import ForgotPassword from './Pages/Auth/Js/ForgotPassword';
 import Login from './Pages/Auth/Js/Login';
 
