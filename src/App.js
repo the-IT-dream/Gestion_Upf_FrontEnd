@@ -8,8 +8,6 @@ function App() {
   return (
    <div className='app_css' style={{ backgroundImage: `url('${backgroundImagePath}')` }}>
      <Login />
-     <ForgotPassword />
-
    </div>
   );
 }

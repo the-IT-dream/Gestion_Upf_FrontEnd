@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../Css/LoginForm.css';
 import { Link } from 'react-router-dom';
+import Input from '../../Mini-Components/Js/Input';
+import InputCheckBox from '../../Mini-Components/Js/InputCheckBox';
 
 function LoginForm(props) {
   // State to store form data
@@ -37,50 +39,48 @@ function LoginForm(props) {
     <div className='Login__Card__Container' >
       <div className='Login__Form__Container'>
         <div className='Login__Form__text'>
+          <img src='../images/logoupf.png' className='image__login'/>
           <h2 className='Login__Form__Title'>{props.titleLogin} </h2>
         </div>
         <form onSubmit={handleSubmit} className='Login__Form__Form'>
-          <div className={`Login__Form__Group ${focusedInput === 'username' ? 'focused' : ''}`}>
-            <label htmlFor="username" className='Login__Form__label'>Email</label>
-            <input
-              className='input__login__email'
-              type="text"
-              id="username"
-              name="username"
-              value={formData.username}
+            <Input 
+              htmlfor={'Email'}
+              label={'Email'}
+              type={'email'}
+              id={'email'}
+              name={'email'}
+              value={formData.Email}
               onChange={handleChange}
-              onFocus={() => handleInputFocus('username')}
-              onBlur={() => handleInputFocus(null)}
-              placeholder="******@gmail.com"
-              required
+              onFocus={handleInputFocus}
+              placeholder={'azerty@gmail.com'}
+              required={'required'}
+              LoginFormGroup={'Login__Form__Group'}
             />
-          </div>
-          <div className={`Login__Form__Group ${focusedInput === 'password' ? 'focused' : ''}`}>
-            <label htmlFor="password" className='Login__Form__label'>Password</label>
-            <input 
-              className='input__login__password'
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
+             <Input 
+              htmlfor={'Password'}
+              label={'Password'}
+              type={'Password'}
+              id={'Password'}
+              name={'Password'}
+              value={formData.Password}
               onChange={handleChange}
-              onFocus={() => handleInputFocus('password')}
-              onBlur={() => handleInputFocus(null)}
-              placeholder="**********"
-              required
+              onFocus={handleInputFocus}
+              placeholder={'azerty'}
+              required={'required'}
+              LoginFormGroup={'Login__Form__Group'}
             />
-          </div>
           <div className='Login__Form__Group__remember'>
-            <div className='Login__Form__Group__remember__check'>
-            <input 
-            type="checkbox"
-            id="remember"
-            name="remember"
-            value={formData.password}
-            onChange={handleChange}
+          <InputCheckBox 
+              htmlfor={'Password'}
+              label={'Se souvenir de moi'}
+              type={'Checkbox'}
+              id={'Password'}
+              name={'Password'}
+              value={formData.Password}
+              onChange={handleChange}
+              onFocus={handleInputFocus}
+              LoginFormGroup={'Login__Form__Group__wrap'}
             />
-            <label htmlFor="password" className='Login__Form__label'>Se Souvenir de moi</label>
-            </div>
             <Link className='Link__style'>
               <p className='mot__de_passe__oublie'>Mot de passe oublié?</p>
             </Link>
