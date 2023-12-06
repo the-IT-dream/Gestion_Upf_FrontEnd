@@ -40,52 +40,7 @@ function LoginForm(props) {
         <div className='Login__Form__text'>
           <h2 className='Login__Form__Title'>{props.titleLogin} </h2>
         </div>
-        <form onSubmit={handleSubmit} className='Login__Form__Form'>
-          <div className={`Login__Form__Group ${focusedInput === 'username' ? 'focused' : ''}`}>
-            <label htmlFor="username" className='Login__Form__label'>Email</label>
-            <input
-              className='input__login__email'
-              type="text"
-              id="username"
-              name="username"
-              value={formData.username}
-              onChange={handleChange}
-              onFocus={() => handleInputFocus('username')}
-              onBlur={() => handleInputFocus(null)}
-              placeholder="amine@gmail.com"
-              required
-            />
-          </div>
-          <div className={`Login__Form__Group ${focusedInput === 'password' ? 'focused' : ''}`}>
-            <label htmlFor="password" className='Login__Form__label'>Password</label>
-            <input 
-              className='input__login__password'
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              onFocus={() => handleInputFocus('password')}
-              onBlur={() => handleInputFocus(null)}
-              required
-            />
-          </div>
-          <div className='Login__Form__Group__remember'>
-            <div className='Login__Form__Group__remember__check'>
-              <input 
-              type="checkbox"
-              id="remember"
-              name="remember"
-              value={formData.password}
-              onChange={handleChange}
-              />
-              <label htmlFor="password" className='Login__Form__label'>Se Souvenir de moi</label>
-            </div>
-            <Link className='Link__style'>
-              <p className='mot__de_passe__oublie'>Mot de passe oublié?</p>
-            </Link>
-          </div>
-          
+        <form onSubmit={handleSubmit} className='Login__Form__Form'> 
           <Button
             buttonStyle={'btn--seconnecter--style'} 
             buttonSize={'btn--seconnecter--size'}
