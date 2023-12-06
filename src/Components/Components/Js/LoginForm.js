@@ -95,24 +95,6 @@ function LoginForm(props) {
             children={'Se connecter'} 
             buttonPath={'/Espace_Etudiant'}
           />
-          <br/><br/><br/>
-          <Button
-            buttonStyle={'btn--reset--style'}
-            buttonSize={'btn--reset--size'}
-            children={'Reset'}
-          />
-          <Button
-            buttonStyle={'btn--save--style'}
-            buttonSize={'btn--save--size'}
-            children={'Save'}
-            icon={'tabler:users'}
-          />
-          <br/><br/>
-          <Button
-            buttonStyle={'btn--resetMini--style'}
-            buttonSize={'btn--resetMini--size'}
-            children={'Reset'}
-          />
         </form>
       </div>
     </div>
