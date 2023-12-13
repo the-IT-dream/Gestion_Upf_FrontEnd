@@ -1,5 +1,7 @@
 import './App.css';
+
 import BackgroundLogin from './Components/Components/Js/BackgroundLogin';
+import { Button } from './Components/Mini-Components/Js/Button';
 import ForgotPassword from './Pages/Auth/Js/ForgotPassword';
 import Login from './Pages/Auth/Js/Login';
 import ResetPassword from './Pages/Auth/Js/ResetPassword';

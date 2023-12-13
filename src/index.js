@@ -9,6 +9,7 @@ import ForgotPassword from './Pages/Auth/Js/ForgotPassword';
 import Login from './Pages/Auth/Js/Login';
 
 
+
 ReactDOM.render(
     // <App />,
     <Router>
@@ -18,6 +19,7 @@ ReactDOM.render(
             <Route path='/Login' element={<Login />} />
             <Route path='/ForgotPassword' element={<ForgotPassword />} />
             <Route path='/ResetPassword' element={<ResetPassword />} />
+
         </Routes>
     </Router>,
     document.getElementById('root') 
