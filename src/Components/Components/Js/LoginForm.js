@@ -93,11 +93,6 @@ function LoginForm(props) {
             buttonSize={'btn--seconnecter--size'}
             children={'Se connecter'} 
             buttonPath={'/Espace_Etudiant'}
-          /><br/><br/>
-          <Button
-            buttonStyle={'btn--remove--style'} 
-            buttonSize={'btn--remove--size'}
-            children={'Remove All'} 
           />
         </form>
       </div>
