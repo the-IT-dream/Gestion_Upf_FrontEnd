@@ -1,0 +1,28 @@
+.TopBar__container{
+    background-color: rgba(255, 255, 255, 0.26);
+    width: 80%;
+    margin-left: 18%;
+    display: flex;
+    justify-content: center;
+}
+.TopBar__cadre{
+    border: 1px solid rgba(47, 43, 61, 0.16);
+    background-color: white;
+    width: 1300px;
+    height: 70px;
+    margin-top: 10px;
+    border-radius: 7px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 88%;
+    padding-left: 2%;
+    align-items: center;
+}
+.search__button{
+    border: none;
+    color: rgba(47, 43, 61, 0.491);
+    background-color: white;
+    font-size: 22px;
+    font-weight: 200;
+    cursor: pointer;
+}

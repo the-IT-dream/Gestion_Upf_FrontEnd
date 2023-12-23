@@ -5,7 +5,7 @@
     height: 100vh;
     background-color:  #fff;
     padding-top: 1%;
-    
+    position: fixed;    
 }
 .Menu__items{
     height: 100%;

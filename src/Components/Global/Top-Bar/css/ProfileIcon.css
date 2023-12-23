@@ -1,0 +1,15 @@
+.profile__img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 60px;
+}
+.profile__img img{
+    position: absolute;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    overflow: hidden;
+}
