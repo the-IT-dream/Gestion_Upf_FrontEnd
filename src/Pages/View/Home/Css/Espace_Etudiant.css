@@ -1,3 +1,4 @@
+
 .espace__etudiant__container{
     display: flex;
     flex-wrap: wrap;
@@ -11,3 +12,11 @@
 	width: calc(100% - 250px);
 	transition: .3s ease;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
