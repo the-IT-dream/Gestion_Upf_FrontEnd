@@ -84,7 +84,7 @@ function LoginForm(props) {
               onChange={handleChange}
               onFocus={handleInputFocus}
               LoginFormGroup={'Login__Form__Group__wrap'}
-            />
+          />
             <Link className='Link__style' to="/ForgotPassword">
               <p className='mot__de_passe__oublie'>Mot de passe oublié?</p>
             </Link>
@@ -95,6 +95,11 @@ function LoginForm(props) {
             children={'Se connecter'} 
             buttonPath={'/Espace_Etudiant'}
           />
+          {/* <Button
+            buttonStyle={'btn--remove--style'} 
+            buttonSize={'btn--remove--size'}
+            children={'Remove All'} 
+          /> */}
         </form>
       </div>
     </div>

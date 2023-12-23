@@ -1,0 +1,16 @@
+.Navbar__container{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    width: 500px;
+}
+.Navbar__items{
+    border-radius: 10px;
+    background: #fff;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
