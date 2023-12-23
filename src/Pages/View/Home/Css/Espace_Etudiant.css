@@ -1,6 +1,22 @@
+
+.espace__etudiant__container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.menu{
+     background-color: black;
+}
+.content{
+    position: fixed;
+	left: 250px;
+	width: calc(100% - 250px);
+	transition: .3s ease;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
+

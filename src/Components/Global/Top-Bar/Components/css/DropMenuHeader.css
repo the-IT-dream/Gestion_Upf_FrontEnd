@@ -1,0 +1,8 @@
+.title__drop__container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 4%;
+    padding-right: 4%;
+    border-bottom: 1px solid rgba(47, 43, 61, 0.16);
+}
