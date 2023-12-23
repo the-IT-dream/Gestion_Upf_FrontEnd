@@ -8,8 +8,8 @@
 }
 .content{
     position: fixed;
-	left: 250px;
-	width: calc(100% - 250px);
+	left: 270px;
+	width: calc(100% - 270px);
 	transition: .3s ease;
 }
 
