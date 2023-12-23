@@ -1,11 +1,11 @@
 .Menu__container{
     display: flex;
+    position: fixed;
     justify-content: center;
     width: 250px;
     height: 100vh;
     background-color:  #fff;
     padding-top: 1%;
-    position: fixed;    
 }
 .Menu__items{
     height: 100%;
