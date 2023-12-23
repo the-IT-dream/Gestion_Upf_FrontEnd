@@ -1,0 +1,16 @@
+.drop__menu__items{
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 4%;
+}
+.drop__menu__items h4{
+    font-weight: 350;
+    font-size: 17px;
+    color: rgba(150, 150, 150, 0.644);
+    transition: .4s;
+}
+.drop__menu__items:hover h4{
+    font-weight: 350;
+    font-size: 17px;
+    color: #B11B81;
+}
