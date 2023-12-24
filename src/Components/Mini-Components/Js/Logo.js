@@ -7,13 +7,8 @@ const LogoWrapper= styled.div`
     padding: 10px 20px;
     display: flex;
     align-items: center;
-    > a{
-      width:100%;
-      text-decoration: none;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      > div {
+    > 
+     div {
         position: relative;
         width: 100%;
         height:70px ;
@@ -21,9 +16,7 @@ const LogoWrapper= styled.div`
         overflow: hidden;
         margin : 10px 5px 10px 0px;
         cursor: pointer;
-        // background : #000;
         display : flex;
-      }
     }
 `;
 
