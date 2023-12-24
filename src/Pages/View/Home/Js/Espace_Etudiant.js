@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from '../../../Auth/Js/Login';
 import '../Css/Espace_Etudiant.css';
 import Account from '../Components/js/Account';
+import Security from '../Components/js/Security';
 
 
 
