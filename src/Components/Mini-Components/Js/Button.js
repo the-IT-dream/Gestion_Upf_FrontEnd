@@ -9,6 +9,7 @@ const STYLES = [
     'btn--resetMini--style',
     'btn--save--style',
     'btn--remove--style',
+    'btn--account--style'
 ];
 const SIZES = [
     'btn--seconnecter--size',
