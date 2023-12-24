@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Children } from 'react'
 import '../../Mini-Components/Css/Menu.css';
 import styled from "styled-components"
 import SideBarButton from "../Js/SideBarButton";
@@ -33,28 +33,28 @@ const SideBarWrapper= styled.div`
   `;
   const makeButtons =[
     {
-      to :"/Espace_Etudiant/info_Stage",
+      to :"/info_Stage",
       icon :<i className="fa-solid fa-circle-info"></i>,
       title:"Les infos de stage",
     },
     {
-      to :"/Espace_Etudiant/postule_Stage",
+      to :"/postule_Stage",
       icon :<i className="fa-solid fa-pen-to-square"></i>,
       title:"Postuler à des stages",
       // subBtn:["Password","Mail","Accounts"]
     },
     {
-      to :"/Espace_Etudiant/Demande_Document",
+      to :"/Demande_Document",
       icon :<i className="fa-solid fa-file"></i>,
       title:"Demande les documents",
     },
     {
-      to :"/Espace_Etudiant/Soumettre_document",
+      to :"/Soumettre_document",
       icon :<i className="fa-solid fa-file-arrow-up"></i>,
       title:"Soumettre les documents",
     }
   ];
-function Menu() {
+function Menu({Children}) {
   return (
     <div>
       <SideBarWrapper>
@@ -65,8 +65,10 @@ function Menu() {
               <SideBarButton to={btn.to} icon={btn.icon} title={btn.title}/>          
             ))}
           </List>
+          
         </SideBarBody>
       </SideBarWrapper>
+      <main>{Children}</main>
     </div>
   )
 }
