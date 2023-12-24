@@ -7,6 +7,8 @@ import SideBar from '../../../../Components/Mini-Components/Js/Navbar'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from '../../../Auth/Js/Login';
 import '../Css/Espace_Etudiant.css';
+import Account from '../Components/js/Account';
+
 
 
 function Espace_Etudiant() {
@@ -17,8 +19,11 @@ function Espace_Etudiant() {
           <Menu/>
         </div>
         <div className='content'>
-          <div>
+          <div className='content__topbar'>
           <TopBar />
+          </div>
+          <div className='content__menu'>
+            <Account />
           </div>
         </div>
       </div>

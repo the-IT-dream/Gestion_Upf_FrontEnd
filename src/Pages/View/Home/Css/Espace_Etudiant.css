@@ -18,5 +18,24 @@
     padding: 0;
     box-sizing: border-box;
   }
+.espace__etudiant__container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.content{
+    display: flex;
+}
+.content__topbar{
+    position: fixed;
+    left: 270px;
+	width: calc(100% - 270px);
+}
+.content__menu{
+    margin-top: 100px;
+    width: calc(100% );
+    margin-left: 2%;
+    margin-right: 2%;
+}
+ 
   
 
