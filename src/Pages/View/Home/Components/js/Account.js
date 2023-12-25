@@ -30,12 +30,13 @@ function Account() {
     // For example, you can send the data to a server for authentication
     console.log('Form submitted with data:', formData);
   };
-
+  const [clicked,setClicked] = useState(false);
   return (
     <div className='account__container'>
         <div className='header__button'>
             <Button
-                className="butt__account"
+                onClick={() => {setClicked(!clicked)}}
+                className={`butt__account ${clicked? 'active' : 'inactive'}`}
                 buttonStyle={'btn--account--style'} 
                 buttonSize={'btn--save--size'}
                 children={'Account'} 
@@ -43,8 +44,7 @@ function Account() {
                 icon={'FaUser'}
             />
              <Button
-                className="butt__account"
-                buttonStyle={'btn--account--style'} 
+                buttonStyle={`btn--account--style ${clicked? 'active' : 'inactive'}`} 
                 buttonSize={'btn--save--size'}
                 children={'Security'} 
                 buttonPath={'/Espace_Etudiant'}

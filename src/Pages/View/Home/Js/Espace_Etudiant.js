@@ -9,6 +9,7 @@ import Login from '../../../Auth/Js/Login';
 import '../Css/Espace_Etudiant.css';
 import Account from '../Components/js/Account';
 import Security from '../Components/js/Security';
+import Postuler from '../Components/js/Postuler';
 
 
 
@@ -21,10 +22,10 @@ function Espace_Etudiant() {
         </div>
         <div className='content'>
           <div className='content__topbar'>
-          <TopBar />
+            <TopBar />
           </div>
           <div className='content__menu'>
-            <Account />
+            <Postuler />
           </div>
         </div>
       </div>

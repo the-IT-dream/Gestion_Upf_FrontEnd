@@ -42,6 +42,7 @@ button{
     color: gray;
     font-size: 15px;
 }
+
 .btn--account--style:hover{
     background-color: var(--primary);
     color:#fff;
