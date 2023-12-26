@@ -7,25 +7,18 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import '../Css/Espace_Etudiant.css';
 import Account from '../Components/js/Account';
+import Security from '../Components/js/Security';
+import Postuler from '../Components/js/Postuler';
 
 
 
 const Espace_Etudiant = () => {
   return (
-    <Router>
-      <Sidebar>
-        <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
-          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
-          {/* <Route path="/about" element={<About />} />
-          <Route path="/comment" element={<Comment />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/productList" element={<ProductList />} /> */}
-        </Routes>
-      </Sidebar>
-    </Router>
+    <div>
+      
+    </div>
   );
 };
+
 
 export default Espace_Etudiant
