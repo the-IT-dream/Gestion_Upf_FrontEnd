@@ -1,0 +1,78 @@
+.account__container{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 2%;
+    background-color: white;
+    border-radius:  7px;
+}
+.header__button{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    background-color:  var(--gray);
+    padding: 1%;
+    margin-bottom: 5px;
+}
+.btn--account--style.active{
+    background-color: var(--primary);
+    color:#fff;
+    transition: .3s;
+}
+.content__header__account{
+    padding: 2%;
+    
+    border-bottom: 1px solid rgba(128, 128, 128, 0.352);
+}
+.content__header__account h2{
+    color: rgba(128, 128, 128, 0.705);
+    font-size: 22px;
+    font-weight: 500;
+    padding-bottom: 2%;
+    
+}
+
+.content__header__account img{
+    border-radius: 5px;
+}
+.image__container{
+    display: flex;
+    flex-wrap:wrap;
+    gap: 2%;
+    align-items: center;
+}
+.image__button {
+    display: flex;
+    gap: 2%;
+}
+.image__text__account{
+    display: flex;
+    flex-direction: column;
+}
+.parag p{
+    color: rgba(128, 128, 128, 0.605);
+    font-weight: 100;
+    padding: 2%;
+    padding-left: 3%;
+}
+.parag h1{
+    color: rgba(128, 128, 128, 0.705);
+    font-size: 22px;
+    font-weight: 500;
+    padding-left: 3%;
+    padding-top: 3%;
+}
+.account__form{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+padding: 2%;
+}
+.account__form .Login__Form__Group{
+    width: 570px;
+}
+.image__button__footer{
+    padding-left: 4%;
+    display: flex;
+    gap:2%;
+}
