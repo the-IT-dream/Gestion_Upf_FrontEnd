@@ -54,14 +54,17 @@
     font-weight: 100;
     padding: 3%;
 }
-.account__form{
+.demande__form{
 display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
+flex-direction: column;
+width: 100%;
+justify-content: center;
 padding: 2%;
 }
-.account__form .Login__Form__Group{
-    width: 570px;
+.demande__form .Login__Form__Group{
+   display: flex;
+   justify-content: space-between;
+   gap: 1%;
 }
 .image__button__footer{
     padding-left: 4%;

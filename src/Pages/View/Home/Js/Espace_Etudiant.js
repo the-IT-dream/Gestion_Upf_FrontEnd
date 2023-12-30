@@ -10,6 +10,7 @@ import '../Css/Espace_Etudiant.css';
 import Account from '../Components/js/Account';
 import Security from '../Components/js/Security';
 import Postuler from '../Components/js/Postuler';
+import DemandeDocuments from '../Components/js/DemandeDocuments';
 
 
 
@@ -25,7 +26,7 @@ function Espace_Etudiant() {
             <TopBar />
           </div>
           <div className='content__menu'>
-            <Postuler />
+          <DemandeDocuments />
           </div>
         </div>
       </div>

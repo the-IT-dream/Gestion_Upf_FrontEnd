@@ -95,11 +95,7 @@
 .Login__Form__Butt button:hover {
   background-color: #8479F2;
 }
-/* LoginForm.css */
 
-/* ... Your existing styles ... */
-
-/* Style the checkbox */
 .Login__Form__Group__remember__check input {
   appearance: none;
   width: 15px;

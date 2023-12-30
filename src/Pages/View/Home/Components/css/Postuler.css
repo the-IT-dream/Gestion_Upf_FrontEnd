@@ -28,8 +28,6 @@
   }
   /* Add this to your existing CSS file or create a new one for styling */
 .custom-file-upload {
-    z-index: 0;
-    position: relative;
     display: flex;
     flex-direction: column;
     text-align: center;
