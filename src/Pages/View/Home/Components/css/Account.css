@@ -5,6 +5,7 @@
     background-color: white;
     border-radius:  7px;
 }
+
 .header__button{
     display: flex;
     flex-wrap: wrap;
@@ -21,7 +22,6 @@
 }
 .content__header__account{
     padding: 2%;
-    
     border-bottom: 1px solid rgba(128, 128, 128, 0.352);
 }
 .content__header__account h2{
@@ -29,7 +29,6 @@
     font-size: 22px;
     font-weight: 500;
     padding-bottom: 2%;
-    
 }
 
 .content__header__account img{

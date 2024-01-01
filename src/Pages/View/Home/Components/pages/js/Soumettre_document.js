@@ -50,13 +50,13 @@ function Soumettre_document(){
     const [clicked, setClicked] = useState(false);
   
     return (
-      <div className='account__container'>
-        
-        <div className='content__account'>
-          <div className='parag'>
+      <div className='Postuler__account__container'>
+        <div className='parag'>
             <h1>Soumettre les documents</h1>
             <p>Upload Multiple Files</p>
           </div>
+        <div className='Postuler__content__account'>
+
           <label className="custom-file-upload">
             <input type="file" onChange={handleFileChange} multiple />
             <i className="fa fa-cloud-upload"></i>

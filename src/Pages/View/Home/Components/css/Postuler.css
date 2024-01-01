@@ -29,17 +29,17 @@
   /* Add this to your existing CSS file or create a new one for styling */
 .custom-file-upload {
     display: flex;
-    flex-direction: column;
     text-align: center;
     justify-content: center;
     margin: 2%;
+    padding: 1%;
     cursor: pointer;
-    padding: 200px 500px;
+    padding: 200px 800px;
     border: 2px solid gray;
     border-radius: 5px;
     background-color: #FFF;
     color: gray;
-    font-size: 16px;
+    font-size: 20px;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   }
   

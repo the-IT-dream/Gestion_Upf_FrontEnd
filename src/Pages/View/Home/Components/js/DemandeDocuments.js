@@ -35,9 +35,9 @@ function DemandeDocuments() {
       };
       const [clicked,setClicked] = useState(false);
       return (
-        <div className='account__container'>
-            <div className='content__account'>
-              <form className='demande__form'>
+        <div className='account__container__demande'>
+            <div className='content__account__demande'>
+              <form className='demande__formulaire'>
                 <InputCheckBox
                   htmlfor={'First Name'}
                   label={'First Name'}
@@ -49,9 +49,10 @@ function DemandeDocuments() {
                   onFocus={handleInputFocus}
                   placeholder={'First Name'}
                   required={'required'}
-                  LoginFormGroup={'Login__Form__Group'}
+                  LoginFormGroup={'Login__Form__Group1'}
+                  Login__Form__label={'Login__Form__label1'}
                 />
-                <InputCheckBox 
+                <InputCheckBox
                   htmlfor={'First Name'}
                   label={'First Name'}
                   type={'checkbox'}
@@ -62,9 +63,10 @@ function DemandeDocuments() {
                   onFocus={handleInputFocus}
                   placeholder={'First Name'}
                   required={'required'}
-                  LoginFormGroup={'Login__Form__Group'}
+                  LoginFormGroup={'Login__Form__Group1'}
+                  Login__Form__label={'Login__Form__label1'}
                 />
-                <InputCheckBox 
+                <InputCheckBox
                   htmlfor={'First Name'}
                   label={'First Name'}
                   type={'checkbox'}
@@ -75,9 +77,10 @@ function DemandeDocuments() {
                   onFocus={handleInputFocus}
                   placeholder={'First Name'}
                   required={'required'}
-                  LoginFormGroup={'Login__Form__Group'}
+                  LoginFormGroup={'Login__Form__Group1'}
+                  Login__Form__label={'Login__Form__label1'}
                 />
-                <InputCheckBox 
+               <InputCheckBox
                   htmlfor={'First Name'}
                   label={'First Name'}
                   type={'checkbox'}
@@ -88,9 +91,10 @@ function DemandeDocuments() {
                   onFocus={handleInputFocus}
                   placeholder={'First Name'}
                   required={'required'}
-                  LoginFormGroup={'Login__Form__Group'}
+                  LoginFormGroup={'Login__Form__Group1'}
+                  Login__Form__label={'Login__Form__label1'}
                 />
-                <InputCheckBox 
+                <InputCheckBox
                   htmlfor={'First Name'}
                   label={'First Name'}
                   type={'checkbox'}
@@ -101,9 +105,10 @@ function DemandeDocuments() {
                   onFocus={handleInputFocus}
                   placeholder={'First Name'}
                   required={'required'}
-                  LoginFormGroup={'Login__Form__Group'}
+                  LoginFormGroup={'Login__Form__Group1'}
+                  Login__Form__label={'Login__Form__label1'}
                 />
-                <InputCheckBox 
+                <InputCheckBox
                   htmlfor={'First Name'}
                   label={'First Name'}
                   type={'checkbox'}
@@ -114,12 +119,13 @@ function DemandeDocuments() {
                   onFocus={handleInputFocus}
                   placeholder={'First Name'}
                   required={'required'}
-                  LoginFormGroup={'Login__Form__Group'}
+                  LoginFormGroup={'Login__Form__Group1'}
+                  Login__Form__label={'Login__Form__label1'}
                 />
               </form>
             </div>
-            <div className='footer__account' >
-            <div className='image__button__footer' >
+            <div className='demande__account' >
+            <div className='demande__button__footer' >
                     <Button
                       buttonStyle={'btn--save--style'} 
                       buttonSize={'btn--save--size'}

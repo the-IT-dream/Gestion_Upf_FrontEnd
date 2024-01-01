@@ -50,7 +50,7 @@ function Postuler() {
   const [clicked, setClicked] = useState(false);
 
   return (
-    <div className='account__container'>
+    <div className='Postuler__account__container'>
       <div className='content__header__account'>
         <h2>Postuler</h2>
         <div className='image__container'>
@@ -67,7 +67,7 @@ function Postuler() {
           </div>
         </div>
       </div>
-      <div className='content__account'>
+      <div className='Postuler__content__account'>
         <div className='parag'>
           <p>Upload Multiple Files</p>
         </div>
