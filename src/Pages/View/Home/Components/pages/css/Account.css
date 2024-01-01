@@ -1,11 +1,10 @@
 .account__container{
     width: 100%;
     height: 100%;
-    padding-bottom: 1%;
+    padding-bottom: 2%;
     background-color: white;
     border-radius:  7px;
 }
-
 .header__button{
     display: flex;
     flex-wrap: wrap;
@@ -22,6 +21,7 @@
 }
 .content__header__account{
     padding: 2%;
+    
     border-bottom: 1px solid rgba(128, 128, 128, 0.352);
 }
 .content__header__account h2{
@@ -29,6 +29,7 @@
     font-size: 22px;
     font-weight: 500;
     padding-bottom: 2%;
+    
 }
 
 .content__header__account img{
@@ -51,7 +52,15 @@
 .parag p{
     color: rgba(128, 128, 128, 0.605);
     font-weight: 100;
-    padding: 3%;
+    padding: 2%;
+    padding-left: 3%;
+}
+.parag h1{
+    color: rgba(128, 128, 128, 0.705);
+    font-size: 22px;
+    font-weight: 500;
+    padding-left: 3%;
+    padding-top: 3%;
 }
 .account__form{
 display: flex;
@@ -65,5 +74,5 @@ padding: 2%;
 .image__button__footer{
     padding-left: 4%;
     display: flex;
-    gap: 2%;
+    gap:2%;
 }

@@ -28,9 +28,9 @@ function TopBar() {
         
       </div>
     </div>
-    {
+    {/* {
       openProfile && <ProfileMenu />
-    }  
+    }   */}
     </>
   )
 }
