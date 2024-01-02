@@ -83,6 +83,7 @@ function LoginForm(props) {
               onChange={handleChange}
               onFocus={handleInputFocus}
               LoginFormGroup={'Login__Form__Group__wrap'}
+              Login__Form__label={'Login__Form__label'}
             />
 
             <Link className='Link__style' to="/ForgotPassword">

@@ -1,0 +1,16 @@
+/* Infos.css */
+.cards__cadre {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cards__container {
+  
+}
+
+/* Adjust width of InfosCard to fit three columns */
+.card__infos {
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}

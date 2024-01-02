@@ -9,7 +9,8 @@ const STYLES = [
     'btn--resetMini--style',
     'btn--save--style',
     'btn--remove--style',
-    'btn--account--style'
+    'btn--account--style',
+    'btn--detail--style'
 ];
 const SIZES = [
     'btn--seconnecter--size',
@@ -17,7 +18,7 @@ const SIZES = [
     'btn--resetMini--size',
     'btn--save--size',
     'btn--remove--size',
-
+    'btn--detail--size'
 ];
 export const Button = ({
     children,
