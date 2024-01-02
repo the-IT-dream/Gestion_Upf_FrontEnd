@@ -32,16 +32,16 @@ const Sidebar = ({children}) => {
             name:"Soumettre les documents",
             icon:<i className="fa-solid fa-file-arrow-up"></i>,
         },
-        {
-            path:"/Account",
-            name:"Account",
-            icon:<i className="fa-solid fa-file-arrow-up"></i>,
-        },
-        {
-            path:"/Securite",
-            name:"Securité",
-            icon:<i className="fa-solid fa-file-arrow-up"></i>,
-        },
+        // {
+        //     path:"/Account",
+        //     name:"Account",
+        //     icon:<i className="fa-solid fa-file-arrow-up"></i>,
+        // },
+        // {
+        //     path:"/Securite",
+        //     name:"Securité",
+        //     icon:<i className="fa-solid fa-file-arrow-up"></i>,
+        // },
     ]
     return (
         <div className="container">

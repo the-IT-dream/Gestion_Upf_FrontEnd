@@ -37,6 +37,17 @@ button{
 .btn--seconnecter--size:hover{
     background-color: #8479F2;
 }
+.btn--account--style{
+    background-color: var(--gray);
+    color: gray;
+    font-size: 15px;
+}
+
+.btn--account--style:hover{
+    background-color: var(--primary);
+    color:#fff;
+    transition: .3s;
+}
 /* //////////////////////////////////////////////////////// */
 .btn--reset--style{
     background-color: var(--gray);

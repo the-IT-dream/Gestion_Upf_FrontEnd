@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import '../css/Account.css';
-import { Button } from '../../../../../../Components/Mini-Components/Js/Button';
-import Input from '../../../../../../Components/Mini-Components/Js/Input';
+import { Button } from '../../../../../Components/Mini-Components/Js/Button';
+import Input from '../../../../../Components/Mini-Components/Js/Input';
 
 function Account() {
   const [formData, setFormData] = useState({
@@ -30,24 +30,24 @@ function Account() {
     // For example, you can send the data to a server for authentication
     console.log('Form submitted with data:', formData);
   };
-
+  const [clicked,setClicked] = useState(false);
   return (
     <div className='account__container'>
         <div className='header__button'>
             <Button
-                className="butt__account"
+                onClick={() => {setClicked(!clicked)}}
+                className={`butt__account ${clicked? 'active' : 'inactive'}`}
                 buttonStyle={'btn--account--style'} 
                 buttonSize={'btn--save--size'}
                 children={'Account'} 
-                buttonPath={'/Account'}
+                buttonPath={'/Securite'}
                 icon={'FaUser'}
             />
              <Button
-                className="butt__account"
-                buttonStyle={'btn--account--style'} 
+                buttonStyle={`btn--account--style ${clicked? 'active' : 'inactive'}`} 
                 buttonSize={'btn--save--size'}
                 children={'Security'} 
-                buttonPath={'/Securite'}
+                buttonPath={'/Account'}
             />
         </div>
         <div className='content__header__account'>
@@ -66,7 +66,7 @@ function Account() {
                 className='reset_butt'
                   buttonStyle={'btn--resetMini--style'} 
                   buttonSize={'btn--resetMini--size'}
-                  children={'Reset'} 
+                  children={'Security'} 
                   buttonPath={'/Espace_Etudiant'}
                 />
               </div>
@@ -159,21 +159,21 @@ function Account() {
           </form>
         </div>
         <div className='footer__account' >
-          <div className='image__button__footer' >
-                  <Button
-                    buttonStyle={'btn--save--style'} 
-                    buttonSize={'btn--save--size'}
-                    children={'Save Changes'} 
-                    // buttonPath={'/Espace_Etudiant'}
-                  />
-                  <Button
-                  className='reset_butt'
-                    buttonStyle={'btn--reset--style'} 
-                    buttonSize={'btn--reset--size'}
-                    children={'Reset'} 
-                    // buttonPath={'/Espace_Etudiant'}
-                  />
-          </div>
+        <div className='image__button__footer' >
+                <Button
+                  buttonStyle={'btn--save--style'} 
+                  buttonSize={'btn--save--size'}
+                  children={'Save Changes'} 
+                  buttonPath={'/Espace_Etudiant'}
+                />
+                <Button
+                className='reset_butt'
+                  buttonStyle={'btn--resetMini--style'} 
+                  buttonSize={'btn--resetMini--size'}
+                  children={'Security'} 
+                  buttonPath={'/Espace_Etudiant'}
+                />
+        </div>
         </div>
     </div>
   )

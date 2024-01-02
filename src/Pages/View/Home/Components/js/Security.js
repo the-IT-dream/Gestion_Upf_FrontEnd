@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
 import '../css/Account.css';
 import '../css/Security.css'
-import { Button } from '../../../../../../Components/Mini-Components/Js/Button';
-import Input from '../../../../../../Components/Mini-Components/Js/Input';
+import { Button } from '../../../../../Components/Mini-Components/Js/Button';
+import Input from '../../../../../Components/Mini-Components/Js/Input';
 
 function Security() {
     const [formData, setFormData] = useState({
@@ -40,7 +40,7 @@ function Security() {
                 buttonStyle={'btn--account--style'} 
                 buttonSize={'btn--save--size'}
                 children={'Account'} 
-                buttonPath={'/Account'}
+                buttonPath={'/Securite'}
                 icon={'FaUser'}
             />
              <Button
@@ -48,11 +48,11 @@ function Security() {
                 buttonStyle={'btn--account--style'} 
                 buttonSize={'btn--save--size'}
                 children={'Security'} 
-                buttonPath={'/Securite'}
+                buttonPath={'/Account'}
             />
         </div>
         <div className='content__account'>
-        <h2>Profile Securite</h2>
+        <h2>Profile Details</h2>
           <form className='account__form'>
             <Input 
               htmlfor={'Current Password'}
@@ -97,26 +97,26 @@ function Security() {
         </div>
         <div className='password__info'>
             <h2>Password Requierements</h2>
-            <p><li>Minimum 8 characters long- the more ,the better</li></p>
-            <p><li>At least one lowercase & one uppercase character</li></p>
-            <p><li>At least one number, symbol, or whitespace character</li></p>
+            <p>Minimum 8 characters long- the more ,the better</p>
+            <p>Minimum 8 characters long- the more ,the better</p>
+            <p>Minimum 8 characters long- the more ,the better</p>
         </div>
         <div className='footer__account' >
-          <div className='image__button__footer' >
-                  <Button
-                    buttonStyle={'btn--save--style'} 
-                    buttonSize={'btn--save--size'}
-                    children={'Save Changes'} 
-                    // buttonPath={'/Espace_Etudiant'}
-                  />
-                  <Button
-                  className='reset_butt'
-                    buttonStyle={'btn--reset--style'} 
-                    buttonSize={'btn--reset--size'}
-                    children={'Reset'} 
-                    // buttonPath={'/Espace_Etudiant'}
-                  />
-          </div>
+        <div className='image__button__footer' >
+                <Button
+                  buttonStyle={'btn--save--style'} 
+                  buttonSize={'btn--save--size'}
+                  children={'Save Changes'} 
+                  buttonPath={'/Espace_Etudiant'}
+                />
+                <Button
+                className='reset_butt'
+                  buttonStyle={'btn--resetMini--style'} 
+                  buttonSize={'btn--resetMini--size'}
+                  children={'Security'} 
+                  buttonPath={'/Espace_Etudiant'}
+                />
+        </div>
         </div>
     </div>
   )
