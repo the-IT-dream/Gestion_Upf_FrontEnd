@@ -9,10 +9,11 @@ function ProfileMenu() {
       <div className='dropdown__menu__container'>
         <DropMenuHeader />
         <DropMenuContent 
-            
+            link="/Account"
             DropMenuItem="Profile"
         />
          <DropMenuContent 
+            link="/Login"
             DropMenuItem="Déconnecter"
         />
       </div>

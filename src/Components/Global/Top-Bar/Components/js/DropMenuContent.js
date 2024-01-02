@@ -6,7 +6,7 @@ function DropMenuContent(props) {
   return (
     <div>
       <div className='drop__menu__items'>
-        <Link className='Link__style' to ="/Account">
+        <Link className='Link__style' to ={props.link}>
         <h4>{props.DropMenuItem} </h4>
         </Link>
         

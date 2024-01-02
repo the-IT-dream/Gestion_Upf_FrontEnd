@@ -20,6 +20,23 @@
     font-size: 12px;
 
   }
+  .Login__Form__Group select {
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+    font-weight: 500;
+    color: rgba(47, 43, 61, 0.78);
+  }
+  .Login__Form__Group select::placeholder {
+    color: rgba(0, 0, 0, 0.361);
+    font-weight: 200;
+    font-size: 12px;
+
+  }
   .Login__Form__label {
     color: rgba(47, 43, 61, 0.78);
     font-size: 13px;
@@ -39,7 +56,6 @@
     background-color: white; /* Set the initial background color */
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-    position: relative;
     
   }
   .Login__Form__Group__wrap input:checked {

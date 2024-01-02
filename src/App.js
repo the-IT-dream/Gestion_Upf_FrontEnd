@@ -12,18 +12,16 @@ import Account from './Pages/View/Home/Components/pages/js/Account'
 import Demande_Document from './Pages/View/Home/Components/pages/js/Demande_Document'
 import Soumettre_document from './Pages/View/Home/Components/pages/js/Soumettre_document'
 import Securite from './Pages/View/Home/Components/pages/js/Security'
-import ProfileMenu from './Components/Global/Top-Bar/js/ProfileMenu';
+import DemandeDocuments from './Pages/View/Home/Components/pages/js/DemandeDocuments';
+import Infos from './Pages/View/Home/Components/pages/js/Infos';
+import Details_Stage from './Pages/View/Home/Components/pages/js/Details_Stage';
+
 
 
 function App() {
 
   return (
 
-  //  <div className='app_css' >
-  //   <div>
-  //     <Login/>
-  //   </div>
-  // </div>
   <Router>
         <Routes>
             <Route path='/' element={<Login/>} /> 
@@ -33,11 +31,13 @@ function App() {
         </Routes>
         <Sidebar>
           <Routes>
-            <Route path="/info_Stage" element={<Info_Stage />} />
+            <Route path='/Details_Stage' element={<Details_Stage/>} />
+            <Route path="/info_Stage" element={<Infos />} />
             <Route path="/postule_Stage" element={<Postule_Stage />} />
-            <Route path="/Account" element={<Account/>} />            
-            <Route path="/Demande_Document" element={<Demande_Document />} />
+            <Route path="/Account" element={<Account/>} />
+            <Route path="/Demande_Document" element={<DemandeDocuments />} />
             <Route path="/Soumettre_document" element={<Soumettre_document />} />
+            <Route path='/Infos' element={<Infos /> } />
             <Route path="/Securite" element={<Securite />} />
           </Routes>
         </Sidebar>

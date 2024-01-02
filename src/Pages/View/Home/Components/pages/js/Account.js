@@ -56,18 +56,16 @@ function Account() {
             <img src='./images/avatar/1.png'/>
             <div className='image__text__account'>
               <div className='image__button'>
-                <Button
-                  buttonStyle={'btn--save--style'} 
-                  buttonSize={'btn--save--size'}
-                  children={'Upload new photo'} 
-                  buttonPath={'/Espace_Etudiant'}
+                <input 
+                  className='input__image'
+                  type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"
                 />
                 <Button
                 className='reset_butt'
                   buttonStyle={'btn--resetMini--style'} 
                   buttonSize={'btn--resetMini--size'}
                   children={'Reset'} 
-                  buttonPath={'/Espace_Etudiant'}
+                  // buttonPath={'/Espace_Etudiant'}
                 />
               </div>
               <div className='parag'>

@@ -14,7 +14,7 @@ const Sidebar = ({children}) => {
     const menuItem=[
         {
             path:"/info_Stage",
-            name:"Les infos de stage",
+            name:"Les opportunités de stage",
             icon:<i className="fa-solid fa-circle-info"></i>
         },
         {
@@ -32,11 +32,11 @@ const Sidebar = ({children}) => {
             name:"Soumettre les documents",
             icon:<i className="fa-solid fa-file-arrow-up"></i>,
         },
-        // {
-        //     path:"/Account",
-        //     name:"Account",
-        //     icon:<i className="fa-solid fa-file-arrow-up"></i>,
-        // },
+        {
+            path:"/Details_Stage",
+            name:"Détails de stage ",
+            icon:<i class="fa-solid fa-newspaper"></i>,
+        },
         // {
         //     path:"/Securite",
         //     name:"Securité",
