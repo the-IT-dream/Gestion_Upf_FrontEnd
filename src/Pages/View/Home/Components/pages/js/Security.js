@@ -40,7 +40,7 @@ function Security() {
                 buttonStyle={'btn--account--style'} 
                 buttonSize={'btn--save--size'}
                 children={'Account'} 
-                buttonPath={'/Espace_Etudiant'}
+                buttonPath={'/Account'}
                 icon={'FaUser'}
             />
              <Button
@@ -48,11 +48,11 @@ function Security() {
                 buttonStyle={'btn--account--style'} 
                 buttonSize={'btn--save--size'}
                 children={'Security'} 
-                buttonPath={'/Espace_Etudiant'}
+                buttonPath={'/Securite'}
             />
         </div>
         <div className='content__account'>
-        <h2>Profile Details</h2>
+        <h2>Profile Securite</h2>
           <form className='account__form'>
             <Input 
               htmlfor={'Current Password'}

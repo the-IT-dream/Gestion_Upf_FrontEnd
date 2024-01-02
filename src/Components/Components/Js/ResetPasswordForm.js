@@ -83,10 +83,10 @@ function ResetPasswordForm(props) {
           />
           <Link className='Link__style' to='/Login'>
             <div className='backto__login__butt'>
-                <Icon 
+                {/* <Icon 
                     className='left__arrow'
                     icon='mingcute:left-line'
-                />
+                /> */}
                 <p className='mot__de_passe__oublie'>Back to login</p>
             </div>
            
