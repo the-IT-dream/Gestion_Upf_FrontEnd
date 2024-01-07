@@ -1,6 +1,7 @@
 import React from 'react'
 import '../Css/Espace_Etudiant.css';
 import Sidebar from '../../../../Components/Mini-Components/SideBar/components/Sidebar'
+import Sidebar_admin from '../../../../Components/Mini-Components/SideBar/components/Sidebar_admin'
 import '../Css/Espace_Etudiant.css';
 import  {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import Details_Stage from '../Components/pages/js/Details_Stage';
@@ -13,10 +14,11 @@ import Security from '../Components/pages/js/Security';
 import TopBar from '../../../../Components/Components/Js/TopBar';
 
 // function Espace_Etudiant (){
-const Espace_Etudiant = () => {
+const Espace_Admin = () => {
   return (
     <div>
-      <Sidebar />
+      {/* <Sidebar /> */}
+      <Sidebar_admin/>
       <div className='content'>
         <div className='content__topbar'>
           <TopBar >
@@ -45,4 +47,4 @@ const Espace_Etudiant = () => {
     </div>
   );
 };
-export default Espace_Etudiant
+export default Espace_Admin

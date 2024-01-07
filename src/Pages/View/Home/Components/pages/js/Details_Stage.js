@@ -3,6 +3,7 @@ import '../css/Account.css';
 import { Button } from '../../../../../../Components/Mini-Components/Js/Button';
 import Input from '../../../../../../Components/Mini-Components/Js/Input';
 import Combobox from '../../../../../../Components/Mini-Components/Js/combobox';
+import Sidebar from '../../../../../../Components/Mini-Components/SideBar/components/Sidebar';
 
 function Details_Stage() {
   const [formData, setFormData] = useState({
@@ -33,6 +34,9 @@ function Details_Stage() {
   };
 
   return (
+    <div>
+      <Sidebar/>
+      
     <div className='account__container'>
         <div className='content__header__account'>
           <h2>Details de stage</h2>
@@ -137,6 +141,7 @@ function Details_Stage() {
                   />
           </div>
         </div>
+    </div>
     </div>
   )
 }

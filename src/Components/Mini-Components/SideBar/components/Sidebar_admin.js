@@ -6,36 +6,36 @@ import logoUPF from '../image/logoUPF.jpg'
 import logof from '../image/logo.png'
 import '../css/Side.css'
 import '../../../../Pages/View/Home/Css/Espace_Etudiant.css'
-import TopBar from "../../../../Components/Components/Js/TopBar"
+import TopBar from "../../../Components/Js/TopBar"
 import DemandeDocuments from '../../../../Pages/View/Home/Components/pages/js/DemandeDocuments';
 
-const Sidebar = ({children}) => {
+const Sidebar = (props) => {
     const[isOpen ,setIsOpen] = useState(true);
     const toggle = () => setIsOpen (!isOpen);
     const[isON ,setIsON] = useState(true);
     const links = () => setIsON (!isON);
     const menuItem=[
-        {
-            path:"/info_Stage",
-            name:"Les opportunités de stage",
-            icon:<i className="fa-solid fa-circle-info"></i>,
-            // onClick:{links}
-        },
-        {
-            path:"/postule_Stage",
-            name:"Postuler à des stages",
-            icon:<i className="fa-solid fa-pen-to-square"></i>,
-        },
-        {
-            path:"/Demande_Document",
-            name:"Demande les documents",
-            icon:<i className="fa-solid fa-file"></i>,
-        },
-        {
-            path:"/Soumettre_document",
-            name:"Soumettre les documents",
-            icon:<i className="fa-solid fa-file-arrow-up"></i>,
-        },
+        // {
+        //     path:"/info_Stage",
+        //     name:"Les opportunités de stage",
+        //     icon:<i className="fa-solid fa-circle-info"></i>,
+        //     // onClick:{links}
+        // },
+        // {
+        //     path:"/postule_Stage",
+        //     name:"Postuler à des stages",
+        //     icon:<i className="fa-solid fa-pen-to-square"></i>,
+        // },
+        // {
+        //     path:"/Demande_Document",
+        //     name:"Demande les documents",
+        //     icon:<i className="fa-solid fa-file"></i>,
+        // },
+        // {
+        //     path:"/Soumettre_document",
+        //     name:"Soumettre les documents",
+        //     icon:<i className="fa-solid fa-file-arrow-up"></i>,
+        // },
         {
             path:"/Details_Stage",
             name:"Détails de stage ",
