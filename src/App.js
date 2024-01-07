@@ -17,12 +17,6 @@ import Infos from './Pages/View/Home/Components/pages/js/Infos';
 function App() {
 
   return (
-
-  //  <div className='app_css' >
-  //   <div>
-  //     <Login/>
-  //   </div>
-  // </div>
   <Router>
         <Routes>
             <Route path='/' element={<Login/>} />      
