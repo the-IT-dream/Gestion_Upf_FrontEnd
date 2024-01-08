@@ -42,6 +42,11 @@ const Sidebar = ({children}) => {
             name:"Securité",
             icon:<i className="fa-solid fa-file-arrow-up"></i>,
         },
+        {
+            path:"/Roles",
+            name:"Roles",
+            icon:<i className="fa-solid fa-file-arrow-up"></i>,
+        },
     ]
     return (
         <div className="container">

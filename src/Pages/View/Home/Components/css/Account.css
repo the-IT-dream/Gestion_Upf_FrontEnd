@@ -67,3 +67,60 @@ padding: 2%;
     display: flex;
     gap: 2%;
 }
+.select__role {
+    position: relative;
+    outline: none;
+    width: 570px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+    font-weight: 500;
+    color: rgba(47, 43, 61, 0.78);
+  }
+  
+  .select__role::placeholder {
+    color: rgba(0, 0, 0, 0.361);
+    font-weight: 200;
+    font-size: 12px;
+  }
+  
+  .select__role.focused {
+    border: 1px solid #B11B81;
+    box-shadow: 0 0 5px #580d4128;
+  }
+  
+  .select__role::after {
+    content: '\25BC'; /* Unicode pour la flèche vers le bas */
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+  
+  .select__role option {
+    outline: none;
+    appearance: none;
+    padding: 10px;
+    color: rgba(47, 43, 61, 0.78); /* Set the text color for options */
+}
+
+/* Selected option */
+.select__role option:checked {
+    background-color: #B11B81;
+    color: white;
+}
+
+/* Hover effect on options */
+.select__role option:hover {
+    background-color: #eee;
+    color: black; /* Adjust text color on hover if needed */
+}
+
+  .select__role.focused {
+    border: 1px solid #B11B81;
+    box-shadow: 0 0 5px #580d4128;
+  }
+  

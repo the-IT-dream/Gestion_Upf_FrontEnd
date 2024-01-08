@@ -12,6 +12,14 @@ import Soumettre_document from './Pages/View/Home/Components/pages/js/Soumettre_
 import Securite from './Pages/View/Home/Components/pages/js/Security'
 import DemandeDocuments from './Pages/View/Home/Components/js/DemandeDocuments';
 import Infos from './Pages/View/Home/Components/pages/js/Infos';
+import DetailsInfo from './Pages/View/Home/Components/pages/js/DetailsInfo';
+import Roles from './Pages/View/Home/Components/Admin/JS/Roles';
+import StudentList from './Pages/View/Home/Components/Admin/JS/StudentList';
+import ModifierEtudiant from './Pages/View/Home/Components/Admin/JS/ModifierEtudiant';
+import AjoutEtudiant from './Pages/View/Home/Components/Admin/JS/AjoutEtudiant';
+import ResponsableStage from './Pages/View/Home/Components/Admin/JS/ResponsableStage';
+import ModifierRS from './Pages/View/Home/Components/Admin/JS/ModifierRS';
+import AjoutRS from './Pages/View/Home/Components/Admin/JS/AjoutRS';
 
 
 function App() {
@@ -37,6 +45,15 @@ function App() {
             <Route path="/Soumettre_document" element={<Soumettre_document />} />
             <Route path='/Infos' element={<Infos /> } />
             <Route path="/Securite" element={<Securite />} />
+            <Route path="/DetailsInfo" element={<DetailsInfo />} />
+            <Route path="/Roles" element={<Roles />} />
+            <Route path="/StudentList" element={<StudentList />} />
+            <Route path="/ModifierEtudiant" element={<ModifierEtudiant />} />
+            <Route path="/AjoutEtudiant" element={<AjoutEtudiant />} />
+            <Route path="/ResponsableStage" element={<ResponsableStage />} />
+            <Route path="/ModifierRS" element={<ModifierRS />} />
+            <Route path="/AjoutRS" element={<AjoutRS />} />
+
           </Routes>
         </Sidebar>
   </Router>

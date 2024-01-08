@@ -1,0 +1,72 @@
+/* RolesCard.css */
+.RolesCard__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.RolesCard__cadre {
+    width: 350px;
+     padding: 5%;
+    background-color: white;
+    align-items: center;
+    border: 1px solid rgba(128, 128, 128, 0.336);
+    border-radius: 7px;
+    cursor: pointer;
+  }
+  
+  .RolesCard__cadre img {
+    border: 1px solid white;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .RolesCard__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2%;
+  }
+  
+  .RolesCard__header p {
+    font-size: 15px;
+    font-weight: 200;
+    color: gray;
+  }
+  
+  .RolesCard__body {
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+  }
+  
+  .RolesCard__body h2 {
+    color: rgb(107, 107, 107);
+    font-size: 25px;
+    font-weight: 300;
+  }
+  
+  .arrow-icon {
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+    opacity: 0;
+    cursor: pointer;
+    transform: translateX(20px); /* Initial translate effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Add smooth transitions */
+  }
+  
+  .RolesCard__container:hover .arrow-icon {
+    opacity: 1;
+    transform: translateX(0); /* Final translate effect */
+  }
+  
+  .arrow-icon svg {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    color: #B11B81;
+  }
+  
