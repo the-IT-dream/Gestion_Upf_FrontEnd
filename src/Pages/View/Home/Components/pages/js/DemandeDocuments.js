@@ -2,9 +2,9 @@ import React,{useState} from 'react';
 import '../css/Account.css';
 import '../css/DemandeDocuments.css';
 
-import { Button } from '../../../../../Components/Mini-Components/Js/Button';
-import Input from '../../../../../Components/Mini-Components/Js/Input';
-import InputCheckBox from '../../../../../Components/Mini-Components/Js/InputCheckBox';
+import { Button } from '../../../../../../Components/Mini-Components/Js/Button';
+import Input from '../../../../../../Components/Mini-Components/Js/Input';
+import InputCheckBox from '../../../../../../Components/Mini-Components/Js/InputCheckBox';
 
 function DemandeDocuments() {
     const [formData, setFormData] = useState({
@@ -136,7 +136,7 @@ function DemandeDocuments() {
                     className='reset_butt'
                       buttonStyle={'btn--resetMini--style'} 
                       buttonSize={'btn--resetMini--size'}
-                      children={'Security'} 
+                      children={'reset'} 
                       buttonPath={'/Espace_Etudiant'}
                     />
             </div>
