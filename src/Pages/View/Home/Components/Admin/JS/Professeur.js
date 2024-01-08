@@ -1,4 +1,3 @@
-
 import React from 'react';
 import '../CSS/StudentList.css';
 import { Button } from '../../../../../../Components/Mini-Components/Js/Button';
@@ -8,20 +7,20 @@ const students = [
   { id: 1, name: 'John Doe', avatar: './images/avatar/1.png' },
   { id: 2, name: 'Jane Doe', avatar: './images/avatar/1.png' },
 ];
-function ResponsableStage() {
+function Professeur() {
     return (
         <div>
         <div className='table__container'>
             <div className='table__header'>
                 <div>
-                    <p>Liste des Responsable de stage</p>
+                    <p>Liste des Encadrents</p>
                 </div>
                 <div>
                 <Button
                     buttonStyle={'btn--detail--style'} 
                     buttonSize={'btn--detail--size'}
                     children={'Ajouter'} 
-                    buttonPath={'/AjoutRS'}
+                    buttonPath={'/AjouterProf'}
                     className='button__detail'
                 />
                 </div>
@@ -51,7 +50,7 @@ function ResponsableStage() {
                   <td>{student.name}</td>
                   <td>{student.name}</td>
                   <td className='butt__td'>
-                    <Link to="/ModifierRS">
+                    <Link to="/ModifierProf">
                     <button className='button__modify'>Modifier</button>
                     </Link>
                     <button className='button__delete'>Supprimer</button>
@@ -65,4 +64,5 @@ function ResponsableStage() {
       );
 }
 
-export default ResponsableStage
+
+export default Professeur

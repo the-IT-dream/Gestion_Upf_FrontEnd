@@ -3,15 +3,15 @@ import '../../css/Account.css';
 import { Button } from '../../../../../../Components/Mini-Components/Js/Button';
 import Input from '../../../../../../Components/Mini-Components/Js/Input';
 
-function ModifierRS() {
+function AjouterProf() {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
         email: '',
-        Departement: '',
-        // cin: '',
+        filiere: '',
+        cin: '',
         niveau: '',
-        // cne: '',
+        cne: '',
       });
     
       // State to track focused input
@@ -112,46 +112,28 @@ function ModifierRS() {
           LoginFormGroup={'Login__Form__Group'}
         />
         <Input
-          htmlfor={'Departement'}
-          label={'Departement'}
-          type={'text'}
-          id={'Departement'}
-          name={'Departement'} 
-          value={formData.Departement}
-          placeholder={'Departement'}
-          required={'required'}
-          LoginFormGroup={'Login__Form__Group'}
-        />
-        <select className='select__role'>
-                <optgroup>
-                  <option>capgimini</option>
-                  <option>cgi</option>
-                  <option>atos</option>
-                </optgroup>
-        </select>
-        {/* <Input
-          htmlfor={'cin'}
-          label={'Cin'}
-          type={'text'}
-          id={'cin'}
-          name={'cin'}
-          value={formData.cin}
-          placeholder={'CD****'}
-          required={'required'}
-          LoginFormGroup={'Login__Form__Group'}
-        /> */}
-        <Input
-          htmlfor={'Niveau'}
-          label={'Niveau'}
-          type={'text'}
-          id={'Niveau'}
-          name={'niveau'}
-          value={formData.niveau}
-          placeholder={'Niveau'}
-          required={'required'}
-          LoginFormGroup={'Login__Form__Group'}
-        />
-        
+        htmlfor={'Departement'}
+        label={'Departement'}
+        type={'text'}
+        id={'Departement'}
+        name={'Departement'} 
+        value={formData.Departement}
+        placeholder={'Departement'}
+        required={'required'}
+        LoginFormGroup={'Login__Form__Group'}
+      />
+      <Input
+        htmlfor={'Niveau'}
+        label={'Niveau'}
+        type={'text'}
+        id={'Niveau'}
+        name={'niveau'}
+        value={formData.niveau}
+        placeholder={'Niveau'}
+        required={'required'}
+        LoginFormGroup={'Login__Form__Group'}
+      />
+       
               </form>
             </div>
             <div className='footer__account' >
@@ -159,14 +141,14 @@ function ModifierRS() {
                       <Button
                         buttonStyle={'btn--save--style'} 
                         buttonSize={'btn--save--size'}
-                        children={'Modifier Etudiant'} 
+                        children={'Ajouter'} 
                         // buttonPath={'/Espace_Etudiant'}
                       />
                       <Button
                       className='reset_butt'
                         buttonStyle={'btn--reset--style'} 
                         buttonSize={'btn--reset--size'}
-                        children={'Supprimer'} 
+                        children={'annuler'} 
                         // buttonPath={'/Espace_Etudiant'}
                       />
               </div>
@@ -174,6 +156,5 @@ function ModifierRS() {
         </div>
       )
     }
-    
 
-export default ModifierRS
+export default AjouterProf
