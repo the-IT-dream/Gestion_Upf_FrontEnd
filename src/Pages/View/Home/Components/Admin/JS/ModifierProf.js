@@ -3,7 +3,7 @@ import '../../css/Account.css';
 import { Button } from '../../../../../../Components/Mini-Components/Js/Button';
 import Input from '../../../../../../Components/Mini-Components/Js/Input';
 
-function ModifierRS() {
+function ModifierProf() {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -176,4 +176,4 @@ function ModifierRS() {
     }
     
 
-export default ModifierRS
+export default ModifierProf
