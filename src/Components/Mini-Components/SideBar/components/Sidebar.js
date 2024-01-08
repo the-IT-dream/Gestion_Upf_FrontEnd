@@ -37,11 +37,12 @@ const Sidebar = ({children}) => {
             name:"Détails de stage ",
             icon:<i class="fa-solid fa-newspaper"></i>,
         },
-        // {
-        //     path:"/Securite",
-        //     name:"Securité",
-        //     icon:<i className="fa-solid fa-file-arrow-up"></i>,
-        // },
+        {
+            path:"/Roles",
+            name:"Roles",
+            icon:<i className="fa-solid fa-file-arrow-up"></i>,
+        },
+
     ]
     return (
         <div className="container">

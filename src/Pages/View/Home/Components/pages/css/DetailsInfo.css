@@ -1,0 +1,14 @@
+
+.Details__cadre{
+    display: flex;
+    flex-direction: ROW;
+    justify-content: center;
+    width: 1200px;
+  }
+
+  
+  .card__infos {
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+  
