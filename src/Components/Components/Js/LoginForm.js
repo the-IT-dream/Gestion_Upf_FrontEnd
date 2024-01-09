@@ -49,7 +49,12 @@ function LoginForm(props) {
 
       if (role === 'STUDENT' || role === 'STUDENT5') {
         navigate('/Espace_Etudiant');
-      } else {
+      } else if (role === 'INTERNSHIP_MANAGER') {
+        navigate('/Espace_R_Stage');
+      } else if (role === 'ADMIN') {     
+        navigate('/Espace_admin');
+      }
+      else {
         alert("Vous ne pouvez pas accéder à la plateforme");
       }
 
@@ -67,7 +72,7 @@ function LoginForm(props) {
           <img src='../images/logoupf.png' className='image__login' alt='logo' />
           <h2 className='Login__Form__Title'>{props.titleLogin} </h2>
         </div>
-        <form onSubmit={'/Espace_Etudiant'} className='Login__Form__Form'>
+        <form  className='Login__Form__Form'>
           <Input   
             htmlfor={'Email'}
             label={'Email'}
@@ -108,6 +113,8 @@ function LoginForm(props) {
               <p className='mot__de_passe__oublie'>Mot de passe oublié?</p>
             </Link>
           </div>
+          
+
           <button
             className="btn--seconnecter--style btn--seconnecter--size"
             type="submit"

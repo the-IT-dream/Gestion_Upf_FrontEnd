@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import '../Css/TopBar.css';
 import ProfileIcon from '../../Global/Top-Bar/js/ProfileIcon';
-import ProfileMenu from '../../Global/Top-Bar/js/ProfileMenu';
+import ProfileMenu_Rs from '../../Global/Top-Bar/js/ProfileMenu_Rs';
 
 function TopBar(props) {
   const [openProfile,setOpenProfile] = useState(false);
@@ -18,7 +18,7 @@ function TopBar(props) {
             <ProfileIcon  ProfileIconImg='../images/avatar/1.png'/>
           </div>
         <div className={`dropdown__container ${openProfile? 'active' : 'inactive'} `}>
-          <ProfileMenu />
+          <ProfileMenu_Rs />
         </div>
         </div>
         

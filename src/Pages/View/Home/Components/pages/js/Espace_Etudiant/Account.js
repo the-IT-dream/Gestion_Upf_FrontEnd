@@ -1,10 +1,15 @@
+import '../../css/Account.css';
+import { Button } from '../../../../../../../Components/Mini-Components/Js/Button';
+import Input from '../../../../../../../Components/Mini-Components/Js/Input';
+import Sidebar from '../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_Etudiant';
+import TopBar from '../../../../../../../Components/Components/Js/TopBar';
+import Sidebar_Responsable_de_Stage from '../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_Responsable_de_Stage';
+
 import React,{useState, useEffect} from 'react';
-import '../css/Account.css';
-import { Button } from '../../../../../../Components/Mini-Components/Js/Button';
-import Input from '../../../../../../Components/Mini-Components/Js/Input';
+
 
 import axios from 'axios';
-import { useAuth } from '../../../../../../AuthContext.js';
+import { useAuth } from '../../../../../../../AuthContext';
 function Account() {
   const { authData } = useAuth();
   const accessToken = authData.access_token;
@@ -50,6 +55,15 @@ function Account() {
 
 
   return (
+    <div>
+      {/* <Sidebar /> */}
+      <Sidebar/>
+      <div className='content'>
+        <div className='content__topbar'>
+          <TopBar  />
+        </div>
+        <div className='content__menu'>
+          <main>
     <div className='account__container'>
       <div className='header__button'>
         <Button
@@ -58,20 +72,20 @@ function Account() {
           buttonStyle={'btn--account--style'}
           buttonSize={'btn--save--size'}
           children={'Account'}
-          buttonPath={'/Espace_Etudiant'}
+          buttonPath={'/Espace_Etudiant/Account'}
           icon={'FaUser'}
         />
         <Button
           buttonStyle={`btn--account--style ${clicked ? 'active' : 'inactive'}`}
           buttonSize={'btn--save--size'}
           children={'Security'}
-          buttonPath={'/Espace_Etudiant'}
+          buttonPath={'/Espace_Etudiant/Securite'}
         />
       </div>
       <div className='content__header__account'>
         <h2>Profile Details</h2>
         <div className='image__container'>
-          <img src='./images/avatar/1.png' alt='avatar' />
+          <img src='../../images/avatar/1.png' alt='avatar' />
           <div className='image__text__account'>
             <div className='image__button'>
               <Button
@@ -84,7 +98,7 @@ function Account() {
                 className='reset_butt'
                 buttonStyle={'btn--resetMini--style'}
                 buttonSize={'btn--resetMini--size'}
-                children={'Security'}
+                children={'reset'}
                 buttonPath={'/Espace_Etudiant'}
               />
             </div>
@@ -195,7 +209,13 @@ function Account() {
         </div>
       </div>
     </div>
-  );
+          </main>
+        </div>
+      </div>
+    
+  </div>
+  )
+
 }
 
 export default Account;

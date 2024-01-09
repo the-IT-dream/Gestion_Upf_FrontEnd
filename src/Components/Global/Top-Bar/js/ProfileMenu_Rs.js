@@ -9,7 +9,7 @@ function ProfileMenu() {
       <div className='dropdown__menu__container'>
         <DropMenuHeader />
         <DropMenuContent 
-            link="/Espace_Etudiant/Account"
+            link="/Espace_R_Stage/Account_Rs"
             DropMenuItem="Profile"
         />
          <DropMenuContent 

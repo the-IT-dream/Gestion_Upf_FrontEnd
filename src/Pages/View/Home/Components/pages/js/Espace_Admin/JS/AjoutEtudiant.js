@@ -1,9 +1,11 @@
 import React,{useState} from 'react';
-import '../../css/Account.css';
-import { Button } from '../../../../../../Components/Mini-Components/Js/Button';
-import Input from '../../../../../../Components/Mini-Components/Js/Input';
+import '../../../../css/Account.css';
+import { Button } from '../../../../../../../../Components/Mini-Components/Js/Button';
+import Input from '../../../../../../../../Components/Mini-Components/Js/Input';
+import Sidebar_admin from '../../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_admin';
+import TopBar_admin from '../../../../../../../../Components/Components/Js/TopBar_admin';
 
-function AjoutRS() {
+function AjoutEtudiant() {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -37,26 +39,34 @@ function AjoutRS() {
       };
     
       return (
-        <div className='account__container'>
-
+        <div>
+          <Sidebar_admin/>
+          <div className='content'>
+            <div className='content__topbar'>
+              <TopBar_admin  />
+              
+            </div>
+            <div className='content__menu'>
+              <main> 
+              <div className='account__container'>
             <div className='content__header__account'>
-              <h2>Profile Details</h2>
+              <h2>Ajouter Etudiant</h2>
               <div className='image__container'>
-                <img src='./images/avatar/1.png'/>
+                <img src='../../images/avatar/1.png'/>
                 <div className='image__text__account'>
                   <div className='image__button'>
                     <Button
                       buttonStyle={'btn--save--style'} 
                       buttonSize={'btn--save--size'}
                       children={'Upload new photo'} 
-                      buttonPath={'/Espace_Etudiant'}
+                      buttonPath={''}
                     />
                     <Button
                     className='reset_butt'
                       buttonStyle={'btn--resetMini--style'} 
                       buttonSize={'btn--resetMini--size'}
                       children={'Reset'} 
-                      buttonPath={'/Espace_Etudiant'}
+                      buttonPath={''}
                     />
                   </div>
                   <div className='parag'>
@@ -100,7 +110,18 @@ function AjoutRS() {
           required={'required'}
           LoginFormGroup={'Login__Form__Group'}
         />
-         <Input
+        <Input
+          htmlfor={'Filiere'}
+          label={'Filiere'}
+          type={'text'}
+          id={'Filiere'}
+          name={'filiere'} 
+          value={formData.filiere}
+          placeholder={'Filiere'}
+          required={'required'}
+          LoginFormGroup={'Login__Form__Group'}
+        />
+        <Input
           htmlfor={'cin'}
           label={'Cin'}
           type={'text'}
@@ -112,28 +133,27 @@ function AjoutRS() {
           LoginFormGroup={'Login__Form__Group'}
         />
         <Input
-        htmlfor={'Departement'}
-        label={'Departement'}
-        type={'text'}
-        id={'Departement'}
-        name={'Departement'} 
-        value={formData.Departement}
-        placeholder={'Departement'}
-        required={'required'}
-        LoginFormGroup={'Login__Form__Group'}
-      />
-      <Input
-        htmlfor={'Niveau'}
-        label={'Niveau'}
-        type={'text'}
-        id={'Niveau'}
-        name={'niveau'}
-        value={formData.niveau}
-        placeholder={'Niveau'}
-        required={'required'}
-        LoginFormGroup={'Login__Form__Group'}
-      />
-       
+          htmlfor={'Niveau'}
+          label={'Niveau'}
+          type={'text'}
+          id={'Niveau'}
+          name={'niveau'}
+          value={formData.niveau}
+          placeholder={'Niveau'}
+          required={'required'}
+          LoginFormGroup={'Login__Form__Group'}
+        />
+        <Input
+          htmlfor={'CNE'}
+          label={'CNE'}
+          type={'text'}
+          id={'Cne'}
+          name={'cne'}
+          value={formData.cne}
+          placeholder={'A****'}
+          required={'required'}
+          LoginFormGroup={'Login__Form__Group'}
+        />
               </form>
             </div>
             <div className='footer__account' >
@@ -154,7 +174,12 @@ function AjoutRS() {
               </div>
             </div>
         </div>
+              </main>
+            </div>
+          </div>       
+      </div>
       )
     }
+    
 
-export default AjoutRS
+export default AjoutEtudiant

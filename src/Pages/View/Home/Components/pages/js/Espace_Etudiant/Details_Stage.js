@@ -1,10 +1,16 @@
 import React,{useState} from 'react';
-import '../css/Account.css';
-import { Button } from '../../../../../../Components/Mini-Components/Js/Button';
-import Input from '../../../../../../Components/Mini-Components/Js/Input';
+import '../../../css/Account.css'
+import { Button } from '../../../../../../../Components/Mini-Components/Js/Button';
+import Input from '../../../../../../../Components/Mini-Components/Js/Input';
+import TopBar from '../../../../../../../Components/Components/Js/TopBar';
+import  {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import Account from './Account';
+import Security from './Security';
+import Sidebar from '../../../../../../../../src/Components/Mini-Components/SideBar/components/Sidebar_Etudiant.js'
+
 //import Combobox from '../../../../../../Components/Mini-Components/Js/combobox';
 import axios from 'axios';
-import { useAuth } from '../../../../../../AuthContext.js';
+import { useAuth } from '../../../../../../../AuthContext.js';
 
 function Details_Stage() {
   const [formData, setFormData] = useState({
@@ -57,6 +63,14 @@ function Details_Stage() {
   };
 
   return (
+    <div>
+      <Sidebar/>
+      <div className='content'>
+        <div className='content__topbar'>
+          <TopBar />
+        </div>
+        <div className='content__menu'>
+          <main>
     <div className='account__container'>
       <div className='content__header__account'>
         <h2>Details de stage</h2>
@@ -143,6 +157,13 @@ function Details_Stage() {
         </div>
       </div>
     </div>
+          </main>
+        </div>
+      </div>
+
+      
+    </div>
+  
   );
 }
 export default Details_Stage
