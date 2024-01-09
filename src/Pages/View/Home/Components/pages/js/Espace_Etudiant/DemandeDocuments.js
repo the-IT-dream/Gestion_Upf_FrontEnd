@@ -1,10 +1,12 @@
 import React,{useState} from 'react';
-import '../css/Account.css';
-import '../css/DemandeDocuments.css';
+import '../../css/Account.css';
+import '../../css/DemandeDocuments.css';
 
-import { Button } from '../../../../../../Components/Mini-Components/Js/Button';
-import Input from '../../../../../../Components/Mini-Components/Js/Input';
-import InputCheckBox from '../../../../../../Components/Mini-Components/Js/InputCheckBox';
+import { Button } from '../../../../../../../Components/Mini-Components/Js/Button';
+import Input from '../../../../../../../Components/Mini-Components/Js/Input';
+import InputCheckBox from '../../../../../../../Components/Mini-Components/Js/InputCheckBox';
+import Sidebar from '../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_Etudiant';
+import TopBar from '../../../../../../../Components/Components/Js/TopBar';
 
 function DemandeDocuments() {
     const [formData, setFormData] = useState({
@@ -33,9 +35,18 @@ function DemandeDocuments() {
         // For example, you can send the data to a server for authentication
         console.log('Form submitted with data:', formData);
       };
-      const [clicked,setClicked] = useState(false);
-      return (
-        <div className='account__container__demande'>
+    const [clicked,setClicked] = useState(false);
+ return (
+
+    <div>
+        <Sidebar/>
+        <div className='content'>
+          <div className='content__topbar'>
+            <TopBar/>
+          </div>
+          <div className='content__menu'>
+            <main>
+            <div className='account__container__demande'>
             <div className='content__account__demande'>
               <form className='demande__formulaire'>
                 <InputCheckBox
@@ -142,7 +153,12 @@ function DemandeDocuments() {
             </div>
             </div>
         </div>
-      )
+            </main>
+          </div>
+        </div>
+        
+    </div>
+  )
 }
 
 export default DemandeDocuments

@@ -67,12 +67,13 @@ function Postuler() {
           </div>
         </div>
       </div>
+      <div className='postuler__upload'>
       <div className='Postuler__content__account'>
         <div className='parag'>
-          <p>Upload Multiple Files</p>
+          <p>Upload Cover letter</p>
         </div>
         <label className="custom-file-upload">
-          <input type="file" onChange={handleFileChange} multiple />
+          <input type="file" onChange={handleFileChange} />
           <i className="fa fa-cloud-upload"></i>
           <span>Drop Files here or click to upload</span>
         </label>
@@ -96,6 +97,37 @@ function Postuler() {
             </ul>
           </div>
         )}
+      </div>
+      <div className='Postuler__content__account'>
+        <div className='parag'>
+          <p>Upload CV</p>
+        </div>
+        <label className="custom-file-upload">
+          <input type="file" onChange={handleFileChange} />
+          <i className="fa fa-cloud-upload"></i>
+          <span>Drop Files here or click to upload</span>
+        </label>
+        {selectedFiles.length > 0 && (
+          <div className="selected-files">
+            <p>Selected Files:</p>
+            <ul>
+              {selectedFiles.map((file, index) => (
+                <li key={index}>{file.name}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {uploadedFiles.length > 0 && (
+          <div className="uploaded-files">
+            <p>Uploaded Files:</p>
+            <ul>
+              {uploadedFiles.map((file, index) => (
+                <li key={index}>{file.name}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
       </div>
       <div className='footer__account'>
         <div className='image__button__footer'>

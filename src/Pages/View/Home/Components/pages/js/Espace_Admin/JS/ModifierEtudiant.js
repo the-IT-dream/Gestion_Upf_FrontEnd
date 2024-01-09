@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import '../../css/Account.css';
-import { Button } from '../../../../../../Components/Mini-Components/Js/Button';
-import Input from '../../../../../../Components/Mini-Components/Js/Input';
+import '../../../../css/Account.css';
+import { Button } from '../../../../../../../../Components/Mini-Components/Js/Button';
+import Input from '../../../../../../../../Components/Mini-Components/Js/Input';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { useAuth } from '../../../../../../AuthContext.js';
+import { useAuth } from '../../../../../../../../AuthContext.js';
+import {useNavigate  } from 'react-router-dom';
+import Sidebar from '../../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_Etudiant.js';
+import TopBar from '../../../../../../../../Components/Components/Js/TopBar.js';
+import Sidebar_admin from '../../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_admin.js';
+import TopBar_admin from '../../../../../../../../Components/Components/Js/TopBar_admin.js';
 
 function ModifierEtudiant() {
   const { authData } = useAuth();
   const accessToken = authData.access_token;
+  const navigate = useNavigate();
 
   const { id } = useParams();
 
@@ -63,7 +69,7 @@ function ModifierEtudiant() {
           'Authorization': `Bearer ${accessToken}`
         }
       });
-
+      navigate('/Espace_admin/Student_list');
       console.log('Student updated successfully:', response.data);
       // Ajoutez ici la logique pour gérer la mise à jour réussie
     } catch (error) {
@@ -73,7 +79,16 @@ function ModifierEtudiant() {
   };
 
   return (
-    <div className='account__container'>
+    <div>
+      <Sidebar_admin/>
+
+      <div className='content'>
+        <div className='content__topbar'>
+          <TopBar_admin  />      
+        </div>
+        <div className='content__menu'>
+          <main> 
+          <div className='account__container'>
       <div className='content__account'>
         <form className='account__form'>
           <Input
@@ -173,6 +188,11 @@ function ModifierEtudiant() {
         </form>
       </div>
       
+    </div>
+          </main>
+        </div>
+      </div>
+    
     </div>
   );
 }

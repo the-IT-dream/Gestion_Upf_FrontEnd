@@ -1,9 +1,9 @@
 import React,{useState} from 'react';
 import '../Css/TopBar.css';
 import ProfileIcon from '../../Global/Top-Bar/js/ProfileIcon';
-import ProfileMenu from '../../Global/Top-Bar/js/ProfileMenu';
+import ProfileMenu_admin from '../../Global/Top-Bar/js/ProfileMenu_admin';
 
-function TopBar(props) {
+function TopBar_admin(props) {
   const [openProfile,setOpenProfile] = useState(false);
   return (
     <>
@@ -15,20 +15,18 @@ function TopBar(props) {
         </div>
         <div>
           <div onClick={() => {setOpenProfile(!openProfile)}}>
-            <ProfileIcon  ProfileIconImg='../images/avatar/1.png'/>
+            <ProfileIcon  ProfileIconImg='../../images/avatar/1.png'/>
           </div>
         <div className={`dropdown__container ${openProfile? 'active' : 'inactive'} `}>
-          <ProfileMenu />
+          <ProfileMenu_admin />
         </div>
         </div>
         
       </div>
     </div>
-    {/* {
-      openProfile && <ProfileMenu />
-    }   */}
+
     </>
   )
 }
 
-export default TopBar
+export default TopBar_admin

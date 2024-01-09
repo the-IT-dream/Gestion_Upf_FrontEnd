@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
-import '../../css/Account.css';
-import { Button } from '../../../../../../Components/Mini-Components/Js/Button';
-import Input from '../../../../../../Components/Mini-Components/Js/Input';
+import React,{useState} from 'react';
+import '../../../../css/Account.css';
+import { Button } from '../../../../../../../../Components/Mini-Components/Js/Button';
+import Input from '../../../../../../../../Components/Mini-Components/Js/Input';
+import Sidebar_admin from '../../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_admin';
+import TopBar_admin from '../../../../../../../../Components/Components/Js/TopBar_admin';
 import axios from 'axios';
-import { useAuth } from '../../../../../../AuthContext.js';
+import { useAuth } from '../../../../../../../../AuthContext.js';
+import { useNavigate  } from 'react-router-dom';
 
 function AjoutEtudiant() {
   const { authData } = useAuth();
@@ -23,6 +26,7 @@ function AjoutEtudiant() {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
+  const navigate = useNavigate();
 
   // Function to handle form submission
   const handleSubmit = async (event) => {
@@ -45,6 +49,7 @@ function AjoutEtudiant() {
           'Authorization': `Bearer ${accessToken}`        },
       });
 
+      navigate('/Espace_admin/Student_list');
       console.log('Student added successfully:', response.data);
       // Ajoutez ici la logique pour rediriger l'utilisateur ou afficher un message de succès
     } catch (error) {
@@ -54,35 +59,20 @@ function AjoutEtudiant() {
   };
 
   return (
-    <div className='account__container'>
-      <div className='content__header__account'>
-        <h2>Profile Details</h2>
-        <div className='image__container'>
-          <img src='./images/avatar/1.png' />
-          <div className='image__text__account'>
-            <div className='image__button'>
-              <Button
-                buttonStyle={'btn--save--style'}
-                buttonSize={'btn--save--size'}
-                children={'Upload new photo'}
-                buttonPath={'/Espace_Etudiant'}
-              />
-              <Button
-                className='reset_butt'
-                buttonStyle={'btn--resetMini--style'}
-                buttonSize={'btn--resetMini--size'}
-                children={'Reset'}
-                buttonPath={'/Espace_Etudiant'}
-              />
-            </div>
-            <div className='parag'>
-              <p>allowed image png ....</p>
-            </div>
-          </div>
-        </div>
+    <div>
+    <Sidebar_admin/>
+    <div className='content'>
+      <div className='content__topbar'>
+        <TopBar_admin  />
+        
       </div>
-      <div className='content__account'>
-        <form className='account__form' onSubmit={'/StudentList'}>
+      <div className='content__menu'>
+        <main> 
+        <div className='account__container'>
+      <div className='content_header_account'>
+        <h2>Ajouter Etudiant</h2>
+      </div>
+      <div className='content__account'><form className='account__form' onSubmit={'/StudentList'}>
           <Input
             htmlfor={'First Name'}
             label={'First Name'}
@@ -189,6 +179,12 @@ function AjoutEtudiant() {
               
             
         </div>
+        </main>
+        </div>
+        </div>
+        </div>
+        
+             
       )
     }
     

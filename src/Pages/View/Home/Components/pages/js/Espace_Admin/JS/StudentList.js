@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import '../CSS/StudentList.css';
-import { Button } from '../../../../../../Components/Mini-Components/Js/Button';
+import { Button } from '../../../../../../../../Components/Mini-Components/Js/Button';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { useAuth } from '../../../../../../AuthContext.js';
+import { useAuth } from '../../../../../../../../AuthContext.js';
+import Sidebar_admin from '../../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_admin';
+import TopBar_admin from '../../../../../../../../Components/Components/Js/TopBar_admin';
 
 function StudentList() {
   const [students, setStudents] = useState([]);
@@ -46,7 +48,16 @@ function StudentList() {
 
   return (
     <div>
-      <div className='table__container'>
+
+      <Sidebar_admin/>
+      <div className='content'>
+        <div className='content__topbar'>
+          <TopBar_admin  />
+          
+        </div>
+        <div className='content__menu'>
+          <main> 
+          <div className='table__container'>
         <div className='table__header'>
           <div>
             <p>Liste des étudiants</p>
@@ -56,8 +67,9 @@ function StudentList() {
               buttonStyle={'btn--detail--style'}
               buttonSize={'btn--detail--size'}
               children={'Ajouter'}
-              buttonPath={'/AjoutEtudiant'}
+              buttonPath={'/Espace_admin/Ajouter_Etudiant'}
               className='button__detail'
+
             />
           </div>
         </div>
@@ -91,7 +103,7 @@ function StudentList() {
                 <td>{student.major}</td>
                 <td>{student.level}</td>
                 <td className='butt__td'>
-                  <Link to={`/ModifierEtudiant/${student.id}`}>
+                  <Link to={`/Espace_admin/Modifier_Etudiant/${student.id}`}>
                     <button className='button__modify'>Modifier</button>
                   </Link>
                   <button onClick={() => handleDeleteStudent(student.id)} className='button__delete'>Supprimer</button>
@@ -100,6 +112,9 @@ function StudentList() {
             ))}
           </tbody>
         </table>
+      </div>
+      </main>
+      </div>
       </div>
     </div>
   );
