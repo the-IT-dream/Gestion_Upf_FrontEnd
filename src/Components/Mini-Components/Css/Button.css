@@ -2,7 +2,7 @@
     --primary: #B11B81;
     --secondary: #333A65;
     --third: #ABADB1;
-    --fourth :#337AB7;
+    --bleu :#0137B2;
     --gray: #F1F1F2;
 }
 *{
@@ -36,6 +36,34 @@ button{
 }
 .btn--seconnecter--size:hover{
     background-color: #8479F2;
+}
+.btn--detail--style{
+    background-color: var(--primary);
+    color:#fff;
+}
+.btn--detail--size{
+    padding: 5px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 100px;
+    font-weight: 200;
+    font-size: 15px;
+    float: right;
+}
+.btn--detail--size:hover{
+    background-color: #8479F2;
+}
+.btn--account--style{
+    background-color: var(--gray);
+    color: gray;
+    font-size: 15px;
+}
+
+.btn--account--style:hover{
+    background-color: var(--primary);
+    color:#fff;
+    transition: .3s;
 }
 /* //////////////////////////////////////////////////////// */
 .btn--reset--style{

@@ -1,7 +1,11 @@
 .drop__menu__items{
+    z-index: 1;
     align-items: center;
-    padding-left: 10%;
+    padding-left: 13%;
     padding-right: 4%;
+    padding-top: 4%;
+    padding-bottom: 2%;
+   
 }
 .drop__menu__items h4{
     font-weight: 350;

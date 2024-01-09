@@ -3,7 +3,7 @@ import '../Css/TopBar.css';
 import ProfileIcon from '../../Global/Top-Bar/js/ProfileIcon';
 import ProfileMenu from '../../Global/Top-Bar/js/ProfileMenu';
 
-function TopBar() {
+function TopBar(props) {
   const [openProfile,setOpenProfile] = useState(false);
   return (
     <>
@@ -15,22 +15,18 @@ function TopBar() {
         </div>
         <div>
           <div onClick={() => {setOpenProfile(!openProfile)}}>
-          <ProfileIcon  
-          
-          ProfileIconImg='../images/avatar/1.png'
-        />
+            <ProfileIcon  ProfileIconImg='../images/avatar/1.png'/>
           </div>
         <div className={`dropdown__container ${openProfile? 'active' : 'inactive'} `}>
-        <ProfileMenu   />
-
+          <ProfileMenu />
         </div>
         </div>
         
       </div>
     </div>
-    {
+    {/* {
       openProfile && <ProfileMenu />
-    }  
+    }   */}
     </>
   )
 }

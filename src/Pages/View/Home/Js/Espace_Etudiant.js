@@ -1,31 +1,25 @@
 import React from 'react'
-
 import '../Css/Espace_Etudiant.css';
-import Sidebar from '../../../../Components/Mini-Components/SideBar/components/Sidebar'
-import Dashboard from '../../../../Components/Mini-Components/SideBar/pages/Dashboard'
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Sidebar from '../../../../Components/Mini-Components/SideBar/components/Sidebar_Etudiant'
+import TopBar from '../../../../Components/Components/Js/TopBar';
 
-import '../Css/Espace_Etudiant.css';
-import Account from '../Components/js/Account';
-
-
-
+// function Espace_Etudiant (){
 const Espace_Etudiant = () => {
   return (
-    <Router>
-      <Sidebar>
-        <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
-          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
-          {/* <Route path="/about" element={<About />} />
-          <Route path="/comment" element={<Comment />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/productList" element={<ProductList />} /> */}
-        </Routes>
-      </Sidebar>
-    </Router>
+    <div>
+      <Sidebar />
+      <div className='content'>
+        <div className='content__topbar'>
+          <TopBar  />
+          
+        </div>
+        <div className='content__menu'>
+          <main>         
+          </main>
+        </div>
+      </div>
+          
+    </div>
   );
 };
-
 export default Espace_Etudiant

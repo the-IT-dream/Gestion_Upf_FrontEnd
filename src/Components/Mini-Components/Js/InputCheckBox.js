@@ -13,7 +13,8 @@ export const InputCheckBox = ({
     label,
     htmlfor,
     required,
-    LoginFormGroup
+    LoginFormGroup,
+    Login__Form__label
 }) => {
   return (
     <div className={LoginFormGroup}>
@@ -27,7 +28,7 @@ export const InputCheckBox = ({
         placeholder={placeholder}
         required={required}
       />
-      <label htmlFor={htmlfor} className='Login__Form__label'>{label}</label>  
+      <label htmlFor={htmlfor} className={Login__Form__label}>{label}</label>  
     </div>
   )
 }
