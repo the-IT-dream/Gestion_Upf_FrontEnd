@@ -27,6 +27,7 @@ import StudentList from './Pages/View/Home/Components/pages/js/Espace_Admin/JS/S
 import ResponsableStage from './Pages/View/Home/Components/pages/js/Espace_Admin/JS/ResponsableStage';
 import AjouterEtudiant from './Pages/View/Home/Components/pages/js/Espace_Admin/JS/AjoutEtudiant';
 import AjouterRS from './Pages/View/Home/Components/pages/js/Espace_Admin/JS/AjoutRS';
+import DetailsInfo from './Pages/View/Home/Components/pages/js/Espace_Etudiant/DetailsInfo';
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
             <Route path="/Espace_Etudiant/info_Stage" element={<Infos />} />
             <Route path="/Espace_Etudiant/Details_Stage" element={<Details_Stage />} />
             <Route path="/Espace_Etudiant/info_Stage" element={<Infos />} />
+            <Route path="/Espace_Etudiant/DetailsInfo" element={<DetailsInfo />} />
             <Route path="/Espace_Etudiant/postule_Stage" element={<Postuler />} />
             <Route path="/Espace_Etudiant/Account" element={<Account/>} />
             <Route path="/Espace_Etudiant/Securite" element={<Security />} />
@@ -66,7 +68,6 @@ function App() {
 
             
       </Router>
-
   );
 }
 

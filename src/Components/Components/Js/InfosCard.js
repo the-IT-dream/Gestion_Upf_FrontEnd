@@ -19,7 +19,7 @@ function InfosCard(props) {
         buttonStyle={'btn--detail--style'} 
         buttonSize={'btn--detail--size'}
         children={'Détails'} 
-        buttonPath={'/DetailsInfo'}
+        buttonPath={'/Espace_Etudiant/DetailsInfo'}
         className='button__detail'
       />
       </div>

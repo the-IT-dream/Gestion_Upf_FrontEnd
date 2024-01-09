@@ -40,9 +40,7 @@ const Sidebar = ({children}) => {
             path:"/Espace_Etudiant/Details_Stage",
             name:"Détails de stage ",
             icon:<i class="fa-solid fa-newspaper"></i>,
-        },
-        
-
+        }
     ]
     return (
         <div className="container">
