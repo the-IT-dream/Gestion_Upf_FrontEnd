@@ -16,7 +16,7 @@ const Sidebar = ({children}) => {
     const links = () => setIsON (!isON);
     const menuItem=[
         {
-            path:"/Espace_Etudiant/info_Stage",
+            path:"/Espace_Etudiant/Infos",
             name:"Les opportunités de stage",
             icon:<i className="fa-solid fa-circle-info"></i>,
             // onClick:{links}

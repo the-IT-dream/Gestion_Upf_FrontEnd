@@ -17,13 +17,13 @@ function Roles() {
           <main> 
             <div className='roles__container'>
                 <div className='RolesCards__wrap'>
-                    <Link className='Link__style' to="/StudentList">
+                    <Link className='Link__style' to="/Espace_admin/Student_list">
                         <RolesCard 
                             nombres="Total 4 etudiant"
                             rolesname="Etudiants"
                         />
                     </Link>
-                    <Link className='Link__style' to="/ResponsableStage">
+                    <Link className='Link__style' to="/Espace_admin/ResponsableStage">
                     <RolesCard 
                             nombres="Total 5 Admin"
                             rolesname="Responsable de stage"

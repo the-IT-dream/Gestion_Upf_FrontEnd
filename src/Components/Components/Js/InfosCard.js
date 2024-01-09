@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Css/InfosCard.css';
+import '../../Components/Css/InfosCard.css';
 import { Button } from '../../Mini-Components/Js/Button';
 
 function InfosCard(props) {
