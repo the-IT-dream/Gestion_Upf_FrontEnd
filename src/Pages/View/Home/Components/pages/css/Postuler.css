@@ -33,21 +33,25 @@
   background-color: #B11B81;
   color: white;
 }
+.postuler__upload{
+  display: flex;
+  flex-direction: row;
+}
 .Postuler__content__account{
     display: flex;
     flex-wrap: wrap;
-    padding: 10%;
+    padding: 2%;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 /* Add this to your existing CSS file or create a new one for styling */
 .custom-file-upload {
-  display: flex;
+    display: flex;
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
     margin: 2%;
-    padding: 200px 500px;
+    padding: 70px 70px;
     cursor: pointer;
     border: 2px solid gray;
     border-radius: 5px;
