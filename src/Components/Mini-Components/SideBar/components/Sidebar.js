@@ -38,8 +38,8 @@ const Sidebar = ({children}) => {
             icon:<i class="fa-solid fa-newspaper"></i>,
         },
         {
-            path:"/Roles",
-            name:"Roles",
+            path:"/Candidature",
+            name:"Candidature",
             icon:<i className="fa-solid fa-file-arrow-up"></i>,
         },
 

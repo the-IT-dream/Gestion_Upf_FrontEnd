@@ -26,6 +26,7 @@ import Details_Stage from './Pages/View/Home/Components/pages/js/Details_Stage';
 import Professeur from './Pages/View/Home/Components/Admin/JS/Professeur';
 import AjouterProf from './Pages/View/Home/Components/Admin/JS/AjouterProf';
 import ModifierProf from './Pages/View/Home/Components/Admin/JS/ModifierProf';
+import Candidature from './Pages/View/Home/Components/pages/js/Candidature';
 
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
             <Route path="/Professeur" element={<Professeur />} />
             <Route path="/AjouterProf" element={<AjouterProf />} />
             <Route path="/ModifierProf" element={<ModifierProf />} />
+            <Route path="/Candidature" element={<Candidature />} />
 
           </Routes>
         </Sidebar>
