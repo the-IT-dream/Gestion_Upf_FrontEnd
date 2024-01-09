@@ -1,8 +1,8 @@
 import React from 'react';
-import InfosCard from '../../../../../../Components/Components/Js/InfosCard';
-import DetailsCard from '../../../../../../Components/Components/Js/DetailsCard';
+import InfosCard from '../../../../../../../Components/Components/Js/InfosCard';
+import DetailsCard from '../../../../../../../Components/Components/Js/DetailsCard';
 import '../css/DetailsInfo.css'
-import Details from '../../../../../../Components/Components/Js/Details';
+import Details from '../../../../../../../Components/Components/Js/Details';
 
 
 function DetailsInfo() {

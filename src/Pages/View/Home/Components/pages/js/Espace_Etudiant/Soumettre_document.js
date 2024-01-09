@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import '../css/Account.css';
-import '../css/Postuler.css';
+import '../../css/Account.css';
+import '../../css/Postuler.css';
 
-import { Button } from '../../../../../../Components/Mini-Components/Js/Button'
-import Input from '../../../../../../Components/Mini-Components/Js/Input';
+import { Button } from '../../../../../../../Components/Mini-Components/Js/Button'
+import Input from '../../../../../../../Components/Mini-Components/Js/Input';
+import Sidebar from '../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_Etudiant';
+import TopBar from '../../../../../../../Components/Components/Js/TopBar';
 
 function Soumettre_document(){
     const [selectedFiles, setSelectedFiles] = useState([]);
@@ -50,7 +52,16 @@ function Soumettre_document(){
     const [clicked, setClicked] = useState(false);
   
     return (
-      <div className='Postuler__account__container'>
+      <div>
+        <Sidebar/>
+        <div className='content'>
+        <div className='content__topbar'>
+          <TopBar />
+          
+        </div>
+        <div className='content__menu'>
+          <main>
+          <div className='Postuler__account__container'>
         <div className='parag'>
             <h1>Soumettre les documents</h1>
             <p>Upload Multiple Files</p>
@@ -102,6 +113,11 @@ function Soumettre_document(){
         </div>
       </div>
       </div>
+          </main>
+        </div>
+      </div>
+      
+    </div>
     );
 };
 

@@ -10,7 +10,8 @@ function InfosCard(props) {
         <h1>{props.nomEntreprise} </h1>
       </div>
       <div className='card__content'>
-        <h2>{props.lieuEntreprise}</h2>
+        <h2><i class="fa-solid fa-location-dot"></i>&nbsp;{props.lieuEntreprise}</h2>
+        
         <p>{props.detailStage}</p>
       </div>
       <div className='card__footer'>
