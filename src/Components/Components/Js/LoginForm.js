@@ -49,7 +49,9 @@ function LoginForm(props) {
 
       if (role === 'STUDENT' || role === 'STUDENT5') {
         navigate('/Espace_Etudiant');
-      } else {
+      } else if (role === 'ADMIN') {
+        navigate('/Espace_Etudiant');
+      }else {
         alert("Vous ne pouvez pas accéder à la plateforme");
       }
 
@@ -80,6 +82,7 @@ function LoginForm(props) {
             required={'required'}
             LoginFormGroup={'Login__Form__Group'}
           />
+    
           <Input 
             htmlfor={'Password'}
             label={'Password'}
