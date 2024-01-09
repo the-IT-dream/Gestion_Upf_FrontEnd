@@ -27,15 +27,7 @@ function Infos() {
         </div>
         <div className='content__menu'>
           <main>
-            {/* <Routes>
-              <Route path='/Details_Stage' element={<Details_Stage/>} />
-              <Route path="/info_Stage" element={<Infos />} />
-              <Route path="/postule_Stage" element={<Postuler />} />
-              <Route path="/Account" element={<Account/>} />
-              <Route path="/Demande_Document" element={<DemandeDocuments />} />
-              <Route path="/Soumettre_document" element={<Soumettre_document />} />
-              <Route path="/Securite" element={<Security />} />
-            </Routes> */}
+
             <div className='cards__container'>
       <div className='cards__cadre'>
         <InfosCard 

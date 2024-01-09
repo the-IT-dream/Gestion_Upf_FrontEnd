@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
@@ -10,13 +11,18 @@ import Espace_Etudiant from './Pages/View/Home/Js/Espace_Etudiant';
 import Account from './Pages/View/Home/Components/pages/js/Espace_Etudiant/Account';
 import Espace_Admin from './Pages/View/Home/Js/Espace_R_Stage';
 import Details_Stage from './Pages/View/Home/Components/pages/js/Espace_Etudiant/Details_Stage';
+import { AuthProvider } from './AuthContext';
+
+
 
 
 
 ReactDOM.render(
 
     <React.StrictMode>
-            <App/>
+        <AuthProvider>
+            <App />
+        </AuthProvider>
     </React.StrictMode>,
     document.getElementById('root') 
 );

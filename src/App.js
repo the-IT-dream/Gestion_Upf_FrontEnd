@@ -1,3 +1,4 @@
+
 import './App.css';
 
 import Login from './Pages/Auth/Js/Login';
@@ -18,15 +19,14 @@ import Soumettre_document from './Pages/View/Home/Components/pages/js/Espace_Etu
 import Security from './Pages/View/Home/Components/pages/js/Espace_Etudiant/Security';
 import Account_Rs from './Pages/View/Home/Components/pages/js/Espace_R_Stage/Account_Rs';
 import Security_Rs from './Pages/View/Home/Components/pages/js/Espace_R_Stage/Security_Rs';
-// import Demande_Document from './Pages/View/Home/Components/pages/js/Demande_Document'
-// import Soumettre_document from './Pages/View/Home/Components/pages/js/Espace_Etudiant/Soumettre_document'
-// import Securite from './Pages/View/Home/Components/pages/js/Espace_Etudiant/Security'
-// import DemandeDocuments from './Pages/View/Home/Components/pages/js/Espace_Etudiant/DemandeDocuments';
-// import Infos from './Pages/View/Home/Components/pages/js/Espace_Etudiant/Infos';
-// import Details_Stage from './Pages/View/Home/Components/pages/js/Espace_Etudiant/Details_Stage';
-// import Espace_Admin from './Pages/View/Home/Js/Responsable _de_Stage';
-
-
+import Roles from './Pages/View/Home/Components/pages/js/Espace_Admin/JS/Roles'
+import Espace_Admin from './Pages/View/Home/Js/Espace_Admin';
+import Account_ad from './Pages/View/Home/Components/pages/js/Espace_Admin/JS/Account_ad';
+import Securit_ad from './Pages/View/Home/Components/pages/js/Espace_Admin/JS/Security_ad';
+import StudentList from './Pages/View/Home/Components/pages/js/Espace_Admin/JS/StudentList';
+import ResponsableStage from './Pages/View/Home/Components/pages/js/Espace_Admin/JS/ResponsableStage';
+import AjouterEtudiant from './Pages/View/Home/Components/pages/js/Espace_Admin/JS/AjoutEtudiant';
+import AjouterRS from './Pages/View/Home/Components/pages/js/Espace_Admin/JS/AjoutRS';
 
 function App() {
 
@@ -40,6 +40,7 @@ function App() {
             //Espaces  
             <Route path="/Espace_Etudiant" element={<Espace_Etudiant />} />
             <Route path='/Espace_R_Stage' element={<Espace_R_Stage/>} />
+            <Route path='/Espace_admin' element={<Espace_Admin/>} />
             //Espace Etudiant
             <Route path="/Espace_Etudiant/info_Stage" element={<Infos />} />
             <Route path="/Espace_Etudiant/Details_Stage" element={<Details_Stage />} />
@@ -53,10 +54,19 @@ function App() {
             <Route path='/Espace_R_Stage/Publier_les_offres_de_stage' element={<Publier_les_offres_de_stage />}/>
             <Route path="/Espace_R_Stage/Account_Rs" element={<Account_Rs/>} />
             <Route path="/Espace_R_Stage/Securite_Rs" element={<Security_Rs />} />
+            //Espace_admin
+            <Route path="/Espace_admin/Account_admin" element={<Account_ad/>} />
+            <Route path="/Espace_admin/Securite_admin" element={<Securit_ad />} />
+            <Route path="/Espace_admin/Roles" element={<Roles/>} />
+            <Route path="/Espace_admin/Student_list" element={<StudentList/>} />
+            <Route path="/Espace_admin/ResponsableStage" element={<ResponsableStage/>} />
+            <Route path="/Espace_admin/Ajouter_Etudiant" element={<AjouterEtudiant/>} />
+            <Route path="/Espace_admin/Ajouter_Rs" element={<AjouterRS/>} />
            </Routes>
 
             
       </Router>
+
   );
 }
 

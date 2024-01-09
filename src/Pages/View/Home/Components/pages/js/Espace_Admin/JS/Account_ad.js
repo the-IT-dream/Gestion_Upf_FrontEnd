@@ -1,16 +1,16 @@
-import '../../css/Account.css';
-import { Button } from '../../../../../../../Components/Mini-Components/Js/Button';
-import Input from '../../../../../../../Components/Mini-Components/Js/Input';
-import Sidebar from '../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_Etudiant';
-import TopBar from '../../../../../../../Components/Components/Js/TopBar';
-import Sidebar_Responsable_de_Stage from '../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_Responsable_de_Stage';
+import '../../../../css/Account.css';
+import { Button } from '../../../../../../../../Components/Mini-Components/Js/Button';
+import Input from '../../../../../../../../Components/Mini-Components/Js/Input';
+
 
 import React,{useState, useEffect} from 'react';
 
 
 import axios from 'axios';
-import { useAuth } from '../../../../../../../AuthContext';
-function Account() {
+import { useAuth } from '../../../../../../../../AuthContext';
+import Sidebar_admin from '../../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_admin';
+import TopBar_admin from '../../../../../../../../Components/Components/Js/TopBar_admin';
+function Account_ad() {
   const { authData } = useAuth();
   const accessToken = authData.access_token;
 
@@ -18,16 +18,15 @@ function Account() {
     firstName: '',
     lastName: '',
     email: '',
-    filiere: '',
+    grade: '',
     cin: '',
-    niveau: '',
-    cne: '',
+    departement: '',
   });
 
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get('http://localhost:5555/upf/students/myProfil', {
+        const response = await axios.get('http://localhost:5555/upf/employees/myProfil', {
           headers: {
             'Authorization': `Bearer ${accessToken}`
           }
@@ -38,10 +37,10 @@ function Account() {
           firstName: userProfile.firstName,
           lastName: userProfile.lastName,
           email: userProfile.mail,
-          filiere: userProfile.major,
+          grade: userProfile.grade,
           cin: userProfile.cin,
-          niveau: userProfile.level,
-          cne: userProfile.cne,
+          departement: userProfile.departement,
+
         });
       } catch (error) {
         console.error(error);
@@ -57,10 +56,10 @@ function Account() {
   return (
     <div>
       {/* <Sidebar /> */}
-      <Sidebar/>
+      <Sidebar_admin/>
       <div className='content'>
         <div className='content__topbar'>
-          <TopBar  />
+          <TopBar_admin  />
         </div>
         <div className='content__menu'>
           <main>
@@ -72,14 +71,14 @@ function Account() {
           buttonStyle={'btn--account--style'}
           buttonSize={'btn--save--size'}
           children={'Account'}
-          buttonPath={'/Espace_Etudiant/Account'}
+          buttonPath={'/Espace_admin/Account_admin'}
           icon={'FaUser'}
         />
         <Button
           buttonStyle={`btn--account--style ${clicked ? 'active' : 'inactive'}`}
           buttonSize={'btn--save--size'}
           children={'Security'}
-          buttonPath={'/Espace_Etudiant/Securite'}
+          buttonPath={'/Espace_admin/Securite_admin'}
         />
       </div>
       <div className='content__header__account'>
@@ -92,14 +91,14 @@ function Account() {
                 buttonStyle={'btn--save--style'}
                 buttonSize={'btn--save--size'}
                 children={'Upload new photo'}
-                buttonPath={'/Espace_Etudiant'}
+                buttonPath={''}
               />
               <Button
                 className='reset_butt'
                 buttonStyle={'btn--resetMini--style'}
                 buttonSize={'btn--resetMini--size'}
                 children={'reset'}
-                buttonPath={'/Espace_Etudiant'}
+                buttonPath={''}
               />
             </div>
             <div className='parag'>
@@ -144,17 +143,17 @@ function Account() {
           required={'required'}
           LoginFormGroup={'Login__Form__Group'}
         />
-        <Input
-          htmlfor={'Filiere'}
-          label={'Filiere'}
-          type={'text'}
-          id={'Filiere'}
-          name={'filiere'} 
-          value={formData.filiere}
-          placeholder={'Filiere'}
-          required={'required'}
-          LoginFormGroup={'Login__Form__Group'}
-        />
+        <Input 
+              htmlfor={'departement'}
+              label={'Departement'}
+              type={'text'}
+              id={'departement'}
+              name={'departement'}
+              value={formData.departement}
+              placeholder={'departement'}
+              required={'required'}
+              LoginFormGroup={'Login__Form__Group'}
+            />
         <Input
           htmlfor={'cin'}
           label={'Cin'}
@@ -166,28 +165,18 @@ function Account() {
           required={'required'}
           LoginFormGroup={'Login__Form__Group'}
         />
-        <Input
-          htmlfor={'Niveau'}
-          label={'Niveau'}
-          type={'text'}
-          id={'Niveau'}
-          name={'niveau'}
-          value={formData.niveau}
-          placeholder={'Niveau'}
-          required={'required'}
-          LoginFormGroup={'Login__Form__Group'}
-        />
-        <Input
-          htmlfor={'CNE'}
-          label={'CNE'}
-          type={'text'}
-          id={'Cne'}
-          name={'cne'}
-          value={formData.cne}
-          placeholder={'A********'}
-          required={'required'}
-          LoginFormGroup={'Login__Form__Group'}
-        />
+        <Input 
+            htmlfor={'grade'}
+            label={'Grade'}
+            type={'text'}
+            id={'grade'}
+            name={'grade'}
+            value={formData.grade}
+            placeholder={'grade'}
+            required={'required'}
+            LoginFormGroup={'Login__Form__Group'}
+          />
+        
       </form>
 
       </div>
@@ -197,14 +186,14 @@ function Account() {
             buttonStyle={'btn--save--style'}
             buttonSize={'btn--save--size'}
             children={'Save Changes'}
-            buttonPath={'/Espace_Etudiant'}
+            buttonPath={''}
           />
           <Button
             className='reset_butt'
             buttonStyle={'btn--resetMini--style'}
             buttonSize={'btn--resetMini--size'}
             children={'Security'}
-            buttonPath={'/Espace_Etudiant'}
+            buttonPath={''}
           />
         </div>
       </div>
@@ -218,4 +207,4 @@ function Account() {
 
 }
 
-export default Account;
+export default Account_ad;

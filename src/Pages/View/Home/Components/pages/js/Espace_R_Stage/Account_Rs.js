@@ -1,38 +1,55 @@
-import React,{useState} from 'react';
 import '../../css/Account.css';
 import { Button } from '../../../../../../../Components/Mini-Components/Js/Button';
 import Input from '../../../../../../../Components/Mini-Components/Js/Input';
-import Sidebar from '../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_Etudiant';
 import TopBar_Rs from '../../../../../../../Components/Components/Js/TopBar_Rs';
 import Sidebar_Responsable_de_Stage from '../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_Responsable_de_Stage';
 
+import React,{useState, useEffect} from 'react';
+
+
+import axios from 'axios';
+import { useAuth } from '../../../../../../../AuthContext';
 function Account_Rs() {
+  const { authData } = useAuth();
+  const accessToken = authData.access_token;
+
   const [formData, setFormData] = useState({
-    username: '',
-    password: ''
+    firstName: '',
+    lastName: '',
+    email: '',
+    grade: '',
+    cin: '',
+    departement: '',
   });
 
-  // State to track focused input
-  const [focusedInput, setFocusedInput] = useState(null);
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const response = await axios.get('http://localhost:5555/upf/employees/myProfil', {
+          headers: {
+            'Authorization': `Bearer ${accessToken}`
+          }
+        });
 
-  // Function to handle form input changes
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
+        const userProfile = response.data;
+        setFormData({
+          firstName: userProfile.firstName,
+          lastName: userProfile.lastName,
+          email: userProfile.mail,
+          grade: userProfile.grade,
+          cin: userProfile.cin,
+          departement: userProfile.departement,
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-  // Function to handle input focus
-  const handleInputFocus = (inputName) => {
-    setFocusedInput(inputName);
-  };
+    fetchProfile();
+  }, [accessToken]);
 
-  // Function to handle form submission
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Add your logic for handling form submission here
-    // For example, you can send the data to a server for authentication
-    console.log('Form submitted with data:', formData);
-  };
+  const [clicked, setClicked] = useState(false);
+
 
   return (
     <div>
@@ -40,151 +57,144 @@ function Account_Rs() {
       <Sidebar_Responsable_de_Stage/>
       <div className='content'>
         <div className='content__topbar'>
-          <TopBar_Rs />
+          <TopBar_Rs  />
         </div>
         <div className='content__menu'>
           <main>
-          <div className='account__container'>
-        <div className='header__button'>
-            <Button
-                className="butt__account"
-                buttonStyle={'btn--account--style'} 
+    <div className='account__container'>
+      <div className='header__button'>
+        <Button
+          onClick={() => { setClicked(!clicked) }}
+          className={`butt__account ${clicked ? 'active' : 'inactive'}`}
+          buttonStyle={'btn--account--style'}
+          buttonSize={'btn--save--size'}
+          children={'Account'}
+          buttonPath={'/Espace_R_Stage/Account_Rs'}
+          icon={'FaUser'}
+        />
+        <Button
+          buttonStyle={`btn--account--style ${clicked ? 'active' : 'inactive'}`}
+          buttonSize={'btn--save--size'}
+          children={'Security'}
+          buttonPath={'/Espace_R_Stage/Securite_Rs'}
+        />
+      </div>
+      <div className='content__header__account'>
+        <h2>Profile Details</h2>
+        <div className='image__container'>
+          <img src='../../images/avatar/1.png' alt='avatar' />
+          <div className='image__text__account'>
+            <div className='image__button'>
+              <Button
+                buttonStyle={'btn--save--style'}
                 buttonSize={'btn--save--size'}
-                children={'Account'} 
-                buttonPath={'/Espace_R_Stage/Account_Rs'}
-                icon={'FaUser'}
-            />
-             <Button
-                className="butt__account"
-                buttonStyle={'btn--account--style'} 
-                buttonSize={'btn--save--size'}
-                children={'Security'} 
-                buttonPath={'/Espace_R_Stage/Securite_Rs'}
-            />
-        </div>
-        <div className='content__header__account'>
-          <h2>Profile Details</h2>
-          <div className='image__container'>
-            <img src='../../images/avatar/1.png'/>
-            <div className='image__text__account'>
-              <div className='image__button'>
-                <input 
-                  className='input__image'
-                  type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"
-                />
-                <Button
+                children={'Upload new photo'}
+                buttonPath={'/Espace_Etudiant'}
+              />
+              <Button
                 className='reset_butt'
-                  buttonStyle={'btn--resetMini--style'} 
-                  buttonSize={'btn--resetMini--size'}
-                  children={'Reset'} 
-                  // buttonPath={'/Espace_Etudiant'}
-                />
-              </div>
-              <div className='parag'>
-                <p>allowed image png ....</p>
-              </div>
+                buttonStyle={'btn--resetMini--style'}
+                buttonSize={'btn--resetMini--size'}
+                children={'reset'}
+                buttonPath={'/Espace_Etudiant'}
+              />
+            </div>
+            <div className='parag'>
+              <p>allowed image png ....</p>
             </div>
           </div>
         </div>
-        <div className='content__account'>
-          <form className='account__form'>
-            <Input 
-              htmlfor={'First Name'}
-              label={'First Name'}
-              type={'text'}
-              id={'First Name'}
-              name={'First Name'}
-              value={formData.Email}
-              onChange={handleChange}
-              onFocus={handleInputFocus}
-              placeholder={'First Name'}
-              required={'required'}
-              LoginFormGroup={'Login__Form__Group'}
-            />
-            <Input 
-              htmlfor={'Last Name'}
-              label={'Last Name'}
-              type={'text'}
-              id={'Last Name'}
-              name={'Last Name'}
-              value={formData.Email}
-              onChange={handleChange}
-              onFocus={handleInputFocus}
-              placeholder={'Last Name'}
-              required={'required'}
-              LoginFormGroup={'Login__Form__Group'}
-            />
-            <Input 
-              htmlfor={'Email'}
-              label={'Email'}
-              type={'email'}
-              id={'email'}
-              name={'email'}
-              value={formData.Email}
-              onChange={handleChange}
-              onFocus={handleInputFocus}
-              placeholder={'azerty@gmail.com'}
-              required={'required'}
-              LoginFormGroup={'Login__Form__Group'}
-            />
-            <Input 
-              htmlfor={'departement'}
-              label={'Departement'}
-              type={'text'}
-              id={'departement'}
-              name={'departement'}
-              value={formData.departement}
-              onChange={handleChange}
-              onFocus={handleInputFocus}
-              placeholder={'departement'}
-              required={'required'}
-              LoginFormGroup={'Login__Form__Group'}
-            />
-            <Input 
-            htmlfor={'cin'}
-            label={'Cin'}
-            type={'text'}
-            id={'cin'}
-            name={'cin'}
-            value={formData.cin}
-            onChange={handleChange}
-            onFocus={handleInputFocus}
-            placeholder={'CD********'}
-            required={'required'}
-            LoginFormGroup={'Login__Form__Group'}
+      </div>
+      <div className='content__account'>
+
+      <form className='account__form'>
+        <Input
+          htmlfor={'First Name'}
+          label={'First Name'}
+          type={'text'}
+          id={'First Name'}
+          name={'firstName'}
+          value={formData.firstName}
+          placeholder={'First Name'}
+          required={'required'}
+          LoginFormGroup={'Login__Form__Group'}
+        />
+        <Input
+          htmlfor={'Last Name'}
+          label={'Last Name'}
+          type={'text'}
+          id={'Last Name'}
+          name={'lastName'}
+          value={formData.lastName}
+          placeholder={'Last Name'}
+          required={'required'}
+          LoginFormGroup={'Login__Form__Group'}
+        />
+        <Input
+          htmlfor={'Email'}
+          label={'Email'}
+          type={'email'}
+          id={'email'}
+          name={'email'}
+          value={formData.email}
+          placeholder={'azerty@gmail.com'}
+          required={'required'}
+          LoginFormGroup={'Login__Form__Group'}
+        />
+        <Input
+          htmlfor={'departement'}
+          label={'departement'}
+          type={'text'}
+          id={'departement'}
+          name={'departement'} 
+          value={formData.departement}
+          placeholder={'departement'}
+          required={'required'}
+          LoginFormGroup={'Login__Form__Group'}
+        />
+        <Input
+          htmlfor={'cin'}
+          label={'Cin'}
+          type={'text'}
+          id={'cin'}
+          name={'cin'}
+          value={formData.cin}
+          placeholder={'CD********'}
+          required={'required'}
+          LoginFormGroup={'Login__Form__Group'}
+        />
+        <Input
+          htmlfor={'grade'}
+          label={'grade'}
+          type={'text'}
+          id={'grade'}
+          name={'grade'}
+          value={formData.grade}
+          placeholder={'grade'}
+          required={'required'}
+          LoginFormGroup={'Login__Form__Group'}
+        />
+        
+      </form>
+
+      </div>
+      <div className='footer__account'>
+        <div className='image__button__footer'>
+          <Button
+            buttonStyle={'btn--save--style'}
+            buttonSize={'btn--save--size'}
+            children={'Save Changes'}
+            buttonPath={'/Espace_Etudiant'}
           />
-          <Input 
-            htmlfor={'grade'}
-            label={'Grade'}
-            type={'text'}
-            id={'grade'}
-            name={'grade'}
-            value={formData.grade}
-            onChange={handleChange}
-            onFocus={handleInputFocus}
-            placeholder={'grade'}
-            required={'required'}
-            LoginFormGroup={'Login__Form__Group'}
+          <Button
+            className='reset_butt'
+            buttonStyle={'btn--resetMini--style'}
+            buttonSize={'btn--resetMini--size'}
+            children={'Security'}
+            buttonPath={'/Espace_Etudiant'}
           />
-          </form>
         </div>
-        <div className='footer__account' >
-          <div className='image__button__footer' >
-                  <Button
-                    buttonStyle={'btn--save--style'} 
-                    buttonSize={'btn--save--size'}
-                    children={'Save Changes'} 
-                    // buttonPath={'/Espace_Etudiant'}
-                  />
-                  <Button
-                  className='reset_butt'
-                    buttonStyle={'btn--reset--style'} 
-                    buttonSize={'btn--reset--size'}
-                    children={'Reset'} 
-                    // buttonPath={'/Espace_Etudiant'}
-                  />
-          </div>
-        </div>
+      </div>
     </div>
           </main>
         </div>
@@ -193,5 +203,4 @@ function Account_Rs() {
   </div>
   )
 }
-
-export default Account_Rs
+export default Account_Rs;
