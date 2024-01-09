@@ -6,8 +6,8 @@ import logoUPF from '../image/logoUPF.jpg'
 import logof from '../image/logo.png'
 import '../css/Side.css'
 import '../../../../Pages/View/Home/Css/Espace_Etudiant.css'
-import TopBar from "../../../../Components/Components/Js/TopBar"
-import DemandeDocuments from '../../../../Pages/View/Home/Components/pages/js/DemandeDocuments';
+import TopBar from "../../../Components/Js/TopBar"
+import DemandeDocuments from '../../../../Pages/View/Home/Components/pages/js/Espace_Etudiant/DemandeDocuments';
 
 const Sidebar = ({children}) => {
     const[isOpen ,setIsOpen] = useState(true);
@@ -16,28 +16,28 @@ const Sidebar = ({children}) => {
     const links = () => setIsON (!isON);
     const menuItem=[
         {
-            path:"/info_Stage",
+            path:"/Espace_Etudiant/info_Stage",
             name:"Les opportunités de stage",
             icon:<i className="fa-solid fa-circle-info"></i>,
             // onClick:{links}
         },
         {
-            path:"/postule_Stage",
+            path:"/Espace_Etudiant/postule_Stage",
             name:"Postuler à des stages",
             icon:<i className="fa-solid fa-pen-to-square"></i>,
         },
         {
-            path:"/Demande_Document",
+            path:"/Espace_Etudiant/Demande_Document",
             name:"Demande les documents",
             icon:<i className="fa-solid fa-file"></i>,
         },
         {
-            path:"/Soumettre_document",
+            path:"/Espace_Etudiant/Soumettre_document",
             name:"Soumettre les documents",
             icon:<i className="fa-solid fa-file-arrow-up"></i>,
         },
         {
-            path:"/Details_Stage",
+            path:"/Espace_Etudiant/Details_Stage",
             name:"Détails de stage ",
             icon:<i class="fa-solid fa-newspaper"></i>,
         },

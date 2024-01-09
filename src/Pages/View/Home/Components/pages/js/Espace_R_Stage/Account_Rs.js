@@ -1,9 +1,12 @@
 import React,{useState} from 'react';
-import '../css/Account.css';
-import { Button } from '../../../../../../Components/Mini-Components/Js/Button';
-import Input from '../../../../../../Components/Mini-Components/Js/Input';
+import '../../css/Account.css';
+import { Button } from '../../../../../../../Components/Mini-Components/Js/Button';
+import Input from '../../../../../../../Components/Mini-Components/Js/Input';
+import Sidebar from '../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_Etudiant';
+import TopBar_Rs from '../../../../../../../Components/Components/Js/TopBar_Rs';
+import Sidebar_Responsable_de_Stage from '../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_Responsable_de_Stage';
 
-function Account() {
+function Account_Rs() {
   const [formData, setFormData] = useState({
     username: '',
     password: ''
@@ -32,14 +35,23 @@ function Account() {
   };
 
   return (
-    <div className='account__container'>
+    <div>
+      {/* <Sidebar /> */}
+      <Sidebar_Responsable_de_Stage/>
+      <div className='content'>
+        <div className='content__topbar'>
+          <TopBar_Rs />
+        </div>
+        <div className='content__menu'>
+          <main>
+          <div className='account__container'>
         <div className='header__button'>
             <Button
                 className="butt__account"
                 buttonStyle={'btn--account--style'} 
                 buttonSize={'btn--save--size'}
                 children={'Account'} 
-                buttonPath={'/Account'}
+                buttonPath={'/Espace_R_Stage/Account_Rs'}
                 icon={'FaUser'}
             />
              <Button
@@ -47,13 +59,13 @@ function Account() {
                 buttonStyle={'btn--account--style'} 
                 buttonSize={'btn--save--size'}
                 children={'Security'} 
-                buttonPath={'/Securite'}
+                buttonPath={'/Espace_R_Stage/Securite_Rs'}
             />
         </div>
         <div className='content__header__account'>
           <h2>Profile Details</h2>
           <div className='image__container'>
-            <img src='./images/avatar/1.png'/>
+            <img src='../../images/avatar/1.png'/>
             <div className='image__text__account'>
               <div className='image__button'>
                 <input 
@@ -116,41 +128,41 @@ function Account() {
               LoginFormGroup={'Login__Form__Group'}
             />
             <Input 
-              htmlfor={'Filiere'}
-              label={'Filiere'}
+              htmlfor={'departement'}
+              label={'Departement'}
               type={'text'}
-              id={'Filiere'}
-              name={'Filiere'}
-              value={formData.Email}
+              id={'departement'}
+              name={'departement'}
+              value={formData.departement}
               onChange={handleChange}
               onFocus={handleInputFocus}
-              placeholder={'Filiere'}
+              placeholder={'departement'}
               required={'required'}
               LoginFormGroup={'Login__Form__Group'}
             />
             <Input 
-            htmlfor={'Telephone'}
-            label={'Telephone'}
+            htmlfor={'cin'}
+            label={'Cin'}
             type={'text'}
-            id={'Telephone'}
-            name={'Telephone'}
-            value={formData.Email}
+            id={'cin'}
+            name={'cin'}
+            value={formData.cin}
             onChange={handleChange}
             onFocus={handleInputFocus}
-            placeholder={'06********'}
+            placeholder={'CD********'}
             required={'required'}
             LoginFormGroup={'Login__Form__Group'}
           />
           <Input 
-            htmlfor={'Niveau'}
-            label={'Niveau'}
+            htmlfor={'grade'}
+            label={'Grade'}
             type={'text'}
-            id={'Niveau'}
-            name={'Niveau'}
-            value={formData.Email}
+            id={'grade'}
+            name={'grade'}
+            value={formData.grade}
             onChange={handleChange}
             onFocus={handleInputFocus}
-            placeholder={'Niveau'}
+            placeholder={'grade'}
             required={'required'}
             LoginFormGroup={'Login__Form__Group'}
           />
@@ -174,7 +186,12 @@ function Account() {
           </div>
         </div>
     </div>
+          </main>
+        </div>
+      </div>
+    
+  </div>
   )
 }
 
-export default Account
+export default Account_Rs

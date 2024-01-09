@@ -94,7 +94,8 @@ function LoginForm(props) {
             buttonStyle={'btn--seconnecter--style'} 
             buttonSize={'btn--seconnecter--size'}
             children={'Se connecter'} 
-            buttonPath={'/Espace_Etudiant'}
+            // buttonPath={'/Espace_Etudiant'}
+            buttonPath={'/Espace_R_Stage'}
           />
         </form>
       </div>
