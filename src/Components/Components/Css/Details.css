@@ -1,0 +1,62 @@
+/* InfosCard.css */
+.card__infos__detail {
+    background-color: white;
+    width: 650px;
+    padding: 2%;
+    margin: 4%;
+    margin-top: 1%;
+    border-radius: 7px;
+  }
+  
+  /* New container CSS */
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .card__header__detail{
+    display: flex;
+    align-items: center;
+  }
+  .card__header__detail h1{
+    padding: 1%;
+    padding-left: 5%;
+    color: rgba(47, 43, 61, 0.621);
+    font-size: 20px;
+  }
+  .card__header__detail img{
+    border-radius: 50%;
+    margin: 2%;
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+  }
+  .card__content__detail{
+    display: flex;
+    flex-direction: column;
+  }
+  .card__content__detail h2{
+    color: #B11B81 ;
+    font-size: 17px;
+    padding: 4%;
+    padding-left: 6%;
+    
+  }
+  .card__content__detail p{
+    color: var(--bleu) ;
+    font-size: 17px;
+    padding: 2%;
+    padding-left: 6%;
+    font-weight: 200;
+    line-height: 1.8;
+  }
+
+  .card__footer{
+  }
+  /* Add media query to handle responsiveness */
+  @media (max-width: 768px) {
+    .cards-container {
+      justify-content: center;
+    }
+  }
+  

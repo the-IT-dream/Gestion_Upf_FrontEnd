@@ -34,7 +34,7 @@
   color: white;
 }
 .Postuler__content__account{
-  display: flex;
+    display: flex;
     flex-wrap: wrap;
     padding: 10%;
     align-items: center;
@@ -43,7 +43,7 @@
 /* Add this to your existing CSS file or create a new one for styling */
 .custom-file-upload {
   display: flex;
-  flex-wrap: wrap;
+    flex-wrap: wrap;
     text-align: center;
     justify-content: center;
     margin: 2%;

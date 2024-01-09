@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 .account__container{
     width: 100%;
     height: 100%;
@@ -78,16 +76,3 @@ padding: 2%;
     display: flex;
     gap:2%;
 }
-.input__image{
-    outline: none;
-    padding: 10px;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
-    width: 100%;
-    font-weight: 500;
-    font-size: 17px;
-    background-color: var(--primary);
-    color:#fff;
-}
->>>>>>> 207fb7a6cabda8c259787bce9a3bf1d2421036fd
