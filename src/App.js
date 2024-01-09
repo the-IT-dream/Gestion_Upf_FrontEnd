@@ -22,7 +22,11 @@ import ModifierEtudiant from './Pages/View/Home/Components/Admin/JS/ModifierEtud
 import AjoutEtudiant from './Pages/View/Home/Components/Admin/JS/AjoutEtudiant';
 import ResponsableStage from './Pages/View/Home/Components/Admin/JS/ResponsableStage';
 import ModifierRS from './Pages/View/Home/Components/Admin/JS/ModifierRS';
-import AjoutRS from './Pages/View/Home/Components/Admin/JS/AjoutRS'; 
+
+import AjoutRS from './Pages/View/Home/Components/Admin/JS/AjoutRS';
+import Professeur from './Pages/View/Home/Components/Admin/JS/Professeur';
+import AjouterProf from './Pages/View/Home/Components/Admin/JS/AjouterProf';
+import ModifierProf from './Pages/View/Home/Components/Admin/JS/ModifierProf';
 
 
 function App() {
@@ -54,6 +58,9 @@ function App() {
             <Route path="/ResponsableStage" element={<ResponsableStage />} />
             <Route path="/ModifierRS" element={<ModifierRS />} />
             <Route path="/AjoutRS" element={<AjoutRS />} />
+            <Route path="/Professeur" element={<Professeur />} />
+            <Route path="/AjouterProf" element={<AjouterProf />} />
+            <Route path="/ModifierProf" element={<ModifierProf />} />
 
           </Routes>
         </Sidebar>

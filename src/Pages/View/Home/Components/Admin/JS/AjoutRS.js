@@ -100,18 +100,7 @@ function AjoutRS() {
           required={'required'}
           LoginFormGroup={'Login__Form__Group'}
         />
-        <Input
-          htmlfor={'Filiere'}
-          label={'Filiere'}
-          type={'text'}
-          id={'Filiere'}
-          name={'filiere'} 
-          value={formData.filiere}
-          placeholder={'Filiere'}
-          required={'required'}
-          LoginFormGroup={'Login__Form__Group'}
-        />
-        <Input
+         <Input
           htmlfor={'cin'}
           label={'Cin'}
           type={'text'}
@@ -123,27 +112,28 @@ function AjoutRS() {
           LoginFormGroup={'Login__Form__Group'}
         />
         <Input
-          htmlfor={'Niveau'}
-          label={'Niveau'}
-          type={'text'}
-          id={'Niveau'}
-          name={'niveau'}
-          value={formData.niveau}
-          placeholder={'Niveau'}
-          required={'required'}
-          LoginFormGroup={'Login__Form__Group'}
-        />
-        <Input
-          htmlfor={'CNE'}
-          label={'CNE'}
-          type={'text'}
-          id={'Cne'}
-          name={'cne'}
-          value={formData.cne}
-          placeholder={'A****'}
-          required={'required'}
-          LoginFormGroup={'Login__Form__Group'}
-        />
+        htmlfor={'Departement'}
+        label={'Departement'}
+        type={'text'}
+        id={'Departement'}
+        name={'Departement'} 
+        value={formData.Departement}
+        placeholder={'Departement'}
+        required={'required'}
+        LoginFormGroup={'Login__Form__Group'}
+      />
+      <Input
+        htmlfor={'Niveau'}
+        label={'Niveau'}
+        type={'text'}
+        id={'Niveau'}
+        name={'niveau'}
+        value={formData.niveau}
+        placeholder={'Niveau'}
+        required={'required'}
+        LoginFormGroup={'Login__Form__Group'}
+      />
+       
               </form>
             </div>
             <div className='footer__account' >

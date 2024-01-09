@@ -19,16 +19,13 @@ function Roles() {
                 rolesname="Responsable de stage"
             />
              </Link>
-             <Link className='Link__style' to="/StudentList">
+             <Link className='Link__style' to="/Professeur">
       <RolesCard 
                 nombres="Total 4 Professeur"
                 rolesname="Professeur"
             />
-             </Link>
-        <RolesCard 
-                nombres="Total 7 Responsable stage"
-                rolesname="Administrateur"
-            />
+        </Link>
+
     </div>
     </div>
   )
