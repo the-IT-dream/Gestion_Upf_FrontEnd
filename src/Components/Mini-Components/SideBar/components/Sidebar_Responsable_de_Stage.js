@@ -15,8 +15,18 @@ const Sidebar_Responsable_de_Stage = (props) => {
 
         {
             path:"/Espace_R_Stage/Publier_les_offres_de_stage",
-            name:"Publier les offres de stage",
+            name:" Ajouter une nouvelle offre",
             icon:<i class="fa-solid fa-newspaper"></i>,
+        },
+        {
+            path:"/Espace_R_Stage/Liste_Offres",
+            name:"Gestion des offres de stage ",
+            icon:<i className="fa-solid fa-circle-info"></i>,
+        },
+        {
+            path:"/Espace_R_Stage/gestion_des_entreprises_partenaires",
+            name:"Gestion des entreprises partenaires",
+            icon:<i className="fa-solid fa-circle-info"></i>,
         },
         {
             path:"/Espace_R_Stage/gestion_de_candidature",
@@ -28,11 +38,7 @@ const Sidebar_Responsable_de_Stage = (props) => {
             name:"Gestion des demandes de stages",
             icon:<i className="fa-solid fa-file"></i>,
         },
-        {
-            path:"/Espace_R_Stage/gestion_des_entreprises_partenaires ",
-            name:"Gestion des entreprises partenaires ",
-            icon:<i className="fa-solid fa-circle-info"></i>,
-        },
+        
         
 
     ]

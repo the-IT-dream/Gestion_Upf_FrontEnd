@@ -11,15 +11,9 @@ function Postuler() {
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [uploadedFiles, setUploadedFiles] = useState([]);
 
-  const handleFileChange = (event, fileType) => {
+  const handleFileChange = (event) => {
     const files = event.target.files;
     setSelectedFiles([...files]);
-
-    // Utilisation de la valeur fileType pour décider quel champ de formData mettre à jour
-    setFormData(prevFormData => ({
-      ...prevFormData,
-      [`${fileType}Files`]: [...files]
-    }));
   };
 
   const handleUpload = () => {
@@ -29,9 +23,7 @@ function Postuler() {
 
   const [formData, setFormData] = useState({
     username: '',
-    password: '',
-    coverLetterFiles: [],  // Champs pour les fichiers de lettre de motivation
-    cvFiles: [] 
+    password: ''
   });
 
   // State to track focused input
@@ -47,7 +39,6 @@ function Postuler() {
   const handleInputFocus = (inputName) => {
     setFocusedInput(inputName);
   };
-  
 
   // Function to handle form submission
   const handleSubmit = (event) => {
@@ -87,13 +78,12 @@ function Postuler() {
                   </div>
                 </div>
               </div>
-              <div className='Postuler__div'>
               <div className='Postuler__content__account'>
                 <div className='parag'>
-                  <p>Upload Cover letter</p>
+                  <p>Upload Multiple Files</p>
                 </div>
                 <label className="custom-file-upload">
-                  <input type="file" onChange={handleFileChange} />
+                  <input type="file" onChange={handleFileChange} multiple />
                   <i className="fa fa-cloud-upload"></i>
                   <span>Drop Files here or click to upload</span>
                 </label>
@@ -117,37 +107,6 @@ function Postuler() {
                     </ul>
                   </div>
                 )}
-              </div>
-              <div className='Postuler__content__account'>
-                <div className='parag'>
-                  <p>Upload Cv</p>
-                </div>
-                <label className="custom-file-upload">
-                  <input type="file" onChange={handleFileChange}  />
-                  <i className="fa fa-cloud-upload"></i>
-                  <span>Drop Files here or click to upload</span>
-                </label>
-                {selectedFiles.length > 0 && (
-                  <div className="selected-files">
-                    <p>Selected Files:</p>
-                    <ul>
-                      {selectedFiles.map((file, index) => (
-                        <li key={index}>{file.name}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                {uploadedFiles.length > 0 && (
-                  <div className="uploaded-files">
-                    <p>Uploaded Files:</p>
-                    <ul>
-                      {uploadedFiles.map((file, index) => (
-                        <li key={index}>{file.name}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
               </div>
               <div className='footer__account'>
                 <div className='image__button__footer'>

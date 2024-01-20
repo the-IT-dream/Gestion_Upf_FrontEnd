@@ -81,29 +81,7 @@ function Account_Rs() {
       </div>
       <div className='content__header__account'>
         <h2>Profile Details</h2>
-        <div className='image__container'>
-          <img src='../../images/avatar/1.png' alt='avatar' />
-          <div className='image__text__account'>
-            <div className='image__button'>
-              <Button
-                buttonStyle={'btn--save--style'}
-                buttonSize={'btn--save--size'}
-                children={'Upload new photo'}
-                buttonPath={'/Espace_Etudiant'}
-              />
-              <Button
-                className='reset_butt'
-                buttonStyle={'btn--resetMini--style'}
-                buttonSize={'btn--resetMini--size'}
-                children={'reset'}
-                buttonPath={'/Espace_Etudiant'}
-              />
-            </div>
-            <div className='parag'>
-              <p>allowed image png ....</p>
-            </div>
-          </div>
-        </div>
+        
       </div>
       <div className='content__account'>
 

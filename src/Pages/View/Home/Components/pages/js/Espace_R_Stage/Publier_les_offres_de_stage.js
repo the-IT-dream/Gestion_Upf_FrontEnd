@@ -1,45 +1,87 @@
-import React,{useState} from 'react';
 import '../../css/Account.css';
 import { Button } from '../../../../../../../Components/Mini-Components/Js/Button';
 import Input from '../../../../../../../Components/Mini-Components/Js/Input';
-import Combobox from '../../../../../../../Components/Mini-Components/Js/combobox';
-import Sidebar from '../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_Etudiant';
-import Textarea from '../../../../../../../Components/Mini-Components/Js/Textarea';
-import InputCheckBox from '../../../../../../../Components/Mini-Components/Js/InputCheckBox';
 import Sidebar_Responsable_de_Stage from '../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_Responsable_de_Stage';
 import TopBar_Rs from '../../../../../../../Components/Components/Js/TopBar_Rs';
+import React,{useState, useEffect} from 'react';
+import axios from 'axios';
+import { useAuth } from '../../../../../../../AuthContext';
 
 function Publier_les_offres_de_stage() {
+  const { authData } = useAuth();
+  const accessToken = authData.access_token;
+  const [companies, setCompanies] = useState([]);
+  const [selectedCompany, setSelectedCompany] = useState('');
   const [formData, setFormData] = useState({
-    username: '',
-    password: ''
+    title: '',
+    description: '',  // Add this line if "description" is part of your form data
+    durationPerWeek: '',
+    startDate: '',
+    deadLine: '',
+    city: '',
   });
 
-  // State to track focused input
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:5555/upf/companies', {
+          headers: {
+            'Authorization': `Bearer ${accessToken}`
+          },
+        });
+
+        setCompanies(response.data);
+      } catch (error) {
+        console.error('Error fetching companies:', error);
+      }
+    };
+
+    fetchData();
+  }, [accessToken]);
+
   const [focusedInput, setFocusedInput] = useState(null);
 
-  // Function to handle form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Function to handle input focus
   const handleInputFocus = (inputName) => {
     setFocusedInput(inputName);
   };
 
-  // Function to handle form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Add your logic for handling form submission here
-    // For example, you can send the data to a server for authentication
-    console.log('Form submitted with data:', formData);
+
+    const payloadData = {
+      title: formData.title,
+      description: formData.description,
+      durationPerWeek: formData.durationPerWeek,
+      startDate: formData.startDate,
+      deadLine: formData.deadLine,
+      city: formData.city,
+      companyName: selectedCompany,
+    };
+
+    try {
+      const response = await axios.post('http://localhost:5555/upf/offers', payloadData, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${accessToken}`,
+        },
+      });
+
+      console.log('Form submitted successfully with data:', response.data);
+      // Add any additional logic or state updates you need after successful submission
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Add any error handling or state updates you need in case of an error
+    }
   };
 
   return (
     <div>
-      <Sidebar_Responsable_de_Stage/>
+      <Sidebar_Responsable_de_Stage />
       <div className='content'>
         <div className='content__topbar'>
           <TopBar_Rs />
@@ -48,157 +90,138 @@ function Publier_les_offres_de_stage() {
           <main>
             <div className='account__container'>
               <div className='content__header__account'>
-                <h2>Publier les offres de stage</h2>
+                <h2>Publier une nouvelle offre de stage</h2>
+                <div className='image__container'>
+                  <div className='image__text__account'>
+                    <div className='image__button'>
+                      <label htmlFor="company">Choisissez une entreprise:</label>
+                      <select
+                        id="company"
+                        name="company"
+                        value={selectedCompany}
+                        onChange={(e) => setSelectedCompany(e.target.value)}
+                      >
+                        <option value="">Sélectionnez une entreprise</option>
+                        {companies.map((company) => (
+                          <option key={company.id} value={company.companyName}>
+                            {company.companyName}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                </div>
               </div>
+
               <div className='content__account'>
                 <form className='account__form'>
-                
-                  <Input 
+                  <Input
                     htmlfor={'Titre de poste'}
                     label={'Titre de poste'}
                     type={'text'}
                     id={'Titre de poste'}
-                    name={'Titre de poste'}
-                    value={formData.titre_poste}
+                    name={'title'}
+                    value={formData.title}
                     onChange={handleChange}
-                    onFocus={handleInputFocus}
+                    onFocus={() => handleInputFocus('Titre de poste')}
                     placeholder={'Titre de poste'}
                     required={'required'}
                     LoginFormGroup={'Login__Form__Group'}
                   />
-                  
-                  <Input 
+
+                  <Input
+                    htmlfor={'Description de l\'offre'}
+                    label={'Description de l\'offre'}
+                    type={'text'}
+                    id={'Description de l\'offre'}
+                    name={'description'}
+                    value={formData.description}
+                    onChange={handleChange}
+                    onFocus={() => handleInputFocus('Description de l\'offre')}
+                    placeholder={'Description de l\'offre'}
+                    required={'required'}
+                    LoginFormGroup={'Login__Form__Group'}
+                  />
+
+                  <Input
                     htmlfor={'durée du stage '}
                     label={'durée du stage '}
                     type={'text'}
                     id={'durée du stage '}
-                    name={'durée du stage '}
-                    value={formData.duree_du_stage }
+                    name={'durationPerWeek'}
+                    value={formData.durationPerWeek}
                     onChange={handleChange}
-                    onFocus={handleInputFocus}
+                    onFocus={() => handleInputFocus('durée du stage')}
                     placeholder={'durée du stage '}
                     required={'required'}
                     LoginFormGroup={'Login__Form__Group'}
                   />
-                  
-                  <Input 
+
+                  <Input
                     htmlfor={'Date de debut'}
                     label={'Date de debut'}
                     type={'date'}
                     id={'Date de debut'}
-                    name={'Date de debut'}
-                    value={formData.date_debut}
+                    name={'startDate'}
+                    value={formData.startDate}
                     onChange={handleChange}
-                    onFocus={handleInputFocus}
+                    onFocus={() => handleInputFocus('Date de debut')}
                     placeholder={'Date de debut'}
                     required={'required'}
                     LoginFormGroup={'Login__Form__Group'}
                   />
-                  <Input 
+
+                  <Input
                     htmlfor={'Date de fin'}
                     label={'Date de fin'}
                     type={'date'}
                     id={'Date de fin'}
-                    name={'Date de fin'}
-                    value={formData.date_fin}
+                    name={'deadLine'}
+                    value={formData.deadLine}
                     onChange={handleChange}
-                    onFocus={handleInputFocus}
+                    onFocus={() => handleInputFocus('Date de fin')}
                     placeholder={'Date de fin'}
                     required={'required'}
                     LoginFormGroup={'Login__Form__Group'}
                   />
-                  <Textarea 
-                    htmlfor={'Les compétences et qualifications requises '}
-                    label={'Les compétences et qualifications requises '}
-                    type={'text'}
-                    id={'Les compétences et qualifications requises '}
-                    name={'Les compétences et qualifications requises '}
-                    value={formData.competence_requises}
-                    onChange={handleChange}
-                    onFocus={handleInputFocus}
-                    placeholder={'Les compétences et qualifications requises '}
-                    required={'required'}
-                    LoginFormGroup={'Login__Form__Group'}
-                  />        
-                  <Textarea 
-                    htmlfor={'description du poste'}
-                    label={'description du poste'}
-                    type={'text'}
-                    id={'description du poste'}
-                    name={'description du poste'}
-                    value={formData.description_du_poste}
-                    onChange={handleChange}
-                    onFocus={handleInputFocus}
-                    placeholder={'description du poste'}
-                    required={'required'}
-                    LoginFormGroup={'Login__Form__Group'}
-                  />
-                  <Input 
+
+                  <Input
                     htmlfor={'Lieu de stage'}
                     label={'Lieu de stage'}
                     type={'text'}
                     id={'Lieu de stage'}
-                    name={'Lieu de stage'}
-                    value={formData.Lieu_de_stage}
+                    name={'city'}
+                    value={formData.city}
                     onChange={handleChange}
-                    onFocus={handleInputFocus}
+                    onFocus={() => handleInputFocus('Lieu de stage')}
                     placeholder={'Lieu de stage'}
                     required={'required'}
                     LoginFormGroup={'Login__Form__Group'}
                   />
-                  <Input
-                    htmlfor={'La rémunération si nécessaire'}
-                    label={'La rémunération si nécessaire'}
-                    type={'text'}
-                    id={'La rémunération si nécessaire'}
-                    name={'La rémunération si nécessaire'}
-                    value={formData.rémunération}
-                    onChange={handleChange}
-                    onFocus={handleInputFocus}
-                    placeholder={'La rémunération si nécessaire'}
-                    required={'required'}
-                    LoginFormGroup={'Login__Form__Group'}
-                  />
-                  <Input
-                    htmlfor={'Les avantages sociaux si nécessaire'}
-                    label={'Les avantages sociaux si nécessaire'}
-                    type={'text'}
-                    id={'Les avantages sociaux si nécessaire'}
-                    name={'Les avantages sociaux si nécessaire'}
-                    value={formData.avantages_sociaux}
-                    onChange={handleChange}
-                    onFocus={handleInputFocus}
-                    placeholder={'Les avantages sociaux si nécessaire'}
-                    required={'required'}
-                    LoginFormGroup={'Login__Form__Group'}
-                  />
-                  
                 </form>
               </div>
-              <div className='footer__account' >
-                <div className='image__button__footer' >
-                        <Button
-                          buttonStyle={'btn--save--style'} 
-                          buttonSize={'btn--save--size'}
-                          children={'Send'} 
-
-                        />
-                        <Button
-                        className='reset_butt'
-                          buttonStyle={'btn--reset--style'} 
-                          buttonSize={'btn--reset--size'}
-                          children={'Reset'} 
-
-                        />
+              <div className='footer__account'>
+                <div className='image__button__footer'>
+                <button
+                        className='btn--save--style btn--save--size'                      
+                        onClick={handleSubmit}
+                        type="submit"
+                      >Ajouter</button>
+                  <Button
+                    className='reset_butt'
+                    buttonStyle={'btn--reset--style'}
+                    buttonSize={'btn--reset--size'}
+                  >
+                    Reset
+                  </Button>
                 </div>
               </div>
-          </div>
+            </div>
           </main>
         </div>
       </div>
-    
     </div>
-  )
+  );
 }
 
-export default Publier_les_offres_de_stage
+export default Publier_les_offres_de_stage;

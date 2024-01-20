@@ -29,6 +29,10 @@ import AjouterEtudiant from './Pages/View/Home/Components/pages/js/Espace_Admin/
 import AjouterRS from './Pages/View/Home/Components/pages/js/Espace_Admin/JS/AjoutRS';
 import DetailsInfo from './Pages/View/Home/Components/pages/js/Espace_Etudiant/DetailsInfo';
 import ModifierEtudiant from './Pages/View/Home/Components/pages/js/Espace_Admin/JS/ModifierEtudiant';
+import Liste_Offres from './Pages/View/Home/Components/pages/js/Espace_R_Stage/Liste_Offres';
+import Offer_Detail from './Pages/View/Home/Components/pages/js/Espace_R_Stage/Offer_Detail';
+import List_companies from './Pages/View/Home/Components/pages/js/Espace_R_Stage/List_companies';
+import Add_company from './Pages/View/Home/Components/pages/js/Espace_R_Stage/Ajouter_Company';
 
 function App() {
 
@@ -47,7 +51,7 @@ function App() {
             //Espace Etudiant
             <Route path="/Espace_Etudiant/Infos" element={<Infos />} />
             <Route path="/Espace_Etudiant/Details_Stage" element={<Details_Stage />} />
-            <Route path="/Espace_Etudiant/DetailsInfo" element={<DetailsInfo />} />
+            <Route path="/Espace_Etudiant/DetailsInfo/:id" element={<DetailsInfo />} />
             <Route path="/Espace_Etudiant/postule_Stage" element={<Postuler />} />
             <Route path="/Espace_Etudiant/Account" element={<Account/>} />
             <Route path="/Espace_Etudiant/Securite" element={<Security />} />
@@ -55,8 +59,12 @@ function App() {
             <Route path="/Espace_Etudiant/Soumettre_document" element={<Soumettre_document />} />
             //Espace Responsable de stage
             <Route path='/Espace_R_Stage/Publier_les_offres_de_stage' element={<Publier_les_offres_de_stage />}/>
+            <Route path='/Espace_R_Stage/Liste_Offres' element={<Liste_Offres />}/>
             <Route path="/Espace_R_Stage/Account_Rs" element={<Account_Rs/>} />
             <Route path="/Espace_R_Stage/Securite_Rs" element={<Security_Rs />} />
+            <Route path="/Espace_R_Stage/Offer_Detail/:id" element={<Offer_Detail />} />
+            <Route path="/Espace_R_Stage/gestion_des_entreprises_partenaires" element={<List_companies />} />
+            <Route path="/Espace_R_Stage/Ajouter_Entreprise" element={<Add_company/>} />
             //Espace_admin
             <Route path="/Espace_admin/Account_admin" element={<Account_ad/>} />
             <Route path="/Espace_admin/Securite_admin" element={<Securit_ad />} />

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import '../../../../css/Account.css';
-import { Button } from '../../../../../../../../Components/Mini-Components/Js/Button';
 import Input from '../../../../../../../../Components/Mini-Components/Js/Input';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -33,8 +32,8 @@ function ModifierEtudiant() {
       try {
         const response = await axios.get(`http://localhost:5555/upf/students/${id}`, {
           headers: {
-            'Authorization': `Bearer ${accessToken}`
-          }
+            'Authorization': `Bearer ${accessToken}`     
+           }
         });
         setFormData({
           firstName: response.data.firstName,
