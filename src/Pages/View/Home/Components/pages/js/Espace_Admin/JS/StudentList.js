@@ -1,20 +1,54 @@
-// StudentList.js
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../CSS/StudentList.css';
 import { Button } from '../../../../../../../../Components/Mini-Components/Js/Button';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useAuth } from '../../../../../../../../AuthContext.js';
 import Sidebar_admin from '../../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_admin';
 import TopBar_admin from '../../../../../../../../Components/Components/Js/TopBar_admin';
 
-const students = [
-  { id: 1, name: 'John Doe', avatar: './images/avatar/1.png' },
-  { id: 2, name: 'Jane Doe', avatar: './images/avatar/1.png' },
-];
-
 function StudentList() {
+  const [students, setStudents] = useState([]);
+  const { authData } = useAuth();
+  const accessToken = authData.access_token;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:5555/upf/students', {
+          headers: {
+            'Authorization': `Bearer ${accessToken}`
+          }
+        });
+        setStudents(response.data);
+      } catch (error) {
+        console.error('Error fetching student data:', error);
+      }
+    };
+
+    fetchData();
+  }, [accessToken]);
+
+  const handleDeleteStudent = async (studentId) => {
+    try {
+      await axios.delete(`http://localhost:5555/upf/students/${studentId}`, {
+        headers: {
+          'Authorization': `Bearer ${accessToken}`
+        }
+      });
+
+      console.log('Student deleted successfully:', studentId);
+      // Mettez à jour l'état pour refléter la suppression
+      setStudents((prevStudents) => prevStudents.filter((student) => student.id !== studentId));
+    } catch (error) {
+      console.error('Error deleting student:', error);
+      // Ajoutez ici la logique pour gérer les erreurs, par exemple, afficher un message d'erreur
+    }
+  };
+
   return (
     <div>
+
       <Sidebar_admin/>
       <div className='content'>
         <div className='content__topbar'>
@@ -25,59 +59,63 @@ function StudentList() {
           <main> 
           <div className='table__container'>
         <div className='table__header'>
-            <div>
-            <p>Liste des etudiant</p>
-            </div>
-            <div>
+          <div>
+            <p>Liste des étudiants</p>
+          </div>
+          <div>
             <Button
-                buttonStyle={'btn--detail--style'} 
-                buttonSize={'btn--detail--size'}
-                children={'Ajouter'} 
-                buttonPath={'/Espace_admin/Ajouter_Etudiant'}
-                className='button__detail'
+              buttonStyle={'btn--detail--style'}
+              buttonSize={'btn--detail--size'}
+              children={'Ajouter'}
+              buttonPath={'/Espace_admin/Ajouter_Etudiant'}
+              className='button__detail'
+
             />
-            </div>
-        
+          </div>
         </div>
-      <table className='StudentList__table'>
-        <thead>
-          <tr>
-          <th></th>
-            <th>CNE</th>
-            <th>Nom</th>
-            <th>Prenom</th>
-            <th>Email</th>
-            <th>Filiere</th>
-            <th>Niveau</th>
-          </tr>
-        </thead>
-        <tbody>
-          {students.map((student) => (
-            <tr key={student.id}>
-            <td>
-                <img src={student.avatar} alt={`Avatar of ${student.name}`} className='StudentList__avatar' />
-              </td>
-              <td>{student.id}</td>
-              <td>{student.name}</td>
-              <td>{student.name}</td>
-              <td>{student.name}</td>
-              <td>{student.name}</td>
-              <td>{student.name}</td>
-              <td className='butt__td'>
-                <Link to="/Espace_admin/ModifierEtudiant">
-                <button className='button__modify'>Modifier</button>
-                </Link>
-                <button className='button__delete'>Supprimer</button>
-              </td>
+        <table className='StudentList__table'>
+          <thead>
+            <tr>
+              <th></th>
+              <th>ID</th>
+              <th>CNE</th>
+              <th>CIN</th>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Email</th>
+              <th>Filière</th>
+              <th>Niveau</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-          </main>
-        </div>
+          </thead>
+          <tbody>
+            {students.map((student) => (
+              <tr key={student.id}>
+                <td>
+                  {/* Ajoutez ici le code pour afficher l'avatar */}
+                </td>
+                <td>{student.id}</td>
+                <td>{student.cne}</td>
+                <td>{student.cin}</td>
+                <td>{student.firstName}</td>
+                <td>{student.lastName}</td>
+                <td>{student.mail}</td>
+                <td>{student.major}</td>
+                <td>{student.level}</td>
+                <td className='butt__td'>
+                  <Link to={`/Espace_admin/Modifier_Etudiant/${student.id}`}>
+                    <button className='button__modify'>Modifier</button>
+                  </Link>
+                  <button onClick={() => handleDeleteStudent(student.id)} className='button__delete'>Supprimer</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-      
+      </main>
+      </div>
+      </div>
     </div>
   );
 }

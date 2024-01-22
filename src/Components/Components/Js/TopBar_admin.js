@@ -15,7 +15,7 @@ function TopBar_admin(props) {
         </div>
         <div>
           <div onClick={() => {setOpenProfile(!openProfile)}}>
-            <ProfileIcon  ProfileIconImg='../images/avatar/1.png'/>
+            <ProfileIcon  ProfileIconImg='../../images/avatar/1.png'/>
           </div>
         <div className={`dropdown__container ${openProfile? 'active' : 'inactive'} `}>
           <ProfileMenu_admin />

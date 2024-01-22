@@ -8,18 +8,25 @@ import '../css/Side.css'
 import '../../../../Pages/View/Home/Css/Espace_Etudiant.css'
 import TopBar from "../../../Components/Js/TopBar"
 import DemandeDocuments from '../../../../Pages/View/Home/Components/pages/js/Espace_Etudiant/DemandeDocuments';
-
+import { useAuth } from '../../../../AuthContext';
 const Sidebar = ({children}) => {
     const[isOpen ,setIsOpen] = useState(true);
     const toggle = () => setIsOpen (!isOpen);
     const[isON ,setIsON] = useState(true);
     const links = () => setIsON (!isON);
+    const { authData } = useAuth();
+    const role = authData.role;
     const menuItem=[
-        {
+        role === 'STUDENT5' && {
             path:"/Espace_Etudiant/Infos",
-            name:"Les opportunités de stage",
+            name:"Les offres de stage",
             icon:<i className="fa-solid fa-circle-info"></i>,
             // onClick:{links}
+        },
+        {
+            path:"/Espace_Etudiant/Entreprises",
+            name:"Nos entreprises partenaires ",
+            icon:<i class="fa-solid fa-newspaper"></i>,
         },
         {
             path:"/Espace_Etudiant/postule_Stage",
@@ -40,7 +47,8 @@ const Sidebar = ({children}) => {
             path:"/Espace_Etudiant/Details_Stage",
             name:"Détails de stage ",
             icon:<i class="fa-solid fa-newspaper"></i>,
-        }
+        },
+        
     ]
     return (
         <div className="container">
@@ -60,17 +68,7 @@ const Sidebar = ({children}) => {
                    ))
                }
             </div>
-            {/* <div className='content'>
-                <div className='content__topbar'>
-                    <TopBar />
-                </div>
-                <div className='content__menu'>
-                    <main>
-                        {children}
-                        {isON && <DemandeDocuments setIsON={links}  />}
-                    </main>
-                </div>
-            </div> */}
+
 
            
         </div>

@@ -5,6 +5,10 @@
   background-color: white;
   border-radius:  7px;
 }
+.Postuler__div{
+  display: flex;
+  flex-direction: row;
+}
 .image__button select {
   width: 300px;
   outline: none;
