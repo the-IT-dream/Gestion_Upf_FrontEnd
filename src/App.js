@@ -39,6 +39,7 @@ import ModifierRS from './Pages/View/Home/Components/pages/js/Espace_Admin/JS/Mo
 import GetStageDetails from './Pages/View/Home/Components/pages/js/Espace_Etudiant/get_stage_details';
 import Account_SuperViser from './Pages/View/Home/Components/pages/js/Espace_SuperViser/Account_SuperViser';
 import Security_SuperViser from './Pages/View/Home/Components/pages/js/Espace_SuperViser/Security_SuperViser';
+import GetStudentList from './Pages/View/Home/Components/pages/js/Espace_SuperViser/List_Etudiants';
 
 function App() {
 
@@ -88,6 +89,7 @@ function App() {
             //Espace_SuperViser
             <Route path="/Espace_SuperViser/Account_SuperViser" element={<Account_SuperViser/>} />
             <Route path="/Espace_SuperViser/Securite_SuperViser" element={<Security_SuperViser/>} />
+            <Route path="/Espace_SuperViser/Liste_Etudiants" element={<GetStudentList/>} />
            </Routes>
 
             

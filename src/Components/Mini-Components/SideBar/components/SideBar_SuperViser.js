@@ -18,6 +18,7 @@ const Sidebar_SuperViser = (props) => {
             // path:"/Espace_admin/Student_list",
             name:"Student list",
             icon:<i className="fa-solid fa-file-arrow-up"></i>,
+            path:"/Espace_SuperViser/Liste_Etudiants"
         },
         {
             // path:"/Espace_admin/ResponsableStage",
