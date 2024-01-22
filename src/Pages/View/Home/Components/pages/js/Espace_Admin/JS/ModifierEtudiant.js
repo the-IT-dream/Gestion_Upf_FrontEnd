@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import '../../../../css/Account.css';
-import { Button } from '../../../../../../../../Components/Mini-Components/Js/Button';
 import Input from '../../../../../../../../Components/Mini-Components/Js/Input';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -14,6 +13,7 @@ import TopBar_admin from '../../../../../../../../Components/Components/Js/TopBa
 function ModifierEtudiant() {
   const { authData } = useAuth();
   const accessToken = authData.access_token;
+  const refreshToken = authData.refresh_token;
   const navigate = useNavigate();
 
   const { id } = useParams();
@@ -33,8 +33,8 @@ function ModifierEtudiant() {
       try {
         const response = await axios.get(`http://localhost:5555/upf/students/${id}`, {
           headers: {
-            'Authorization': `Bearer ${accessToken}`
-          }
+            'Authorization': `Bearer ${accessToken}`     
+           }
         });
         setFormData({
           firstName: response.data.firstName,
@@ -61,17 +61,29 @@ function ModifierEtudiant() {
     }));
   };
 
-  const handleUpdateStudent = async () => {
+  const handleUpdateStudent = async (event) => {
+    event.preventDefault();
+
+    const data = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      mail: formData.email,
+      major: formData.filiere,
+      cin: formData.cin,
+      level: formData.niveau,
+      cne: formData.cne,
+    };
+
     try {
-      const response = await axios.put(`http://localhost:5555/upf/students/${id}`, formData, {
+      const response = await axios.put(`http://localhost:5555/upf/students/${id}`, data, {
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${accessToken}`
-        }
+          'Authorization': `Bearer ${refreshToken}`        },
       });
+
       navigate('/Espace_admin/Student_list');
       console.log('Student updated successfully:', response.data);
-      // Ajoutez ici la logique pour gérer la mise à jour réussie
+      // Ajoutez ici la logique pour rediriger l'utilisateur ou afficher un message de succès
     } catch (error) {
       console.error('Error updating student:', error);
       // Ajoutez ici la logique pour gérer les erreurs, par exemple, afficher un message d'erreur

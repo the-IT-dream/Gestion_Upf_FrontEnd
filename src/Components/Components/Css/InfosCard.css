@@ -1,7 +1,7 @@
 /* InfosCard.css */
 .card__infos {
     background-color: white;
-    width: 350px;
+    width: 420px;
     padding: 2%;
     margin: 1%;
     margin-top: 1%;
@@ -51,7 +51,7 @@
   .card__footer{
   }
   /* Add media query to handle responsiveness */
-  @media (max-width: 768px) {
+  @media (max-width: 710px) {
     .cards-container {
       justify-content: center;
     }

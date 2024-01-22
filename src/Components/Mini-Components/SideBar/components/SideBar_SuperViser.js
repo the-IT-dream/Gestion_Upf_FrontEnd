@@ -6,41 +6,25 @@ import '../css/Side.css'
 import '../../../../Pages/View/Home/Css/Espace_Etudiant.css'
 
 
-const Sidebar_Responsable_de_Stage = (props) => {
+const Sidebar_SuperViser = (props) => {
     const[isOpen ,setIsOpen] = useState(true);
     const toggle = () => setIsOpen (!isOpen);
     // const[isON ,setIsON] = useState(true);
     // const links = () => setIsON (!isON);
     const menuItem=[
 
-        {
-            path:"/Espace_R_Stage/Publier_les_offres_de_stage",
-            name:" Ajouter une nouvelle offre",
-            icon:<i class="fa-solid fa-newspaper"></i>,
-        },
-        {
-            path:"/Espace_R_Stage/Liste_Offres",
-            name:"Gestion des offres de stage ",
-            icon:<i className="fa-solid fa-circle-info"></i>,
-        },
-        {
-            path:"/Espace_R_Stage/gestion_des_entreprises_partenaires",
-            name:"Gestion des entreprises partenaires",
-            icon:<i className="fa-solid fa-circle-info"></i>,
-        },
-        {
-            path:"/Espace_R_Stage/gestion_de_candidature",
-            name:"Gestion de candidature",
-            icon:<i className="fa-solid fa-pen-to-square"></i>,
-        },
-        {
-            path:"/Espace_R_Stage/gestion_des_demandes_de_stages",
-            name:"Gestion des demandes de stages",
-            icon:<i className="fa-solid fa-file"></i>,
-        },
-        
-        
 
+        {
+            // path:"/Espace_admin/Student_list",
+            name:"Student list",
+            icon:<i className="fa-solid fa-file-arrow-up"></i>,
+        },
+        {
+            // path:"/Espace_admin/ResponsableStage",
+            name:"Responsable Stage",
+            icon:<i className="fa-solid fa-file-arrow-up"></i>,
+        },
+    
     ]
     return (
         <div className="container">
@@ -60,21 +44,9 @@ const Sidebar_Responsable_de_Stage = (props) => {
                    ))
                }
             </div>
-            {/* <div className='content'>
-                <div className='content__topbar'>
-                    <TopBar />
-                </div>
-                <div className='content__menu'>
-                    <main>
-                        {children}
-                        {isON && <DemandeDocuments setIsON={links}  />}
-                    </main>
-                </div>
-            </div> */}
-
-           
+   
         </div>
     );
 };
 
-export default Sidebar_Responsable_de_Stage;
+export default Sidebar_SuperViser;

@@ -4,15 +4,16 @@ import { Button } from '../../../../../../../Components/Mini-Components/Js/Butto
 import Input from '../../../../../../../Components/Mini-Components/Js/Input';
 import TopBar from '../../../../../../../Components/Components/Js/TopBar';
 import  {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
-import Account from './Account';
-import Security from './Security';
+
 import Sidebar from '../../../../../../../../src/Components/Mini-Components/SideBar/components/Sidebar_Etudiant.js'
+import { useNavigate } from 'react-router-dom';
 
 //import Combobox from '../../../../../../Components/Mini-Components/Js/combobox';
 import axios from 'axios';
 import { useAuth } from '../../../../../../../AuthContext.js';
 
 function Details_Stage() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     nom_Societe: '',
     date_debut: '',
@@ -47,6 +48,7 @@ function Details_Stage() {
       });
 
       console.log('Data sent successfully:', response.data);
+      navigate("/Espace_Etudiant/Stage");
     } catch (error) {
       console.error('Error sending data:', error);
     }

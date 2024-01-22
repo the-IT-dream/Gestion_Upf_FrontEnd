@@ -10,19 +10,14 @@ function InfosCard(props) {
         <h1>{props.nomEntreprise} </h1>
       </div>
       <div className='card__content'>
-        <h2><i class="fa-solid fa-location-dot"></i>&nbsp;{props.lieuEntreprise}</h2>
         
         <p>{props.detailStage}</p>
       </div>
+
       <div className='card__footer'>
-      <Button
-        buttonStyle={'btn--detail--style'} 
-        buttonSize={'btn--detail--size'}
-        children={'Détails'} 
-        buttonPath={'/Espace_Etudiant/DetailsInfo'}
-        className='button__detail'
-      />
+
       </div>
+      
     </div>
   )
 }

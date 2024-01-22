@@ -2,16 +2,17 @@ import React from 'react'
 import '../Css/Espace_Etudiant.css';
 import Sidebar_Responsable_de_Stage from '../../../../Components/Mini-Components/SideBar/components/Sidebar_Responsable_de_Stage'
 import '../Css/Espace_Etudiant.css';
-import TopBar_Rs from '../../../../Components/Components/Js/TopBar_Rs';
+import TopBar_SuperViser from '../../../../Components/Components/Js/TopBar_SuperViser';
+import Sidebar_SuperViser from '../../../../Components/Mini-Components/SideBar/components/SideBar_SuperViser';
 
-function Responsable_de_Stage (){
+function Super_Viser (){
   return (
     <div>
       {/* <Sidebar /> */}
-      <Sidebar_Responsable_de_Stage/>
+      <Sidebar_SuperViser/>
       <div className='content'>
         <div className='content__topbar'>
-          <TopBar_Rs />
+          <TopBar_SuperViser />
         </div>
         <div className='content__menu'>
           <main>
@@ -23,4 +24,4 @@ function Responsable_de_Stage (){
     </div>
   );
 };
-export default Responsable_de_Stage
+export default Super_Viser

@@ -48,19 +48,7 @@ const Sidebar_admin = (props) => {
                    ))
                }
             </div>
-            {/* <div className='content'>
-                <div className='content__topbar'>
-                    <TopBar />
-                </div>
-                <div className='content__menu'>
-                    <main>
-                        {children}
-                        {isON && <DemandeDocuments setIsON={links}  />}
-                    </main>
-                </div>
-            </div> */}
-
-           
+   
         </div>
     );
 };

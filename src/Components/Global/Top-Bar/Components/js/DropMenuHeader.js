@@ -10,7 +10,7 @@ function DropMenuHeader() {
                ProfileIconImg='../images/avatar/1.png'
             />
             <div>
-            <h3>ayoub </h3>
+            <h3>Sanae </h3>
             </div>
 
        </div>
