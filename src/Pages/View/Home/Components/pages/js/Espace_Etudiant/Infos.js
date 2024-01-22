@@ -44,37 +44,35 @@ function Infos() {
         </div>
         <div className='content__menu'>
           <main>  
-          <div className='cards__container'>
+            <div className='cards__container'>
               <div className='cards__cadre'>
-              {error && <p>{error}</p>}
-              <div className='cards__container'>
-                <div className='cards__cadre'>
-                  {jobOffers.map((offer) => (
-                    <div key={offer.id} >
-                      <OfferInfosCard
-                        
-                        imgEntreprise={offer.companyName === 'Capgemini' ? '../images/Entreprise/Capgemini.png' :
-                        offer.companyName === 'Atos' ? '../images/Entreprise/Atos.png' :
-                        offer.companyName === 'CGI' ? '../images/Entreprise/CGI.png' :
-                        '../images/Entreprise/Oracle.png' }
-                        titre={offer.title}
-                        nomEntreprise={offer.companyName}
-                        lieuEntreprise={offer.city}
-                        detailStage={offer.description}
-                      />
-                      <div className='card__content__detail'  >
-                          <Button
-                            buttonStyle={'btn--detail--style'}
-                            buttonSize={'btn--detail--size'}
-                            children={'Details'}
-                            buttonPath={`/Espace_Etudiant/DetailsInfo/${offer.id}`}
-                            className='button__detail'
+                {error && <p>{error}</p>}
+                <div className='cards__container'>
+                  <div className='cards__cadre'>
+                    {jobOffers.map((offer) => (
+                      <div key={offer.id} >
+                        <OfferInfosCard
+                          
+                          imgEntreprise={offer.companyName === 'Capgemini' ? '../images/Entreprise/Capgemini.png' :
+                          offer.companyName === 'Atos' ? '../images/Entreprise/Atos.png' :
+                          offer.companyName === 'CGI' ? '../images/Entreprise/CGI.png' :
+                          '../images/Entreprise/Oracle.png' }
+                          titre={offer.title}
+                          nomEntreprise={offer.companyName}
+                          lieuEntreprise={offer.city}
+                          detailStage={offer.description}
+                        />
+                        <div className='card__content__detail'  >
+                            <Button
+                              buttonStyle={'btn--detail--style'}
+                              buttonSize={'btn--detail--size'}
+                              children={'Details'}
+                              buttonPath={`/Espace_Etudiant/DetailsInfo/${offer.id}`}
+                              className='button__detail'
 
-                          />
+                            />
                          </div> 
-                      <div>
-                         
-                      
+                      <div>                 
                         </div>
                     </div>
                   ))}

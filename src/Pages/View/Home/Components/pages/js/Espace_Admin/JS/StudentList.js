@@ -95,8 +95,8 @@ function StudentList() {
                   {/* Ajoutez ici le code pour afficher l'avatar */}
                 </td>
                 <td>{student.id}</td>
-                <td>{student.cin}</td>
                 <td>{student.cne}</td>
+                <td>{student.cin}</td>
                 <td>{student.firstName}</td>
                 <td>{student.lastName}</td>
                 <td>{student.mail}</td>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../css/Account.css';
 import '../../css/Postuler.css';
 
@@ -6,50 +6,86 @@ import { Button } from '../../../../../../../Components/Mini-Components/Js/Butto
 import Input from '../../../../../../../Components/Mini-Components/Js/Input';
 import Sidebar from '../../../../../../../Components/Mini-Components/SideBar/components/Sidebar_Etudiant';
 import TopBar from '../../../../../../../Components/Components/Js/TopBar';
+import axios from 'axios';
+import { useAuth } from '../../../../../../../AuthContext';
+import { useNavigate  } from 'react-router-dom';
 
 function Postuler() {
-  const [selectedFiles, setSelectedFiles] = useState([]);
-  const [uploadedFiles, setUploadedFiles] = useState([]);
-
-  const handleFileChange = (event) => {
-    const files = event.target.files;
-    setSelectedFiles([...files]);
-  };
-
-  const handleUpload = () => {
-    setUploadedFiles([...uploadedFiles, ...selectedFiles]);
-    setSelectedFiles([]);
-  };
+  const [companies, setCompanies] = useState([]);
+  const [selectedCompany, setSelectedCompany] = useState('');
+  const { authData } = useAuth();
+  const accessToken = authData.access_token;
+  const refreshToken = authData.refresh_token;
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    username: '',
-    password: ''
+    cv: null,
+    coverLetter: null,
   });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:5555/upf/companies', {
+          headers: {
+            'Authorization': `Bearer ${accessToken}`
+          },
+        });
+
+        setCompanies(response.data);
+
+      } catch (error) {
+        console.error('Error fetching companies:', error);
+      }
+    };
+
+    fetchData();
+  }, [accessToken]);
+
+  const handleFileChange = (event) => {
+    const { name, files } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: files[0],
+    }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append('cv', formData.cv);
+      formDataToSend.append('coverLetter', formData.coverLetter);
+      formDataToSend.append('companyName', selectedCompany);
+
+      const response = await axios.post(
+        'http://localhost:5555/upf/students/candidacy/company',
+        formDataToSend,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            'Authorization': `Bearer ${refreshToken}`          },
+        }
+      );
+
+      console.log('Candidacy submitted successfully:', response.data);
+      navigate('/Espace_Etudiant');
+      // Ajoutez ici la logique pour gérer la réponse si nécessaire
+
+    } catch (error) {
+      console.error('Error submitting candidacy:', error);
+      // Ajoutez ici la logique pour gérer les erreurs si nécessaire
+    }
+  };
 
   // State to track focused input
   const [focusedInput, setFocusedInput] = useState(null);
-
-  // Function to handle form input changes
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
 
   // Function to handle input focus
   const handleInputFocus = (inputName) => {
     setFocusedInput(inputName);
   };
-
-  // Function to handle form submission
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Add your logic for handling form submission here
-    // For example, you can send the data to a server for authentication
-    console.log('Form submitted with data:', formData);
-    console.log('Files uploaded:', uploadedFiles);
-  };
-
-  const [clicked, setClicked] = useState(false);
 
   return (
     <div>
@@ -67,61 +103,60 @@ function Postuler() {
                 <div className='image__container'>
                   <div className='image__text__account'>
                     <div className='image__button'>
-                      <select>
-                        <optgroup>
-                          <option>capgimini</option>
-                          <option>cgi</option>
-                          <option>atos</option>
-                        </optgroup>
+                    <select
+                        id="company"
+                        name="company"
+                        value={selectedCompany}
+                        onChange={(e) => setSelectedCompany(e.target.value)}
+                      >
+                        <option value="">Sélectionnez une entreprise</option>
+                        {companies.map((company) => (
+                          <option key={company.id} value={company.companyName}>
+                            {company.companyName}
+                          </option>
+                        ))}
                       </select>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className='Postuler__content__account'>
-                <div className='parag'>
-                  <p>Upload Multiple Files</p>
-                </div>
-                <label className="custom-file-upload">
-                  <input type="file" onChange={handleFileChange} multiple />
-                  <i className="fa fa-cloud-upload"></i>
-                  <span>Drop Files here or click to upload</span>
-                </label>
-                {selectedFiles.length > 0 && (
-                  <div className="selected-files">
-                    <p>Selected Files:</p>
-                    <ul>
-                      {selectedFiles.map((file, index) => (
-                        <li key={index}>{file.name}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                {uploadedFiles.length > 0 && (
-                  <div className="uploaded-files">
-                    <p>Uploaded Files:</p>
-                    <ul>
-                      {uploadedFiles.map((file, index) => (
-                        <li key={index}>{file.name}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+              <div className='content__account'>
+                <form className='account__form'>
+                <Input
+                      htmlfor={'cv'}
+                      label={'CV:'}
+                      type={'file'}
+                      id={'cv'}
+                      name={'cv'}
+                      onChange={handleFileChange}
+                      onFocus={() => handleInputFocus('cv')}
+                      placeholder={'cv'}
+                      required={'required'}
+                      LoginFormGroup={'Login__Form__Group'}
+                    />
+                  <Input
+                      htmlfor={'coverLetter'}
+                      label={'Lettre de motivation:'}
+                      type={'file'}
+                      id={'coverLetter'}
+                      name={'coverLetter'}
+                      onChange={handleFileChange}
+                      onFocus={() => handleInputFocus('coverLetter')}
+                      placeholder={'coverLetter'}
+                      required={'required'}
+                      LoginFormGroup={'Login__Form__Group'}
+                    />
+                  </form>
               </div>
               <div className='footer__account'>
                 <div className='image__button__footer'>
-                  <Button
-                    buttonStyle={'btn--save--style'}
-                    buttonSize={'btn--save--size'}
-                    children={'Upload Files'}
-                    buttonPath={'/Espace_Etudiant'}
-                    onClick={handleSubmit}
-                  />
+            
+                  <button className='btn--save--style btn--save--size' nClick={handleSubmit} type='submit'>Postuler</button>
                   <Button
                     className='reset_butt'
                     buttonStyle={'btn--remove--style'}
                     buttonSize={'btn--remove--size'}
-                    children={'Remove All'}
+                    children={'Annuler'}
                     buttonPath={'/Espace_Etudiant'}
                   />
                 </div>

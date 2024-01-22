@@ -6,25 +6,21 @@ import '../css/Side.css'
 import '../../../../Pages/View/Home/Css/Espace_Etudiant.css'
 
 
-const Sidebar_admin = (props) => {
+const Sidebar_SuperViser = (props) => {
     const[isOpen ,setIsOpen] = useState(true);
     const toggle = () => setIsOpen (!isOpen);
     // const[isON ,setIsON] = useState(true);
     // const links = () => setIsON (!isON);
     const menuItem=[
 
+
         {
-            path:"/Espace_admin/Roles",
-            name:"Roles",
-            icon:<i className="fa-solid fa-file-arrow-up"></i>,
-        },
-        {
-            path:"/Espace_admin/Student_list",
+            // path:"/Espace_admin/Student_list",
             name:"Student list",
             icon:<i className="fa-solid fa-file-arrow-up"></i>,
         },
         {
-            path:"/Espace_admin/ResponsableStage",
+            // path:"/Espace_admin/ResponsableStage",
             name:"Responsable Stage",
             icon:<i className="fa-solid fa-file-arrow-up"></i>,
         },
@@ -53,4 +49,4 @@ const Sidebar_admin = (props) => {
     );
 };
 
-export default Sidebar_admin;
+export default Sidebar_SuperViser;

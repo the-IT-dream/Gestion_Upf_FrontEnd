@@ -96,7 +96,7 @@ function ResponsableStage() {
                       <td>{internshipManager.grade}</td>
                       <td>{internshipManager.departement}</td>
                       <td className='butt__td'>
-                        <Link to={`/ModifierRS/${internshipManager.id}`}>
+                        <Link to={`/Espace_Admin/ModifierRS/${internshipManager.id}`}>
                           <button className='button__modify'>Modifier</button>
                         </Link>
                         <button onClick={() => handleDeleteManager(internshipManager.id)} className='button__delete'>Supprimer</button>

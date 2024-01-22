@@ -16,7 +16,6 @@ function AjoutRS() {
     firstName: '',
     lastName: '',
     mail: '',
-    filiere: '',
     cin: '',
     grade: '',
     departement: '',
@@ -38,7 +37,7 @@ function AjoutRS() {
           role: {
             roleName: 'INTERNSHIP_MANAGER',
           },
-          grade: 'GradeA',
+          
         },
         {
           headers: {
