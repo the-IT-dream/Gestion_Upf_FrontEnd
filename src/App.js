@@ -40,6 +40,7 @@ import GetStageDetails from './Pages/View/Home/Components/pages/js/Espace_Etudia
 import Account_SuperViser from './Pages/View/Home/Components/pages/js/Espace_SuperViser/Account_SuperViser';
 import Security_SuperViser from './Pages/View/Home/Components/pages/js/Espace_SuperViser/Security_SuperViser';
 import GetStudentList from './Pages/View/Home/Components/pages/js/Espace_SuperViser/List_Etudiants';
+import RandomNum from './Pages/Auth/Js/RandomNum'
 
 function App() {
 
@@ -49,7 +50,7 @@ function App() {
             <Route path='/' element={<Login/>} /> 
             <Route path='/Login' element={<Login/>} />
             <Route path='/ForgotPassword' element={<ForgotPassword/>} /> 
-
+            <Route path='/RandomNum/:mail' element={<RandomNum/>} /> 
             <Route path='/ResetPassword' element={<ResetPassword/>} /> 
             //Espaces  
             <Route path="/Espace_Etudiant" element={<Espace_Etudiant />} />
