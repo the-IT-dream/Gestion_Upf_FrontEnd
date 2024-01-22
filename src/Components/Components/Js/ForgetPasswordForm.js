@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import '../Css/LoginForm.css';
 import { Link } from 'react-router-dom';
 
@@ -7,67 +9,72 @@ import InputCheckBox from '../../Mini-Components/Js/InputCheckBox';
 import { Button } from '../../Mini-Components/Js/Button';
 
 function ForgetPasswordForm(props) {
-   // State to store form data
-   const [formData, setFormData] = useState({
-    username: '',
-    password: ''
+  const [formData, setFormData] = useState({
+    email: '', // Change from 'username' to 'email' to match the state variable
   });
 
-  // State to track focused input
+  const navigate = useNavigate();
+
   const [focusedInput, setFocusedInput] = useState(null);
 
-  // Function to handle form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Function to handle input focus
   const handleInputFocus = (inputName) => {
     setFocusedInput(inputName);
   };
 
-  // Function to handle form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Add your logic for handling form submission here
-    // For example, you can send the data to a server for authentication
-    console.log('Form submitted with data:', formData);
+    
+    try {
+      const response = await axios.post('http://localhost:5555/upf/randomNumber', {
+        mail: formData.email,
+      });
+
+      console.log(JSON.stringify(response.data));
+      navigate(`/RandomNum/${formData.email}`);
+      // Handle the response as needed
+
+      // Your existing form submission logic here
+      console.log('Form submitted with data:', formData);
+    } catch (error) {
+      console.error(error);
+      // Handle errors as needed
+    }
   };
   return (
-    <div className='Login__Card__Container' >
+    <div className='Login__Card__Container'>
       <div className='Login__Form__Container'>
         <div className='Login__Form__text'>
           <h2 className='Login__Form__Title'>{props.titleForgetPassword} </h2>
           <div className='text__desc__forgetform'>
-          <p >Enter your email and we′ll send you instructions to reset your password</p>
+            <p>Enter your email and we′ll send you instructions to reset your password</p>
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className='Login__Form__Form'>
-            <Input 
-              htmlfor={'Email'}
-              label={'Email'}
-              type={'email'}
-              id={'email'}
-              name={'email'}
-              value={formData.Email}
-              onChange={handleChange}
-              onFocus={handleInputFocus}
-              placeholder={'azerty@gmail.com'}
-              required={'required'}
-              LoginFormGroup={'Login__Form__Group'}
-            />
-          <Button
-            buttonStyle={'btn--seconnecter--style'} 
-            buttonSize={'btn--seconnecter--size'}
-            children={props.buttonLogin} 
-            buttonPath={'/ResetPassword'}
+        <form className='Login__Form__Form'>
+          <Input
+            htmlfor={'Email'}
+            label={'Email'}
+            type={'email'}
+            id={'email'}
+            name={'email'}
+            value={formData.email}
+            onChange={handleChange}
+            onFocus={handleInputFocus}
+            placeholder={'azerty@gmail.com'}
+            required={'required'}
+            LoginFormGroup={'Login__Form__Group'}
           />
+          
+          <button className='btn--seconnecter--style btn--seconnecter--size' type='submit' onClick={handleSubmit}>Envoyer</button>
         </form>
       </div>
     </div>
   );
 }
 
-export default ForgetPasswordForm
+export default ForgetPasswordForm;
