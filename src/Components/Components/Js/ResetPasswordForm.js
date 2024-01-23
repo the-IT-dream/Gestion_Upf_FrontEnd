@@ -40,6 +40,7 @@ function ResetPasswordForm(props) {
   // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
+    navigate("/Login");
 
     const data ={
       password : formData.password,

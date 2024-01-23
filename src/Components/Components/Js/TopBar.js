@@ -11,7 +11,6 @@ function TopBar(props) {
     <div className='TopBar__container'>
       <div className='TopBar__cadre'>
         <div>
-        <button className='search__button'>Search</button>
         </div>
         <div>
           <div onClick={() => {setOpenProfile(!openProfile)}}>

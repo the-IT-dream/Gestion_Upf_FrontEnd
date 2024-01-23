@@ -82,53 +82,32 @@ function Account_ad() {
         />
       </div>
       <div className='content__header__account'>
-        <h2>Profile Details</h2>
-        <div className='image__container'>
-          <img src='../../images/avatar/1.png' alt='avatar' />
-          <div className='image__text__account'>
-            <div className='image__button'>
-              <Button
-                buttonStyle={'btn--save--style'}
-                buttonSize={'btn--save--size'}
-                children={'Upload new photo'}
-                buttonPath={''}
-              />
-              <Button
-                className='reset_butt'
-                buttonStyle={'btn--resetMini--style'}
-                buttonSize={'btn--resetMini--size'}
-                children={'reset'}
-                buttonPath={''}
-              />
-            </div>
-            <div className='parag'>
-              <p>allowed image png ....</p>
-            </div>
-          </div>
-        </div>
+        <h2>Details de profile</h2>
+        
+        
       </div>
       <div className='content__account'>
 
       <form className='account__form'>
         <Input
-          htmlfor={'First Name'}
-          label={'First Name'}
+          htmlfor={'Prénom'}
+          label={'Prénom'}
           type={'text'}
-          id={'First Name'}
+          id={'Prénom'}
           name={'firstName'}
           value={formData.firstName}
-          placeholder={'First Name'}
+          placeholder={'Prénom'}
           required={'required'}
           LoginFormGroup={'Login__Form__Group'}
         />
         <Input
-          htmlfor={'Last Name'}
-          label={'Last Name'}
+          htmlfor={'Nom'}
+          label={'Nom'}
           type={'text'}
-          id={'Last Name'}
+          id={'Nom'}
           name={'lastName'}
           value={formData.lastName}
-          placeholder={'Last Name'}
+          placeholder={'Nom'}
           required={'required'}
           LoginFormGroup={'Login__Form__Group'}
         />

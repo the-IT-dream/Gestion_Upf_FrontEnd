@@ -69,32 +69,32 @@ function AjoutRS() {
               <div className='content__account'>
                 <form className='account__form' onSubmit={handleSubmit}>
                   <Input
-                    htmlfor={'First Name'}
-                    label={'First Name'}
+                    htmlfor={'Prénom'}
+                    label={'Prénom'}
                     type={'text'}
-                    id={'First Name'}
+                    id={'Prénom'}
                     name={'firstName'}
                     value={formData.firstName}
-                    placeholder={'First Name'}
+                    placeholder={'Prénom'}
                     required={'required'}
                     LoginFormGroup={'Login__Form__Group'}
                     onChange={handleChange}
                   />
                   <Input
-                    htmlfor={'Last Name'}
-                    label={'Last Name'}
+                    htmlfor={'Nom'}
+                    label={'Nom'}
                     type={'text'}
-                    id={'Last Name'}
+                    id={'Nom'}
                     name={'lastName'}
                     value={formData.lastName}
-                    placeholder={'Last Name'}
+                    placeholder={'Nom'}
                     required={'required'}
                     LoginFormGroup={'Login__Form__Group'}
                     onChange={handleChange}
                   />
                   <Input
                     htmlfor={'mail'}
-                    label={'mail'}
+                    label={'Mail'}
                     type={'mail'}
                     id={'mail'}
                     name={'mail'}
@@ -130,7 +130,7 @@ function AjoutRS() {
                   />
                   <Input
                     htmlfor={'grade'}
-                    label={'grade'}
+                    label={'Grade'}
                     type={'text'}
                     id={'grade'}
                     name={'grade'}

@@ -50,85 +50,85 @@ function DemandeDocuments() {
             <div className='content__account__demande'>
               <form className='demande__formulaire'>
                 <InputCheckBox
-                  htmlfor={'First Name'}
-                  label={'First Name'}
+                  htmlfor={'Prénom'}
+                  label={'Prénom'}
                   type={'checkbox'}
-                  id={'First Name'}
-                  name={'First Name'}
+                  id={'Prénom'}
+                  name={'Prénom'}
                   value={formData.Email}
                   onChange={handleChange}
                   onFocus={handleInputFocus}
-                  placeholder={'First Name'}
+                  placeholder={'Prénom'}
                   required={'required'}
                   LoginFormGroup={'Login__Form__Group1'}
                   Login__Form__label={'Login__Form__label1'}
                 />
                 <InputCheckBox
-                  htmlfor={'First Name'}
-                  label={'First Name'}
+                  htmlfor={'Prénom'}
+                  label={'Prénom'}
                   type={'checkbox'}
-                  id={'First Name'}
-                  name={'First Name'}
+                  id={'Prénom'}
+                  name={'Prénom'}
                   value={formData.Email}
                   onChange={handleChange}
                   onFocus={handleInputFocus}
-                  placeholder={'First Name'}
+                  placeholder={'Prénom'}
                   required={'required'}
                   LoginFormGroup={'Login__Form__Group1'}
                   Login__Form__label={'Login__Form__label1'}
                 />
                 <InputCheckBox
-                  htmlfor={'First Name'}
-                  label={'First Name'}
+                  htmlfor={'Prénom'}
+                  label={'Prénom'}
                   type={'checkbox'}
-                  id={'First Name'}
-                  name={'First Name'}
+                  id={'Prénom'}
+                  name={'Prénom'}
                   value={formData.Email}
                   onChange={handleChange}
                   onFocus={handleInputFocus}
-                  placeholder={'First Name'}
+                  placeholder={'Prénom'}
                   required={'required'}
                   LoginFormGroup={'Login__Form__Group1'}
                   Login__Form__label={'Login__Form__label1'}
                 />
                <InputCheckBox
-                  htmlfor={'First Name'}
-                  label={'First Name'}
+                  htmlfor={'Prénom'}
+                  label={'Prénom'}
                   type={'checkbox'}
-                  id={'First Name'}
-                  name={'First Name'}
+                  id={'Prénom'}
+                  name={'Prénom'}
                   value={formData.Email}
                   onChange={handleChange}
                   onFocus={handleInputFocus}
-                  placeholder={'First Name'}
+                  placeholder={'Prénom'}
                   required={'required'}
                   LoginFormGroup={'Login__Form__Group1'}
                   Login__Form__label={'Login__Form__label1'}
                 />
                 <InputCheckBox
-                  htmlfor={'First Name'}
-                  label={'First Name'}
+                  htmlfor={'Prénom'}
+                  label={'Prénom'}
                   type={'checkbox'}
-                  id={'First Name'}
-                  name={'First Name'}
+                  id={'Prénom'}
+                  name={'Prénom'}
                   value={formData.Email}
                   onChange={handleChange}
                   onFocus={handleInputFocus}
-                  placeholder={'First Name'}
+                  placeholder={'Prénom'}
                   required={'required'}
                   LoginFormGroup={'Login__Form__Group1'}
                   Login__Form__label={'Login__Form__label1'}
                 />
                 <InputCheckBox
-                  htmlfor={'First Name'}
-                  label={'First Name'}
+                  htmlfor={'Prénom'}
+                  label={'Prénom'}
                   type={'checkbox'}
-                  id={'First Name'}
-                  name={'First Name'}
+                  id={'Prénom'}
+                  name={'Prénom'}
                   value={formData.Email}
                   onChange={handleChange}
                   onFocus={handleInputFocus}
-                  placeholder={'First Name'}
+                  placeholder={'Prénom'}
                   required={'required'}
                   LoginFormGroup={'Login__Form__Group1'}
                   Login__Form__label={'Login__Form__label1'}

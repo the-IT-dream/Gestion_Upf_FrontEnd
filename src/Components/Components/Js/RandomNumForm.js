@@ -59,7 +59,7 @@ function RandomNumForm(props) {
         </div>
 
         <form onSubmit={handleSubmit} className='Login__Form__Form'>
-        <p>La valeur de numberValue est : {numberValue}</p>
+
           <Input
             htmlfor={'R_num'}
             label={'Random number'}

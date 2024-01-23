@@ -87,24 +87,24 @@ function Account_Rs() {
 
       <form className='account__form'>
         <Input
-          htmlfor={'First Name'}
-          label={'First Name'}
+          htmlfor={'Prénom'}
+          label={'Prénom'}
           type={'text'}
-          id={'First Name'}
+          id={'Prénom'}
           name={'firstName'}
           value={formData.firstName}
-          placeholder={'First Name'}
+          placeholder={'Prénom'}
           required={'required'}
           LoginFormGroup={'Login__Form__Group'}
         />
         <Input
-          htmlfor={'Last Name'}
-          label={'Last Name'}
+          htmlfor={'Nom'}
+          label={'Nom'}
           type={'text'}
-          id={'Last Name'}
+          id={'Nom'}
           name={'lastName'}
           value={formData.lastName}
-          placeholder={'Last Name'}
+          placeholder={'Nom'}
           required={'required'}
           LoginFormGroup={'Login__Form__Group'}
         />
@@ -121,7 +121,7 @@ function Account_Rs() {
         />
         <Input
           htmlfor={'departement'}
-          label={'departement'}
+          label={'Departement'}
           type={'text'}
           id={'departement'}
           name={'departement'} 

@@ -80,8 +80,8 @@ function StudentList() {
               <th>ID</th>
               <th>CNE</th>
               <th>CIN</th>
-              <th>Nom</th>
               <th>Prénom</th>
+              <th>Nom</th>
               <th>Email</th>
               <th>Filière</th>
               <th>Niveau</th>
