@@ -23,6 +23,12 @@ const Sidebar = ({children}) => {
             icon:<i className="fa-solid fa-circle-info"></i>,
             // onClick:{links}
         },
+        role === 'STUDENT5' && {
+            path:"/Espace_Etudiant/Postuler_Offer",
+            name:"Postuler à des offres",
+            icon:<i className="fa-solid fa-pen-to-square"></i>,
+            // onClick:{links}
+        },
         {
             path:"/Espace_Etudiant/Entreprises",
             name:"Nos entreprises partenaires ",
@@ -34,13 +40,13 @@ const Sidebar = ({children}) => {
             icon:<i className="fa-solid fa-pen-to-square"></i>,
         },
         {
-            path:"/Espace_Etudiant/Demande_Document",
-            name:"Demande les documents",
+            path:"/Espace_Etudiant/Liste_Candidature",
+            name:"Liste des candidatures",
             icon:<i className="fa-solid fa-file"></i>,
         },
         {
-            path:"/Espace_Etudiant/Soumettre_document",
-            name:"Soumettre les documents",
+            path:"/Espace_Etudiant/Stage",
+            name:"Afficher les details du mon stage",
             icon:<i className="fa-solid fa-file-arrow-up"></i>,
         },
         {

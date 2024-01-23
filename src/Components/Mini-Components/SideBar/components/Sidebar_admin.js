@@ -20,12 +20,17 @@ const Sidebar_admin = (props) => {
         },
         {
             path:"/Espace_admin/Student_list",
-            name:"Student list",
+            name:"Liste des étudiants",
             icon:<i className="fa-solid fa-file-arrow-up"></i>,
         },
         {
             path:"/Espace_admin/ResponsableStage",
-            name:"Responsable Stage",
+            name:"Liste des responsables de stage",
+            icon:<i className="fa-solid fa-file-arrow-up"></i>,
+        },
+        {
+            path:"/Espace_admin/SupervisorList",
+            name:"Liste des encadrants de stage",
             icon:<i className="fa-solid fa-file-arrow-up"></i>,
         },
     

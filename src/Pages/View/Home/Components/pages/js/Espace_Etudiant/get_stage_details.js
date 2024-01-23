@@ -54,7 +54,7 @@ function GetStageDetails() {
                     <p><b>ville:</b> {internshipDetails.city}</p>
                     <p><b>Pays:</b> {internshipDetails.country}</p>
                     <p><b>Durée de stage avec semaine: </b>{internshipDetails.duration}</p>
-                    <p><b>Date de soutenance:</b>{internshipDetails.defenseDate}</p>
+                    <p><b>Date de soutenance: </b>{internshipDetails.defenseDate}</p>
                     </div>
                     
                     </div>

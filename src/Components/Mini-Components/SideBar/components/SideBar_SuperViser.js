@@ -22,8 +22,9 @@ const Sidebar_SuperViser = (props) => {
         },
         {
             // path:"/Espace_admin/ResponsableStage",
-            name:"Responsable Stage",
+            name:"Liste des details de stage",
             icon:<i className="fa-solid fa-file-arrow-up"></i>,
+            path:"/Espace_SuperViser/Liste_Details_Stage"
         },
     
     ]

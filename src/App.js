@@ -41,6 +41,12 @@ import Account_SuperViser from './Pages/View/Home/Components/pages/js/Espace_Sup
 import Security_SuperViser from './Pages/View/Home/Components/pages/js/Espace_SuperViser/Security_SuperViser';
 import GetStudentList from './Pages/View/Home/Components/pages/js/Espace_SuperViser/List_Etudiants';
 import RandomNum from './Pages/Auth/Js/RandomNum'
+import PostulerOffer from './Pages/View/Home/Components/pages/js/Espace_Etudiant/Postuler_Offer';
+import InternshipDetailsSupervisor from './Pages/View/Home/Components/pages/js/Espace_SuperViser/Liste_Details_Stage';
+import ModifyDefenseDate from './Pages/View/Home/Components/pages/js/Espace_SuperViser/Plannifier_Soutenance';
+import SupervisorList from './Pages/View/Home/Components/pages/js/Espace_Admin/JS/Professeur';
+import AjoutProf from './Pages/View/Home/Components/pages/js/Espace_Admin/JS/AjouterProf';
+import CandidatureList from './Pages/View/Home/Components/pages/js/Espace_Etudiant/Liste_Candidature_Entreprise';
 
 function App() {
 
@@ -68,6 +74,8 @@ function App() {
             <Route path="/Espace_Etudiant/Soumettre_document" element={<Soumettre_document />} />
             <Route path="/Espace_Etudiant/Entreprises" element={<List_companies_Etudiant />} />
             <Route path="/Espace_Etudiant/Stage" element={<GetStageDetails />} />
+            <Route path="/Espace_Etudiant/Postuler_Offer" element={<PostulerOffer />} />
+            <Route path="/Espace_Etudiant/Liste_Candidature" element={<CandidatureList/>}/>
 
             //Espace Responsable de stage
             <Route path='/Espace_R_Stage/Publier_les_offres_de_stage' element={<Publier_les_offres_de_stage />}/>
@@ -87,10 +95,16 @@ function App() {
             <Route path="/Espace_admin/Ajouter_Rs" element={<AjouterRS/>} />
             <Route path="/Espace_admin/Modifier_Etudiant/:id" element={<ModifierEtudiant/>} />
             <Route path="/Espace_admin/ModifierRS/:id" element={<ModifierRS/>} />
+            <Route path="/Espace_admin/SupervisorList" element={<SupervisorList/>} />
+            <Route path="/Espace_admin/Ajouter_Encadrant" element={<AjoutProf/>} />
+
             //Espace_SuperViser
             <Route path="/Espace_SuperViser/Account_SuperViser" element={<Account_SuperViser/>} />
             <Route path="/Espace_SuperViser/Securite_SuperViser" element={<Security_SuperViser/>} />
             <Route path="/Espace_SuperViser/Liste_Etudiants" element={<GetStudentList/>} />
+            <Route path="/Espace_SuperViser/Liste_Details_Stage" element={<InternshipDetailsSupervisor/>} />
+            <Route path="/Espace_SuperViser/modify-defense-date/:id" element={<ModifyDefenseDate/>} />
+
            </Routes>
 
             

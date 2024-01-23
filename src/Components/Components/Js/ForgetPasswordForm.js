@@ -14,6 +14,8 @@ function ForgetPasswordForm(props) {
   });
 
   const navigate = useNavigate();
+  const [numberValue, setNumberValue] = useState(null);
+
 
   const [focusedInput, setFocusedInput] = useState(null);
 
@@ -35,7 +37,8 @@ function ForgetPasswordForm(props) {
       });
 
       console.log(JSON.stringify(response.data));
-      navigate(`/RandomNum/${formData.email}`);
+      navigate(`/RandomNum/${formData.email}`, { state: { numberValue: response.data.number } });
+
       // Handle the response as needed
 
       // Your existing form submission logic here

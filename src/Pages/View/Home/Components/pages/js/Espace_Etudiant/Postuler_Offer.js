@@ -9,10 +9,9 @@ import TopBar from '../../../../../../../Components/Components/Js/TopBar';
 import axios from 'axios';
 import { useAuth } from '../../../../../../../AuthContext';
 import { useNavigate  } from 'react-router-dom';
-
-function Postuler() {
-  const [companies, setCompanies] = useState([]);
-  const [selectedCompany, setSelectedCompany] = useState('');
+function PostulerOffer(){
+  const [offers, setOffers] = useState([]);
+  const [selectedOffer, setSelectedOffer] = useState('');
   const { authData } = useAuth();
   const accessToken = authData.access_token;
   const refreshToken = authData.refresh_token;
@@ -26,16 +25,16 @@ function Postuler() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5555/upf/companies', {
+        const response = await axios.get('http://localhost:5555/upf/offers/student', {
           headers: {
             'Authorization': `Bearer ${accessToken}`
           },
         });
 
-        setCompanies(response.data);
+        setOffers(response.data);
 
       } catch (error) {
-        console.error('Error fetching companies:', error);
+        console.error('Error fetching offers:', error);
       }
     };
 
@@ -57,10 +56,10 @@ function Postuler() {
       const formDataToSend = new FormData();
       formDataToSend.append('cv', formData.cv);
       formDataToSend.append('coverLetter', formData.coverLetter);
-      formDataToSend.append('companyName', selectedCompany);
+      formDataToSend.append('offer', selectedOffer);
 
       const response = await axios.post(
-        'http://localhost:5555/upf/students/candidacy/company',
+        'http://localhost:5555/upf/students/candidacy-for-offer',
         formDataToSend,
         {
           headers: {
@@ -106,13 +105,13 @@ function Postuler() {
                     <select
                         id="company"
                         name="company"
-                        value={selectedCompany}
-                        onChange={(e) => setSelectedCompany(e.target.value)}
+                        value={selectedOffer}
+                        onChange={(e) => setSelectedOffer(e.target.value)}
                       >
                         <option value="">Sélectionnez une entreprise</option>
-                        {companies.map((company) => (
-                          <option key={company.id} value={company.companyName}>
-                            {company.companyName}
+                        {offers.map((offer) => (
+                          <option key={offer.id} value={offer.title}>
+                            {offer.companyName} : {offer.title}
                           </option>
                         ))}
                       </select>
@@ -168,6 +167,6 @@ function Postuler() {
     
     </div>
   );
-}
 
-export default Postuler;
+}
+export default PostulerOffer;

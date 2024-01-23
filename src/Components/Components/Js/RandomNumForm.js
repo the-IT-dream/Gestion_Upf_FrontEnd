@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import '../Css/LoginForm.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import Input from '../../Mini-Components/Js/Input';
-import { useAuth } from '../../../AuthContext';
 import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 
 function RandomNumForm(props) {
-  const { authData } = useAuth();
-  const accessToken = authData.access_token;
+  const location = useLocation();
   const navigate = useNavigate();
+  const { numberValue } = location.state;
 
   const [formData, setFormData] = useState({
     R_num: '', // Keep it consistent with the state variable
@@ -33,7 +33,14 @@ function RandomNumForm(props) {
       });
 
       console.log(JSON.stringify(response.data));
-      //navigate("/ResetPassword");
+
+      if (String(formData.R_num) === String(numberValue)) {
+        navigate("/ResetPassword", { state: { access_token : response.data.access_token} });
+      } else {
+        alert("Numéro incorrect.");
+      }
+      
+
       console.log('Form submitted with data:', formData);
     } catch (error) {
       alert("Erreur lors de la soumission du formulaire.");
@@ -52,6 +59,7 @@ function RandomNumForm(props) {
         </div>
 
         <form onSubmit={handleSubmit} className='Login__Form__Form'>
+        <p>La valeur de numberValue est : {numberValue}</p>
           <Input
             htmlfor={'R_num'}
             label={'Random number'}
